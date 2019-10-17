@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./assets/css/Connexion-Inscription.css">
+    <link rel="stylesheet" href="./assets/css/Inscription.css">
+    
+    <title>Inscription | FreeNote </title>
+</head>
+<body>
+    <main>
+        <a id="LogoMainContainer" href="">
+            <img id="LogoMain" src="./assets/images/logo.png" alt="logo FreeNote">
+        </a>
+
+        <section id="PageTitleContainer">
+            <p id="PageTitle">
+                Créer votre compte
+            </p>
+        </section>
+
+        <section id="FormContainer">
+            <form action="" method="post">
+                <input type="text" name="Nom"  class="FormInput" placeholder="Nom">
+                <input type="text" name="Prenom"  class="FormInput" placeholder="Prénom">
+                <input type="text" name="Pseudo" class="FormInput" placeholder="Pseudo">
+                
+                <select name="Gender" class="FormInput">
+                    <option class="OptionInput" value="H">
+                        Homme
+                    </option>
+                    <option class="OptionInput" value="M">
+                        Femme
+                    </option>
+                    <option class="OptionInput" value="NS">
+                        Non spécifié
+                    </option>
+                </select>
+
+                <input type="email" name="Email" class="FormInput" placeholder="Adresse Mail">
+
+                <input type="date" name="Naissance" class="FormInput" placeholder="Date">
+
+                <input type="password" name="Pwd" class="FormInput" placeholder="Mot de passe">
+                <input type="password" name="Pwd1" class="FormInput" placeholder="Confirmer mot de passe">
+
+                <div id="SubmitContainer">
+                    <input id="submitButton" type="submit" value="S'inscrire">
+                </div>
+            </form>
+
+            <p id="LoginLink">
+                Vous possédez déja un compte ? <a href="">Se connecter</a>
+            </p>
+        </section>
+
+    </main>
+</body>
+</html>

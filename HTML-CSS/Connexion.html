@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./assets/css/Connexion-Inscription.css">
+    <link rel="stylesheet" href="./assets/css/Connexion.css">
+    <title>Connexion | FreeNote</title>
+</head>
+<body>
+    <main>
+        <a id="LogoMainContainer" href="">
+            <img id="LogoMain" src="./assets/images/logo.png" alt="logo FreeNote">
+        </a>
+
+        <section id="PageTitleContainer">
+            <p id="PageTitle">
+                Connexion
+            </p>
+            <p id="PageDescription">
+                Accéder à FreeNote
+            </p>
+        </section>
+
+        <section id="FormContainer">
+            <form action="" method="post">
+                <input type="text" name="Pseudo" placeholder="Pseudo" /> <br/>
+
+                <div id="PwdContainer">
+                    <input type="password" name="Pwd" placeholder="Mot de passe"/> <br/>
+                    <a id="ForgotPwdLink" href="">Mot de passe oublié ?</a>
+                </div>
+                    
+                <div id="RememberContainer">
+                    <input type="checkbox" name="rememberC" id="rememberC">
+                    <label id="rememberCLabel" for="rememberC">Se souvenir de moi</label>
+                </div>
+<!-- 
+                <div id="ErrorContainer">
+                    <p id="Error">
+                        L'email possède déjà un compte associé.
+                    </p>
+                </div> -->
+
+                <div id="SubmitContainer">
+                    <input id="submitButton" type="submit" value="Se connecter">
+                </div>
+            </form>
+
+            <p id="RegisterLink">
+                Nouveau sur FreeNote ? <a href="">S'inscrire maintenant</a>
+            </p>
+
+        </section>
+    </main>
+</body>
+</html>
+
+

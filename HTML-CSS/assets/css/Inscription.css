@@ -1,0 +1,77 @@
+#FormContainer {
+    margin-bottom : 30px;
+    text-align: center;
+
+
+    padding : 50px 50px 30px 50px;
+
+
+}
+
+.FormInput {
+    justify-content: space-between;
+    
+    width: 43%;
+    flex-wrap: nowrap;
+    margin : 0 25px 35px 0;
+    background : none;
+    padding-bottom: 10px;
+
+    border : none;
+    border-bottom: 3px solid #ff793f;
+    
+    font-size: 19px;
+ 
+
+}
+.FormInput:focus {
+    outline: none;
+}
+
+
+/* 
+    SELECT OPTION
+*/
+option {
+    color : #212121;
+}
+option:focus{
+    outline : none;
+}
+select .OptionInput {
+    color : #212121;
+
+    outline : none;
+}
+
+/* 
+    LoginLink
+*/
+#LoginLink {
+    text-align: center;
+    margin : 20px auto 0 auto;
+}
+
+/* 
+    TABLET DESIGN
+*/
+@media screen and (max-width : 1024px) {
+    main {
+        width : 80%;
+    }
+}
+
+/* 
+    SMARTPHONE DESIGN
+*/
+@media screen and (max-width : 610px) {
+    main {
+        width : 90%;
+    }
+}
+
+@media screen and (max-width : 539px) {
+    .FormInput {
+        width : 80%;
+    }
+}
