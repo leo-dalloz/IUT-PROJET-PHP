@@ -20,16 +20,18 @@
     */
     function sendMail($s_mail) {
 
-      $i_token = generateToken();
-      $s_obj = 'mot de passe oublié' ;
-      $headers = "MIME-Version: 1.0" . "\r\n";
+      $i_token  = generateToken();
+      $s_obj    = 'mot de passe oublié' ;
+      $headers  = "MIME-Version: 1.0" . "\r\n";
       $headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
 
-      $s_msg  = '<html><body>';
-      $s_msg .= '<h1 style="color : green">Mot de passe oublié ? </h1>';
-      $s_msg .= '<h2 style="color : green">pas de panique !</h2>';
-      $s_msg .= '<p> cliquez sur ce lien : ';
+      $s_msg  = '<html><body style="background-color : #20232A; color : #fff">';
+      $s_msg .= '<h1 style="color : lightgrey">Mot de passe oublié ? </h1>';
+      $s_msg .= '<h2 style="color : lightgrey">pas de panique !</h2>';
+      $s_msg .= '<p> dirigez vous sur ce lien : ';
       $s_msg .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $i_token;//
+      $s_msg .= 'si vous n\'êtes pas à l\'origine de ce changement de mot de passe ignorez ce mail <br>'
+      $s_msg .= 'Faites attention peut-être que quelqu\'un essaie de vous pirater<br>';
       $s_msg .= '</body></html>';
       //$s_msg  = wordwrap($s_msg,70);
 
