@@ -3,7 +3,22 @@
     $style_common = '../assets/css/connexion-inscription.css';
     $style = '../assets/css/inscription.css';
 
-    ob_start()
+
+    // Gestion des erreurs de connexion
+    // Jeremy
+    $s_error = $_GET['error'];
+    if ($s_error == 'wrong')
+        $s_error = 'Vous n\'avez pas rempli un des champs.';
+    else if ($s_error == 'pwd')
+        $s_error = 'Les mots de passe sont différents.';
+    else if ($s_error == 'pseudo')
+        $s_error = 'Le pseudo que vous avez choisi est déjà utilisé.';
+    else if ($s_error == 'email')
+        $s_error = 'L\'email que vous avez choisi possède déjà un compte associé.';
+    else
+        $s_error = '';
+
+    ob_start();
 ?>
 
 	<main>
