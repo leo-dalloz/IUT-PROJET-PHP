@@ -22,11 +22,22 @@
 
       $i_token = generateToken();
       $s_obj = 'mot de passe oublié' ;
-      $s_msg = 'bonjour cliquez sur le <a href="generatePwdC.php?token='. $i_token . '">lien</a> svp';
+      $s_msg = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      <html>
+          <head>
+              <meta http-equiv="content-type" content="text/html"; charset="utf-8">
+          </head>
+          <body>
+              <h1 style="color : green"> Mot de passe oublié ? </h1>
+              <h2> pas d\'inquiétudes ! </h2>
+              <p> cliquez sur ce <a href="http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/view/generatePwdV.php">lien</a> pour réinitialiser votre mot de passe <br>
+                bonne journée et à bientôt sur freenote ! </p>
+          </body>
+      </html>';
 
 
       addToken($i_token,$s_mail);
-      mail('laurent.vouriot@etu.univ-amu.fr','test','test');
       mail($s_mail,$s_obj,$s_msg);
 
     } // sendMail()
