@@ -2,7 +2,7 @@
 
     session_start();
 
-    require '../Model/loginM.php';
+    require '../model/loginM.php';
 
     $s_pseudo = $_POST['Pseudo'];
     $s_password = $_POST['Pwd'];
@@ -13,15 +13,9 @@
         $_SESSION['login'] = 'ok';
         $_SESSION['user'] = returnUser($s_pseudo);
         if ($_SESSION['user']->getMyAdmin() == 1)
-            header('Location: ../View/pageTestV.php?admin=oui');
+            header('Location: ../view/pageTestV.php?admin=oui');
         else
-            header('Location: ../View/pageTestV.php?admin=non');
+            header('Location: ../view/pageTestV.php?admin=non');
     }
     else
-        header('Location: ../View/loginV.php?step=error');
-
-
-
-
-
-
+        header('Location: ../view/loginV.php?step=error');
