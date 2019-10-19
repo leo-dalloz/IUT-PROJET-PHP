@@ -6,7 +6,7 @@
       if ($step == null)
           $msg = 'verification mail';
       else if($step == 'ok')
-          $msg = 'un mail à été envoyé ';
+          $msg = 'un mail à été envoyé à ' . $_POST['mail'] ;
       elseif ($step == 'error')
           $msg = 'adresse mail inexistante dans notre base de données ';
 
@@ -18,7 +18,7 @@
   <h2> <?= $msg ?> </h2>
   <form  action = "../controller/newPwdC.php" method="post">
       Veuillez entrer votre adresse email <br>
-      <input type="text" name="mail" value="mail" placeholder="mail"> <br>
+      <input type="text" name="mail" placeholder="mail"> <br>
       <input type="submit" name="action" value="envoyer"> <br>
   </form>
 

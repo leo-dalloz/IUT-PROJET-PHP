@@ -33,10 +33,6 @@
       $s_msg .= 'Si vous n\'êtes pas à l\'origine de ce changement de mot de passe ignorez ce mail. <br><br>';
       $s_msg .= 'Faites attention peut-être que quelqu\'un essaie de vous pirater<br><p>';
       $s_msg .= '</body></html>';
-      //$s_msg  = wordwrap($s_msg,70);
-
-
-
 
 
       addToken($i_token,$s_mail);
