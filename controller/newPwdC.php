@@ -22,7 +22,7 @@
 
       $i_token = generateToken();
       $s_obj = 'mot de passe oublié' ;
-      $s_msg = '<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html"; charset="utf-8"></head><body><h1 style="color : green"> Mot de passe oublié ? </h1><h2> pas d\'inquiétudes ! </h2><p> cliquez sur ce <a href="../view/generatePwdV.php">lien</a> pour réinitialiser votre mot de passe <br>bonne journée et à bientôt sur freenote ! </p></body></html>';
+      $s_msg = '<html><head><meta http-equiv="content-type" content="text/html"; charset="utf-8"></head><body><h1 style="color : green"> Mot de passe oublié ? </h1><h2> pas d\'inquiétudes ! </h2><p> cliquez sur ce <a href="../view/generatePwdV.php">lien</a> pour réinitialiser votre mot de passe <br>bonne journée et à bientôt sur freenote ! </p></body></html>';
 
 
       addToken($i_token,$s_mail);
