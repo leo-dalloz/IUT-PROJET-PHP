@@ -6,7 +6,7 @@
       if ($step == null)
           $msg = 'verification mail';
       else if($step == 'ok')
-          $msg = 'un mail à été envoyé à ' . $_POST['mail'] ;
+          $msg = 'un mail à été envoyé' ;
       elseif ($step == 'error')
           $msg = 'adresse mail inexistante dans notre base de données ';
 
