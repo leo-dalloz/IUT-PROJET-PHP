@@ -29,8 +29,8 @@
       $s_msg .= '<h1 style="color : green">Mot de passe oublié ? </h1>';
       $s_msg .= '<h2 style="color : green">pas de panique !</h2>';
       $s_msg .= '<p> cliquez sur ce ';
-      $s_msg .= '<a href="../view/generatePwdC.php?token=">'; 
-      $s_msg .= 'lien</a> pour réinitialiser votre mot de passe';
+      $s_msg .= '<a href="../view/generatePwdC.php?token=">';
+      $s_msg .= $i_token//'lien</a> pour réinitialiser votre mot de passe';
       $s_msg .= '</body></html>';
       //$s_msg  = wordwrap($s_msg,70);
 
