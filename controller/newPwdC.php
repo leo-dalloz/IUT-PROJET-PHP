@@ -23,14 +23,13 @@
       $i_token = generateToken();
       $s_obj = 'mot de passe oublié' ;
       $headers = "MIME-Version: 1.0" . "\r\n";
-      $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+      $headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
 
       $s_msg  = '<html><body>';
       $s_msg .= '<h1 style="color : green">Mot de passe oublié ? </h1>';
       $s_msg .= '<h2 style="color : green">pas de panique !</h2>';
-      $s_msg .= '<p> cliquez sur ce ';
-      //$s_msg .= '<a href="../view/generatePwdC.php?token=">';
-      $s_msg .= $i_token ;//'lien</a> pour réinitialiser votre mot de passe';
+      $s_msg .= '<p> cliquez sur ce lien : ';
+      $s_msg .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $i_token;//
       $s_msg .= '</body></html>';
       //$s_msg  = wordwrap($s_msg,70);
 
