@@ -27,11 +27,7 @@
 
       addToken($i_token,$s_mail);
       mail('laurent.vouriot@etu.univ-amu.fr','test','test');
-      if(mail($s_mail,$s_obj,$s_msg))
-      {
-        print_r('ok');
-        exit()
-      }
+      mail($s_mail,$s_obj,$s_msg);
 
     } // sendMail()
 
