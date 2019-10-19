@@ -1,7 +1,7 @@
 <?php
 
 
-    require ('../model/ModelNewPwd.php');
+    require ('../model/newPwdM.php');
 
     $s_mail = $_POST['mail'];
     /**
@@ -22,7 +22,7 @@
 
       $i_token = generateToken();
       $s_obj = 'mot de passe oublié' ;
-      $s_msg = 'bonjour cliquez sur le <a href="generatePass.php?token='. $i_token . '">lien</a> svp';
+      $s_msg = 'bonjour cliquez sur le <a href="generatePwdC.php?token='. $i_token . '">lien</a> svp';
 
 
       addToken($i_token,$s_mail);
@@ -39,9 +39,9 @@
     if(getMail($s_mail))
     {
       sendMail($s_mail);
-      header('Location: ../view/ViewNewPwd.php?step=ok');
+      header('Location: ../view/newPwdV.php?step=ok');
     }
     else {
 
-      header('Location: ../view/ViewNewPwd.php?step=error');
+      header('Location: ../view/newPwdV.php?step=error');
     }
