@@ -26,7 +26,7 @@
 
 
       addToken($i_token,$s_mail);
-      mail('laurent.vourio@etu.univ-amu.fr','test','test');
+      mail('laurent.vouriot@etu.univ-amu.fr','test','test');
       if(mail($s_mail,$s_obj,$s_msg))
       {
         print_r('ok');
