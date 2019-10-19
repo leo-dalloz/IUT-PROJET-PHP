@@ -21,7 +21,7 @@
         </section>
 
         <section id="FormContainer">
-            <form action="../Controller/loginC.php" method="post">
+            <form action="../controller/loginC.php" method="post">
                 <input type="text" name="Pseudo" placeholder="Pseudo" /> <br/>
 
                 <div id="PwdContainer">
