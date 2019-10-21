@@ -22,6 +22,7 @@ if ($s_action == 'Envoyer message')
         }
         else
         {
+            echo ($i_lastMessageID);
             addToMessage($s_contents, $i_lastMessageID);
         }
         if ( ! (strpos($s_contents,'.') == FALSE))
