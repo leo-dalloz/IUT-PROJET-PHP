@@ -5,10 +5,10 @@
     $s_confPwd = $_POST['confMdp'];
 
     $i_token   = $_GET['token'];
-  
+
 
     // on verifie si le token existe  dans la bd et on redirige en fonction
-    if(!verifToken($i_token)) {
+    if(!verifToken($i_token) || $i_token == null) {
       header('Location : ../accesInterdit.html');
     }
 
