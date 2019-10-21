@@ -28,6 +28,20 @@ class Discussion
             $this->tab_myMessages[] = new Message($dbRow['messageId'],$dbRow['authorId'],$dbRow['contents'],$dbRow['date'],$dbRow['nbLike'], $dbRow['state']);
         }
     }
+
+    public function lastMessage()
+    {
+        $i_lastMessage = -1 ;
+        $dbLink = dbConnect();
+        $query = 'SELECT messageId FROM Message WHERE discussionId = \'' . $this->i_myDiscussionId .'\' AND state = 1' ;
+        $dbResult = testError($dbLink,$query);
+        while($dbRow = mysqli_fetch_assoc($dbResult))
+        {
+            $i_lastMessage = $dbRow['messageId'];
+        }
+        return $i_lastMessage;
+    }
+
     public function show()
     {
         foreach ($this->tab_myMessages as $value)

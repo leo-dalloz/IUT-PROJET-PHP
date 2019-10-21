@@ -15,12 +15,19 @@ if ($s_action == 'Envoyer message')
     else if(str_word_count($s_contents,0,'123456789') <= $D_discussion->getNbMaxWords()
         && str_word_count($s_contents,0,'123456789') != 0)
     {
-
-        createMessage('0001',$i_discussionId, $s_contents);
+        $i_lastMessageID = idLastMessage();
+        if ( -1 == $i_lastMessageID)
+        {
+            createMessage('0001',$i_discussionId, $s_contents);
+        }
+        else
+        {
+            addToMessage($s_contents, $i_lastMessageID);
+        }
         if ( ! (strpos($s_contents,'.') == FALSE))
         {
 //                echo strpos($s_contents,'.');
-            $D_discussion->closeDiscussion();
+            $D_discussion->closeThisMessage();
         }
         header('Location: ../view/pageDiscussionV.php?etat=' . 'message envoyé' . '&discussionId=' . $i_discussionId);
     }
