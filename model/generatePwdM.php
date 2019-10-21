@@ -37,4 +37,6 @@
                SET password =' . $s_newMdp .'
                WHERE token  =' . $i_token;
     $result = testError($dbLink,$query);
+
+    header("Location :https://ent.univ-amu.fr/uPortal/f/Accueil/normal/render.uP");
   }//changeMail()
