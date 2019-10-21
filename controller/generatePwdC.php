@@ -1,11 +1,11 @@
 <?php
     require ('../model/generatePwdM.php');
 
-    $s_newPwd  = $_POST['newPwd'];
-    $s_confPwd = $_POST['confMdp'];
 
     $i_token   = $_GET['token'];
 
+    $s_newPwd  = $_POST['newPwd'];
+    $s_confPwd = $_POST['confMdp'];
 
 
     print_r($_POST);
