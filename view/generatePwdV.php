@@ -1,14 +1,10 @@
 <?php
-  $i_token = $_GET['token'];
-  $step    = $_GET['step'];
 
-  // on verifie si le token existe  dans la bd et on redirige en fonction
-  if($i_token == null || !verifToken($i_token))
-    header('Location : accesInterdit.html');
+      $step  = $_GET['step'];
+      
+      if ($step = 'errconf')
+          $msg = "les deux mots de passes ne correspondent pas" ;
 
-  if ($step = 'errconf')
-      $msg = "les deux mots de passes ne correspondent pas" ;
-  
 ?>
 
 <main>
