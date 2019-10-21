@@ -39,13 +39,13 @@
                 <input type="text" name="Pseudo" class="FormInput" placeholder="Pseudo">
 
                 <select name="Gender" class="FormInput">
-                    <option class="OptionInput" value="H">
+                    <option class="OptionInput" value="Homme">
                         Homme
                     </option>
-                    <option class="OptionInput" value="M">
+                    <option class="OptionInput" value="Femme">
                         Femme
                     </option>
-                    <option class="OptionInput" value="NS">
+                    <option class="OptionInput" value="Non spécifié">
                         Non spécifié
                     </option>
                 </select>
