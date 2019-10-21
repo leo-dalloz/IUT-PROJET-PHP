@@ -3,12 +3,12 @@
 
        $i_token = $_GET['token'];
 
-       // ?token=<?=$i_token?
+
 ?>
 
 <main>
   <h1> nouveau mdp </h1>
-  <from  action="../controller/generatePwdC.php" method="post">
+  <form  action="../controller/generatePwdC.php?token=<?=$i_token?>" method="post">
     <input type="text" name="newPwd" placeholder="nouveau mot de passe"><br>
     <p> Confirmez votre mot de passe <br></p>
     <input type="password" name="confMdp" placeholder="confirmer mot de passe"><br>
