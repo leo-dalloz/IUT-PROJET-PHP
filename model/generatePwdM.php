@@ -36,6 +36,7 @@
     $query  = 'UPDATE User
                SET password =' . $s_newPwd .'
                WHERE token  =' . $i_token;
+               
     $result = testError($dbLink,$query);
 
   }//changeMail()
