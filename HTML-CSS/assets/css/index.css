@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap');
+
+
+* {
+    margin : 0;
+    padding : 0;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style : none;
+}
+
+#LDiscussionContainer {
+    width : 600px;
+    height : 60%;
+
+    background-color : #20232A;
+
+    box-shadow: 0 0 15px rgba(21, 21, 21, 0.8);
+
+    color : white;
+
+    position : fixed;
+    top : 20%;
+    left : -560px;
+
+    border-top-right-radius : 25px;
+    border-bottom-right-radius : 25px;
+
+    display : flex;
+    flex-direction : row-reverse;
+    align-items: stretch;
+
+    transition : 1s;
+}
+#LDiscussionContainer:hover {
+    left : 0;
+
+    transition : 1s;
+}
+
+#LDTitle {
+    padding : 10px;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    user-select : none;
+
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size : 15px;
+
+    cursor: default;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    background-color : #ff793f;
+    transition : 0.2s;  
+}
+
+#LDTitle:hover {
+    cursor : pointer;
+    background-color : #ec7c4c;
+    
+    transition : 0.2s;
+}
+
+#LDiscussion {
+    width : 100%;
+    height : 100%;
+
+    overflow-y : scroll;
+
+    display : flex;
+    flex-direction : column;
+    
+}
+
+
+.Discussion {
+    display : flex;
+    flex-direction : row;
+    justify-content: space-around;
+    flex-wrap : wrap;
+
+    padding-top : 20px;
+    padding-bottom : 20px;
+
+    cursor : default;
+
+    font-size : 17px;
+}
+
+.Discussion:hover {
+    background-color : rgba(200,200,200,0.1);
+}
+
+.LinkDiscu:hover {
+    color : #ff793f;
+}
+
+.Open {
+    color : #218c74;
+}
+.Close {
+    color : #ff5252;
+}
+
+#DescriptionTitle {
+    font-size : 50px;
+
+    font-family : 'Archivo Black', sans-serif;
+
+}
+#DescriptionText {
+    text-align: justify;
+    font-size : 20px;
+
+    padding : 20px;
+}
+
+/* 
+    FIRST PART CONTAINER
+*/
+#FirstPartContainer {
+    display : flex;   
+    align-items: stretch;
+}
+
+#FirstPartImage {
+    width : 500px;
+    height : auto;
+}
+#DescriptionButtons {
+    display : flex;
+    flex-direction : row;
+    justify-content: space-around;
+}
+
+.MainButton {
+    padding : 10px 15px 10px 15px;
+
+    font-size : 20px;
+
+    box-shadow : 0 0 5px rgba(21, 21, 21, 0.8);
+
+    background-color : #ff793f;
+}
+.MainButton:hover {
+    transition : 0.2s;
+
+    background-color : #ec7c4c;
+}
+
+@media screen and (max-width : 600px) {
+    #LDiscussionContainer {
+        width : 100%;
+        left : -90%;
+    }
+
+    #LDiscussionContainer:hover {
+        left : 0;
+    }
+}
+
