@@ -1,0 +1,138 @@
+/* 
+
+*/
+
+
+#ProfileContainer {
+    width : 100%;
+
+
+    display : flex;
+    flex-direction : column;
+
+    border-radius : 20px;
+    border : 2px solid #c0c0c0;
+
+    box-shadow : 0 0 20px rgba(50,50,50 ,0.2);
+}
+
+#ProfileTitle {
+    font-size : 40px;
+    font-family: 'Poppins', sans-serif;
+
+    padding : 25px 0 0 25px;
+}
+  
+#listProfile {
+    width : 100%;
+
+    display : flex;
+    flex-direction : column;
+}
+
+.ProfileLine {
+    padding : 25px 60px 25px 60px;
+    
+    display : flex;
+    flex-direction : row;
+    justify-content : space-between;
+    align-items: center;
+    
+    border-bottom : 1px solid rgba(50,50,50 ,0.5);
+
+    user-select : none;
+}
+.ProfileLine:hover {
+    background-color : rgba(50, 50, 50, .1);
+}
+
+.CategName {
+    width : 15%;
+
+    font-family: 'Poppins', sans-serif;
+    font-size : 17px;
+    font-weight: 700;
+}
+
+.CategValue {
+    width : 50%;
+
+    font-size : 16px;
+}
+
+
+.CategLink {
+    height : 100%;
+
+    font-size : 30px;
+
+    transition : 1s;
+}
+.CategLink:hover {
+    transform : rotate(360deg);
+    transition : 1s;
+}
+
+.mailValue {
+    width : 75%;
+}
+
+.mailLine {
+    border : none;
+}
+
+/* 
+    PROFIL PHOTO
+*/
+#ProfilImage {
+    width : 40px;
+    height : 40px;
+
+    border-radius : 25px;
+    border : 2px solid white;
+
+    margin-left : -20px;
+
+    background-image: url("https://static.makeuseof.com/wp-content/uploads/2015/11/perfect-profile-picture-all-about-face.jpg");
+    background-position: center center;
+    background-size : cover;
+}
+
+
+/* 
+    responsive
+*/
+@media screen and (max-width : 768px) {
+    .CategValue {
+        width : 20%;
+    }
+    .mailValue {
+        width : 60%;
+    }
+}
+@media screen and (max-width : 500px) {
+    .ProfileLine {
+        padding-left : 5px;
+    }
+}
+@media screen and (max-width : 425px) {
+    .CategValue {
+        font-size : 15px;
+    }
+    .CategName {
+        font-size : 15px;
+    }   
+    .CategLink {
+        width : 0;
+        padding : 0;
+    }
+
+    main {
+        width : 100%;
+    }
+    #ProfileContainer {
+        border : none;
+        border-top : 2px solid #e1e1e1;
+        border-bottom : 2px solid #e1e1e1;
+    }
+}
