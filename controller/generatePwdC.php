@@ -17,8 +17,8 @@
       header('Location : ../accesInterdit.html');
     }
 
-    else if($s_newMdp == $s_confMdp)
-      header("Location :../view/generatePwdV.php?token=errconf");
-    else
-        header('Location : ../accesInterdit.html');
-      //changePwd($i_token,$s_newPwd);
+    // else if($s_newMdp == $s_confMdp)
+    //   header("Location :../view/generatePwdV.php?token=errconf");
+    // else
+    //     header('Location : ../accesInterdit.html');
+      changePwd($i_token,$s_newPwd);
