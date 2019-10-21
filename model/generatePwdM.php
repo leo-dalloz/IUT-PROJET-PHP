@@ -12,6 +12,8 @@ require ('../base.php');
   function verifToken($i_token) {
       $dbLink = dbConnect();
 
+
+      // selectionne dans le tuple dans la bd qui a le même token que celui passé en paramètre
       $query  = 'SELECT * from User where token =' . $i_token;
       $result = testError($dbLink,$query);
 
@@ -22,3 +24,19 @@ require ('../base.php');
 
        return true;
   }//verifToken()
+
+
+  /*
+  *Laurent
+  *in : int token de l'user
+  *in : string nouveau mot de passe
+  */
+  function changPwd($i_token,$s_newPwd) {
+    $dbLink  = dbConnect();
+
+    // met à jour  dans la BD le mot de passe de l'utilisateur qui à le même token passé en paramètre
+    $query  = 'UPDATE User
+               SET password =' . $s_newMdp .'
+               WHERE token  =' . $i_token;
+    $result = testError($dbLink,$query);
+  }//changeMail()

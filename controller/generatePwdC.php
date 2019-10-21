@@ -1,10 +1,14 @@
 <?php
-  require ('../model/generatePwdM.php');
+    require ('../model/generatePwdM.php');
 
-  $token = $_GET['token'];
+    $s_newPwd  = $_POST['newMdp'];
+    $s_confPwd = $_POST['confMdp'];
 
-  // on verifie si le token existe  dans la bd et on redirige en fonction
-  if(verifToken($token))
-    header('Location: ../view/generatePwdV.php');
-  else
-    header('Location: ../accesInterdit.html');
+    $i_token   = $_GET['token']
+
+
+    if($s_newMdp == $s_confMdp) {
+      header("Location :../view/generatePwdV.php?step=errconf");
+    }
+
+    changePwd($i_token,$s_newPwd);
