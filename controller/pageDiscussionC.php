@@ -15,6 +15,7 @@ if ($s_action == 'Envoyer message')
     else if(str_word_count($s_contents,0,'123456789') <= $D_discussion->getNbMaxWords()
         && str_word_count($s_contents,0,'123456789') != 0)
     {
+
         $i_lastMessageID = $D_discussion->LastMessage();
         if ( -1 == $i_lastMessageID)
         {
