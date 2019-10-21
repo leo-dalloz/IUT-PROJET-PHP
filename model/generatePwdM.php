@@ -31,12 +31,11 @@
   */
   function changPwd($i_token,$s_newPwd) {
     $dbLink  = dbConnect();
-
+    
     // met à jour  dans la BD le mot de passe de l'utilisateur qui à le même token passé en paramètre
     $query  = 'UPDATE User
                SET password =' . $s_newMdp .'
                WHERE token  =' . $i_token;
     $result = testError($dbLink,$query);
 
-    echo 'ok';
   }//changeMail()
