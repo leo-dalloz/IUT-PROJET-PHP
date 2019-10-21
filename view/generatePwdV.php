@@ -5,7 +5,7 @@
       // if ($step = 'errconf')
       //     $msg = "les deux mots de passes ne correspondent pas" ;
       // else $msg = "cvle100";
-
+      $i_token = $_GET['token'];
 
 ?>
 
