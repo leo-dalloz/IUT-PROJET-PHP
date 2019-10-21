@@ -1,11 +1,11 @@
 <?php
 
-      // $step  = $_GET['step'];
-      //
-      // if ($step = 'errconf')
-      //     $msg = "les deux mots de passes ne correspondent pas" ;
-      // else $msg = "cvle100";
-      $i_token = $_GET['token'];
+       $step  = $_GET['step'];
+
+       if ($step = 'errconf')
+           $msg = "les deux mots de passes ne correspondent pas" ;
+       else $msg = "cvle100";
+       $i_token = $_GET['token'];
 
 ?>
 
@@ -16,5 +16,7 @@
     <p> Confirmez votre mot de passe <br></p>
     <input type="password" name="confMdp" placeholder="confirmer mot de passe"><br>
     <input type="submit" name="action" value="envoyer"><br>
+    <?= $msg ?> <br>
+    <?= $i_token ?>
   <form>
 </main>
