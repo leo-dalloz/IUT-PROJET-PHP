@@ -3,7 +3,7 @@
 	$style = '../assets/css/index.css';
 	$style_theme = '../assets/css/theme/day.css';
 
-    require '../Controller/indexC.php';
+    require '../controller/indexC.php';
     $tab_discussions = getTabDiscussion();
 
 	ob_start();
