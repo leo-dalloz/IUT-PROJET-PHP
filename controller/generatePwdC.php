@@ -1,14 +1,15 @@
 <?php
     require ('../model/generatePwdM.php');
 
-    $s_newPwd  = $_POST['newMdp'];
+    $s_newPwd  = $_POST['newPwd'];
     $s_confPwd = $_POST['confMdp'];
 
     $i_token   = $_GET['token'];
 
 
 
-
+    print_r($_POST);
+    exit();
 
 
     // on verifie si le token existe  dans la bd et on redirige en fonction
@@ -21,5 +22,3 @@
     // else
     //     header('Location : ../accesInterdit.html');
     changePwd($i_token,$s_newPwd);
-
-      header('Location : ../accesInterdit.html');
