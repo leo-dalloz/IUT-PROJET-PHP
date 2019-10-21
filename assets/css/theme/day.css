@@ -1,9 +1,6 @@
-* {
-    color : white;
-}
 
 a, a:active {
-    color : white;
+    color : black;
 }
 
 html {
@@ -11,9 +8,13 @@ html {
 }
 
 main {
-    background-color : #e1e1e1;
+    color : black;
 }
 
 main > * {
     color : #212121;
+}
+
+.AuthorName > a, .AuthorName > a:active  {
+    color : white;
 }
