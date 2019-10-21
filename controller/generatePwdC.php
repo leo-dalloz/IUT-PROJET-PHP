@@ -10,11 +10,12 @@
     exit();
 
     // on verifie si le token existe  dans la bd et on redirige en fonction
-    if($i_token == null || !verifToken($i_token)) {
-      header('Location : accesInterdit.html');
+    if(!verifToken($i_token)) {
+      header('Location : ../accesInterdit.html');
     }
 
     else if($s_newMdp == $s_confMdp)
-      header("Location :../view/generatePwdV.php?step=errconf");
+      header("Location :../view/generatePwdV.php?token=errconf");
     else
-      changePwd($i_token,$s_newPwd);
+        header('Location : ../accesInterdit.html');
+      //changePwd($i_token,$s_newPwd);
