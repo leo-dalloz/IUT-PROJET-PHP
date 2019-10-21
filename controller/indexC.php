@@ -1,5 +1,5 @@
 <?php
-require '../model/indexModel.php';
+require '../model/indexM.php';
 function getTabDiscussion()
 {
     return getDiscussions();
