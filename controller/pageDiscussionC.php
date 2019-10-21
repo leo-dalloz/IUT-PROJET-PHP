@@ -4,6 +4,7 @@ $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
+
 echo $D_discussion->getState() . '<br>';
 if ($s_action == 'Envoyer message')
 {
@@ -14,6 +15,7 @@ if ($s_action == 'Envoyer message')
     else if(str_word_count($s_contents,0,'123456789') <= $D_discussion->getNbMaxWords()
         && str_word_count($s_contents,0,'123456789') != 0)
     {
+
         createMessage('0001',$i_discussionId, $s_contents);
         if ( ! (strpos($s_contents,'.') == FALSE))
         {

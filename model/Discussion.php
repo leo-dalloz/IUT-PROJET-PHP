@@ -21,18 +21,18 @@ class Discussion
             $this->b_myState = $dbRow['state'];
         }
         $this->i_myDiscussionId = $i_discussionId;
-        $query = 'SELECT messageId, authorId, contents, date, nbLike FROM Message WHERE discussionId = \'' . $i_discussionId . '\' ORDER BY date';
+        $query = 'SELECT messageId, authorId, contents, date, nbLike, state FROM Message WHERE discussionId = \'' . $i_discussionId . '\' ORDER BY date';
         $dbResult = testError($dbLink,$query);
         while($dbRow = mysqli_fetch_assoc($dbResult))
         {
-            $this->tab_myMessages[] = new Message($dbRow['messageId'],$dbRow['authorId'],$dbRow['contents'],$dbRow['date'],$dbRow['nbLike']);
+            $this->tab_myMessages[] = new Message($dbRow['messageId'],$dbRow['authorId'],$dbRow['contents'],$dbRow['date'],$dbRow['nbLike'], $dbRow['state']);
         }
     }
     public function show()
     {
         foreach ($this->tab_myMessages as $value)
         {
-            echo $value->getContents() . ' ';
+            echo $value->getContents() . '<br>';
         }
     }
     public function getNbMessages()

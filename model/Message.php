@@ -6,14 +6,27 @@ class Message
     private $s_myContents;
     private $d_myDate;
     private $i_myNbLike;
-    function __construct($i_messageId, $i_authorId, $s_contents,$d_date, $i_nbLike)
+    private $b_myState;
+    function __construct($i_messageId, $i_authorId, $s_contents,$d_date, $i_nbLike, $b_state)
     {
         $this->i_myMessageId = $i_messageId;
         $this->i_myAuthorID = $i_authorId;
         $this->s_myContents= $s_contents;
         $this->d_myDate = $d_date;
         $this->i_nbLike = $i_nbLike;
+        $this->b_myState = $b_state;
     }
+
+    public function closeMessage()
+    {
+        $this->b_myState = 0;
+        $dbLink = dbConnect();
+        $query = 'UPDATE Message SET state = 0 WHERE messageId = ' . $this->i_myMessageId;
+        testError($dbLink,$query);
+    }
+
+
+
     /**
      * @return mixed
      */
