@@ -1,15 +1,20 @@
 * {
     color : white;
 }
-
 a, a:active {
     color : white;
 }
 
 html {
-    background : #1d2331;
+    background : #353436;
 }
 
-main {
-    background-color : #181D29;
+/* 
+    profile
+*/
+.ProfileLine {
+    border-bottom : 1px solid #f1f1f1;
+}
+.mailLine {
+    border : none;
 }
