@@ -13,7 +13,7 @@
     print_r($_GET);
     exit();
     // on verifie si le token existe  dans la bd et on redirige en fonction
-    if( $i_token ==  || !verifToken($i_token) ) {
+    if( $i_token == null || !verifToken($i_token) ) {
       header('Location : ../accesInterdit.html');
     }
 

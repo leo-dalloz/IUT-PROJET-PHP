@@ -31,7 +31,7 @@
   */
   function changPwd($i_token,$s_newPwd) {
     $dbLink  = dbConnect();
-    
+
     // met à jour  dans la BD le mot de passe de l'utilisateur qui à le même token passé en paramètre
     $query  = 'UPDATE User
                SET password =' . $s_newMdp .'
