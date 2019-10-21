@@ -4,9 +4,10 @@ require '../controller/discussionC.php';
 start_page('Discussion1');
 $s_etat = $_GET['etat'];
 $i_numDiscussion = $_GET['discussionId'];
+
 if ($s_etat == null || $i_numDiscussion == null)
 {
-    header('Location: index.php');
+    header('Location: indexV.php');
 }
 ?>
 
@@ -17,7 +18,7 @@ if ($s_etat == null || $i_numDiscussion == null)
     <p><?$D_discussion->show()?></p><br>
 
     <strong><? echo $s_etat?></strong><br>
-    <form action="../Controller/controlerDiscussion.php?discussionId=<?echo $i_numDiscussion?>" method="post" >
+    <form action="../controller/discussionC.php?discussionId=<?echo $i_numDiscussion?>" method="post" >
         <label for="contents">Ecriver un message</label><br/>
         <input type="text" name="contents" placeholder="Message"><br/>
         <input type="submit" name="action" value="Envoyer message">
