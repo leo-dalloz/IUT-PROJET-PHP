@@ -11,7 +11,6 @@ function createMessage($i_authorId, $i_discussionId, $s_contents)
 
 function addToMessage($s_contents, $i_messageId)
 {
-    $this->b_myState = 0;
     $dbLink = dbConnect();
     $query = 'UPDATE Message SET contents = CONCAT(contents,\' ' . $s_contents .'\') WHERE messageId = ' . $i_messageId;
     testError($dbLink,$query);
