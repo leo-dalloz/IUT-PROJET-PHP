@@ -9,7 +9,7 @@
     if($i_token == '')
       header('Location : ../accesInterdit.html');
     // on verifie si le token existe  dans la bd et on redirige en fonction
-    else if(|| $i_token == null || !verifToken($i_token) ) {
+    else if($i_token == NULL || !verifToken($i_token) ) {
       header('Location : ../accesInterdit.html');
     }
 
