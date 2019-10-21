@@ -1,4 +1,6 @@
 <?php
+require 'dbTest.php';
+
 class Message
 {
     private $i_myMessageId;
