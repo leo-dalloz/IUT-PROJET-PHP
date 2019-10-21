@@ -20,6 +20,6 @@
     //   header("Location :../view/generatePwdV.php?token=errconf");
     // else
     //     header('Location : ../accesInterdit.html');
-      changePwd($i_token,$s_newPwd);
+    changePwd($i_token,$s_newPwd);
 
       header('Location : ../accesInterdit.html');
