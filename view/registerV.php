@@ -22,8 +22,8 @@
 ?>
 
 	<main>
-        <a id="LogoMainContainer" href="index.php">
-            <img id="LogoMain" src="./assets/images/test2.png" alt="logo FreeNote">
+        <a id="LogoMainContainer" href="indexV.php">
+            <img id="LogoMain" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
 
         <section id="PageTitleContainer">
@@ -45,8 +45,8 @@
                     <option class="OptionInput" value="Femme">
                         Femme
                     </option>
-                    <option class="OptionInput" value="Non spécifié">
-                        Non spécifié
+                    <option class="OptionInput" value="Autre">
+                        Autre
                     </option>
                 </select>
 
