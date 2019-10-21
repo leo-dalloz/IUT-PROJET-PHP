@@ -1,7 +1,7 @@
 <?php
 
 
-    require ('../model/ModelNewPwd.php');
+    require ('../model/NewPwdM.php');
 
     $s_mail = $_POST['mail'];
     /**
@@ -30,7 +30,7 @@
       if(mail($s_mail,$s_obj,$s_msg))
       {
         print_r('ok');
-        exit()
+        exit();
       }
 
     } // sendMail()
@@ -39,9 +39,9 @@
     if(getMail($s_mail))
     {
       sendMail($s_mail);
-      header('Location: ../view/ViewNewPwd.php?step=ok');
+      header('Location: ../view/NewPwdV.php?step=ok');
     }
     else {
 
-      header('Location: ../view/ViewNewPwd.php?step=error');
+      header('Location: ../view/NewPwdV.php?step=error');
     }

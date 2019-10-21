@@ -33,7 +33,7 @@
         </section>
 
         <section id="FormContainer">
-            <form action="../controller/registrationC.php" method="post">
+            <form action="../controller/registerC.php" method="post">
                 <input type="text" name="Nom"  class="FormInput" placeholder="Nom">
                 <input type="text" name="Prenom"  class="FormInput" placeholder="Prénom">
                 <input type="text" name="Pseudo" class="FormInput" placeholder="Pseudo">
@@ -56,6 +56,8 @@
 
                 <input type="password" name="Pwd" class="FormInput" placeholder="Mot de passe">
                 <input type="password" name="Pwd1" class="FormInput" placeholder="Confirmer mot de passe">
+
+                <?php echo $s_error; ?>
 
                 <div id="SubmitContainer">
                     <input id="submitButton" type="submit" value="S'inscrire">

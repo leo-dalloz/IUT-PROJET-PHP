@@ -12,16 +12,16 @@
 
     if ($s_pwd != $s_pwd2)
     {
-        header('Location: ../View/registrationV.php?error=pwd');
+        header('Location: ../view/registerV.php?error=pwd');
     }
     else{
 
 
 
 
-        require '../Model/checkM.php';
+        require '../model/checkM.php';
 
-        require '../Model/registrationM.php';
+        require '../model/registerM.php';
 
         if ($s_surname != NULL AND $s_name != NULL AND $s_pseudo != NULL AND $s_email != NULL AND $d_birth != NULL AND $s_pwd != NULL AND $s_pwd2 != NULL AND $s_gender != NULL AND checkPseudo($s_pseudo) == 0 AND checkEmail($s_email) == 0)
         {
@@ -34,20 +34,20 @@
 
             registration($newUser);
 
-            header('Location: ../View/loginV.php');
+            header('Location: ../view/loginV.php');
 
         }
         else if ($s_surname == NULL OR $s_name == NULL OR $s_pseudo == NULL OR $s_email == NULL OR $d_birth == NULL OR $s_pwd == NULL OR $s_pwd2 == NULL OR $s_gender == NULL)
         {
-            header('Location: ../View/registrationV.php?error=wrong');
+            header('Location: ../view/registerV.php?error=wrong');
         }
         else if (checkPseudo($s_pseudo))
         {
-            header('Location: ../View/registrationV.php?error=pseudo');
+            header('Location: ../view/registerV.php?error=pseudo');
         }
         else if (checkEmail($s_email))
         {
-            header('Location: ../View/registrationV.php?error=email');
+            header('Location: ../view/registerV.php?error=email');
         }
 
 

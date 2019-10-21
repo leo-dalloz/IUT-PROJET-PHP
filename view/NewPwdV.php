@@ -16,7 +16,7 @@
 <main>
   <h1> Mot de passe oublié </h1>
   <h2> <?= $msg ?> </h2>
-  <form  action = "../controler/ControlerNewPwd.php" method="post">
+  <form  action = "../controller/ControlerNewPwd.php" method="post">
       Veuillez entrer votre adresse email <br>
       <input type="text" name="mail" value="mail" placeholder="mail"> <br>
       <input type="submit" name="action" value="envoyer"> <br>

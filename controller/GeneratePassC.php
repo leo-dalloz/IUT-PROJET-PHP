@@ -1,5 +1,5 @@
 <?php
-  require ('../model/ModelGeneratePass.php');
+  require ('../model/GeneratePassM.php');
 
   $token = $_GET['token'];
 
