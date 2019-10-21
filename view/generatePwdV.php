@@ -16,6 +16,6 @@
     <p> Confirmez votre mot de passe <br></p>
     <input type="password" name="confMdp" placeholder="confirmer mot de passe"><br>
     <input type="submit" name="action" value="envoyer"><br>
-    <?php echo $msg ?>
+    <?= $msg ?>
   <form>
 </main>
