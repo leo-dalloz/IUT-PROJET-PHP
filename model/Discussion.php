@@ -7,11 +7,12 @@ class Discussion
     private $i_myNbMaxWords;
     private $i_myNbLike;
     private $b_myState;
+    private $i_myNbMaxMessage;
     private $tab_myMessages = array();
     function __construct($i_discussionId)
     {
         $dbLink = dbConnect();
-        $query = 'SELECT discussionName, nbMaxWords, nbLike, state FROM Discussion WHERE discussionId = \'' . $i_discussionId.'\'';
+        $query = 'SELECT discussionName, nbMaxWords, nbLike, state, nbMaxMessages FROM Discussion WHERE discussionId = \'' . $i_discussionId.'\'';
         $dbResult = testError($dbLink,$query);
         while($dbRow = mysqli_fetch_assoc($dbResult))
         {
@@ -19,6 +20,7 @@ class Discussion
             $this->i_myNbMaxWords = $dbRow['nbMaxWords'];
             $this->i_myNbLike =$dbRow['nbLike'];
             $this->b_myState = $dbRow['state'];
+            $this->i_myNbMaxMessage = $dbRow['nbMaxMessages'];
         }
         $this->i_myDiscussionId = $i_discussionId;
         $query = 'SELECT messageId, authorId, contents, date, nbLike, state FROM Message WHERE discussionId = \'' . $i_discussionId . '\' ORDER BY date';
@@ -28,6 +30,13 @@ class Discussion
             $this->tab_myMessages[] = new Message($dbRow['messageId'],$dbRow['authorId'],$dbRow['contents'],$dbRow['date'],$dbRow['nbLike'], $dbRow['state']);
         }
     }
+
+    public function canOpenDiscussion()
+    {
+        if(count($this->tab_myMessages) < $this->i_myNbMaxMessage) return 1;
+        else return 0;
+    }
+
 
     public function closeAMessage()
     {

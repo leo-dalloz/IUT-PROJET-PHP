@@ -18,7 +18,15 @@ if ($s_action == 'Envoyer message')
         $i_lastMessageID = $D_discussion->LastMessage();
         if ( -1 == $i_lastMessageID)
         {
-            createMessage('0001',$i_discussionId, $s_contents);
+            if(1 == $D_discussion->canOpenDiscussion())
+            {
+                createMessage('0001',$i_discussionId, $s_contents);
+            }
+            else
+            {
+                $D_discussion->closeDiscussion();
+                header('Location: ../view/pageDiscussionV.php?etat=' . 'discussion full' . '&discussionId=' . $i_discussionId);
+            }
         }
         else
         {
