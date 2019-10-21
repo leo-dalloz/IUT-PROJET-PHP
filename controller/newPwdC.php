@@ -17,7 +17,7 @@
     * Laurent
     * Envoie un mail avec le token généré à l'utilisateur souhaitant changer son mot de passe
     * in : string mail de user
-    */
+    */  
     function sendMail($s_mail) {
 
       $i_token  = generateToken();

@@ -1,8 +1,6 @@
 <?php
 
-
-
-require ('../base.php');
+  require ('../base.php');
  /*
  *Laurent
  *verifie que le token passé en paramètre existe bien dans la base de données

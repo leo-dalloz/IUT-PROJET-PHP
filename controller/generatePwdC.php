@@ -6,6 +6,8 @@
 
     $i_token   = $_GET['token'];
 
+    print_r()
+
     // on verifie si le token existe  dans la bd et on redirige en fonction
     if($i_token == null || !verifToken($i_token))
       header('Location : accesInterdit.html');
