@@ -1,201 +1,172 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap');
+
 
 * {
     margin : 0;
     padding : 0;
 
-    font-family : 'Roboto', sans-serif;
-}
-
-a, a:active {
-    text-decoration : none;
-}
-
-img {
-    user-select : none;
-}
-
-i {
-    padding : 5px;
-}
-
-
-
-html {
-    min-height : 100%;
-}
-
-
-header {
-    width : 100%;
-    height : 100px;
-
-    background-color : #20232A;
-
-    box-shadow : 0 0 10px rgba(21,21,21, 0.6);
-
-    display : flex;
-    flex-direction: row;
-    justify-content: center;
-
-    border-bottom : 3px solid #ff793f;
-}
-#HeaderContainer {
-    max-width : 1024px;
-    width : 100%;
-    height : 100%;
-
-    display : flex;
-    flex-direction : row;
-    justify-content : space-around;
-    align-items: center;
-}
-
-#LogoHeader {
-    width : 120px;
-
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px; 
-}
-
-nav {
-    height : 100%;
-
-    display : flex;
-    flex-direction : column;
-    justify-content : space-around;
-    align-items : center;
-
     font-family: 'Roboto', sans-serif;
 }
 
-.navLink {
-    height : 100%;
-    
-    padding : 0 25px 0 25px;
-
-    display : flex;
-    
-    align-items : center;
-
-    user-select : none;
-        
-    color : white;
-    font-size : 20px;
-
-}
-.navLink:hover {
-    border-bottom : 4px solid #ff793f;
-    box-shadow : 0 0 15px rgba(21,21,21, 0.6);
-    
-    color : #f7895a;
-
-    transition : 0.2s;
-}
-main {
-    width : 80%;
-    max-width : 1024px;
-
-    margin : 50px auto 50px auto;
+a {
+    text-decoration: none;
 }
 
+li {
+    list-style : none;
+}
 
-
-/* 
-    FOOTER
-*/
-footer {
-    width : 100%;
-
-    position: absolute;
-    bottom : 0;
+#LDiscussionContainer {
+    width : 600px;
+    height : 60%;
 
     background-color : #20232A;
 
-    display : flex;
-    flex-direction : row;
-    justify-content: center;
+    box-shadow: 0 0 15px rgba(21, 21, 21, 0.8);
 
-    box-shadow : 0 0 15px rgba(21,21,21, 0.6);
-    border-top: 3px solid #ff793f;
+    color : white;
+
+    position : fixed;
+    top : 20%;
+    left : -560px;
+
+    border-top-right-radius : 25px;
+    border-bottom-right-radius : 25px;
+
+    display : flex;
+    flex-direction : row-reverse;
+    align-items: stretch;
+
+    transition : 1s;
+}
+#LDiscussionContainer:hover {
+    left : 0;
+
+    transition : 1s;
+}
+
+#LDTitle {
+    padding : 10px;
+
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    user-select : none;
+
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size : 15px;
+
+    cursor: default;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    background-color : #ff793f;
+    transition : 0.2s;  
+}
+
+#LDTitle:hover {
+    cursor : pointer;
+    background-color : #ec7c4c;
+    
+    transition : 0.2s;
+}
+
+#LDiscussion {
+    width : 100%;
+    height : 100%;
+
+    overflow-y : scroll;
+
+    display : flex;
+    flex-direction : column;
+    
 }
 
 
-#FooterContainer {
-    max-width : 1024px;
-    width : 80%;
-
+.Discussion {
     display : flex;
     flex-direction : row;
     justify-content: space-around;
     flex-wrap : wrap;
+
+    padding-top : 20px;
+    padding-bottom : 20px;
+
+    cursor : default;
+
+    font-size : 17px;
 }
 
+.Discussion:hover {
+    background-color : rgba(200,200,200,0.1);
+}
 
-#NameContainer {
+.LinkDiscu:hover {
+    color : #ff793f;
+}
+
+.Open {
+    color : #218c74;
+}
+.Close {
+    color : #ff5252;
+}
+
+#DescriptionTitle {
+    font-size : 50px;
+
+    font-family : 'Archivo Black', sans-serif;
+
+}
+#DescriptionText {
+    text-align: justify;
+    font-size : 20px;
+
+    padding : 20px;
+}
+
+/* 
+    FIRST PART CONTAINER
+*/
+#FirstPartContainer {
+    display : flex;   
+    align-items: stretch;
+}
+
+#FirstPartImage {
+    width : 500px;
+    height : auto;
+}
+#DescriptionButtons {
     display : flex;
     flex-direction : row;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-.AuthorName {
-    padding : 10px;
-}
-.AuthorName > a:hover, .AuthorName> a:hover > i {
-    color : #ff793f;
-    transition : 0.2s;
-}
+.MainButton {
+    padding : 10px 15px 10px 15px;
 
-#ChangeThemeButton {
-    margin-right : 20px;
+    font-size : 20px;
 
-    background : none;
-    border : none;
+    box-shadow : 0 0 5px rgba(21, 21, 21, 0.8);
 
-    font-size : 25px;
-
-    color : white;
-    transition : 0.2s;
-}
-
-#ChangeThemeButton:hover {
     background-color : #ff793f;
-
-    cursor : pointer;
+}
+.MainButton:hover {
     transition : 0.2s;
-}
-#ChangeThemeButton:focus {
-    outline : none;
+
+    background-color : #ec7c4c;
 }
 
-@media screen and (min-width: 540px)
-{
-    #LogoHeader
-    {
-        width: 140px;
-        margin : 10px;
+@media screen and (max-width : 600px) {
+    #LDiscussionContainer {
+        width : 100%;
+        left : -90%;
     }
-    .navLink
-    {
-        font-size: 25px;
-    }
-    #ChangeThemeButton
-    {
 
+    #LDiscussionContainer:hover {
+        left : 0;
     }
 }
 
-@media screen and (min-width: 660px)
-{
-    nav
-    {
-        flex-direction: row;
-    }
-
-    header
-    {
-        height: 70px;
-    }
-}
