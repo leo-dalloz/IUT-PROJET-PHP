@@ -33,7 +33,7 @@
         </section>
 
         <section id="FormContainer">
-            <form action="" method="post">
+            <form action="../controller/registrationC.php" method="post">
                 <input type="text" name="Nom"  class="FormInput" placeholder="Nom">
                 <input type="text" name="Prenom"  class="FormInput" placeholder="Prénom">
                 <input type="text" name="Pseudo" class="FormInput" placeholder="Pseudo">
