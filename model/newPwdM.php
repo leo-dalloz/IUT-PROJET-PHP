@@ -6,9 +6,8 @@
   * Laurent
   * verifie dans la base de donnée si l'adresse mail existe
   * in : string adresse mail
-  * out : bool 
+  * out : bool
   */
-
   function getMail($s_mail)
   {
 
@@ -28,7 +27,6 @@
   * in : int token
   * in : string mail de l'utilisateur qui veut changer de mot de passe, l'adresse mail est clé primaire de la table user car elle est unique
   */
-
   function addToken($i_token,$s_mail){
     $dbLink = dbConnect();
     $query  = 'UPDATE User
