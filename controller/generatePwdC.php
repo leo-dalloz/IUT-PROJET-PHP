@@ -5,9 +5,7 @@
     $s_confPwd = $_POST['confMdp'];
 
     $i_token   = $_GET['token'];
-    print ('get');
-    print_r($_GET);
-    exit();
+  
 
     // on verifie si le token existe  dans la bd et on redirige en fonction
     if(!verifToken($i_token)) {
