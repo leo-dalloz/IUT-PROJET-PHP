@@ -6,7 +6,7 @@
     $s_email = $_POST['Email'];
     $d_birth = $_POST['Birth'];
     $s_pwd = $_POST['Pwd'];
-    $s_pwd2 = $_POST['Pwd2'];
+    $s_pwd2 = $_POST['Pwd1'];
     $s_gender = $_POST['Gender'];
 
 
