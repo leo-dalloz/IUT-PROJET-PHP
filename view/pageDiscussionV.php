@@ -24,7 +24,7 @@ if ($s_etat == null || $i_numDiscussion == null)
         <input type="submit" name="action" value="Envoyer message">
     </form>
 
-    <a href="index.php">
+    <a href="indexV.php">
         <p> Retour au menu </p>
     </a>
 

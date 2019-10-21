@@ -16,13 +16,3 @@ function addToMessage($s_contents, $i_messageId)
     $query = 'UPDATE Message SET contents = CONCAT(contents,\' ' . $s_contents .'\') WHERE messageId = ' . $i_messageId;
     testError($dbLink,$query);
 }
-
-function closeThisMessage()
-{
-    closeMessage();
-}
-
-function idLastMessage()
-{
-    return lastMessage();
-}

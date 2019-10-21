@@ -29,6 +29,11 @@ class Discussion
         }
     }
 
+    public function closeAMessage()
+    {
+        end($this->tab_myMessages)->closeMessage();
+    }
+
     public function lastMessage()
     {
         $i_lastMessage = -1 ;
