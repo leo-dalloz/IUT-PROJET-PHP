@@ -14,7 +14,7 @@
         foreach ($tab_discussions as $value)
         {
             ?>
-            <a href="pageDiscussionView.php?etat=login&discussionId=<?echo $value->getDiscussionId()?>"id="lien_salon_1">
+            <a href="pageDiscussionV.php?etat=login&discussionId=<?echo $value->getDiscussionId()?>"id="lien_salon_1">
                 <p>  <?echo $value->getName()?> <br>
                     <?$b_isOuvert = $value->getState()?>
                     status :<span id="span_status_discussion_<?echo ($b_isOuvert) ? 'ouvert' : 'ferme' ?>">

@@ -9,7 +9,7 @@ if ($s_action == 'Envoyer message')
 {
     if (! $D_discussion->getState())
     {
-        header('Location: ../View/pageDiscussionView.php?etat='. 'Discussion fermé' . '&discussionId=' .$i_discussionId);
+        header('Location: ../view/pageDiscussionV.php?etat='. 'Discussion fermé' . '&discussionId=' .$i_discussionId);
     }
     else if(str_word_count($s_contents,0,'123456789') <= $D_discussion->getNbMaxWords()
         && str_word_count($s_contents,0,'123456789') != 0)
@@ -20,10 +20,10 @@ if ($s_action == 'Envoyer message')
 //                echo strpos($s_contents,'.');
             $D_discussion->closeDiscussion();
         }
-        header('Location: ../View/pageDiscussionView.php?etat=' . 'message envoyé' . '&discussionId=' . $i_discussionId);
+        header('Location: ../view/pageDiscussionV.php?etat=' . 'message envoyé' . '&discussionId=' . $i_discussionId);
     }
     else
     {
-        header('Location: ../View/pageDiscussionView.php?etat=error&discussionId=' .$i_discussionId);
+        header('Location: ../view/pageDiscussionV.php?etat=error&discussionId=' .$i_discussionId);
     }
 }
