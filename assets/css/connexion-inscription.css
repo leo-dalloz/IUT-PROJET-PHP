@@ -173,4 +173,6 @@ main {
     text-align: center;
 }
 
-@media screen and (width)
+@media screen and (max-width: 1024px) {
+
+}
