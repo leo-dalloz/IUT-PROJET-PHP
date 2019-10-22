@@ -5,15 +5,15 @@
     $s_msg = 'les 2 mots de passes entrés sont differenets';
   else if($step = 'mpd')
     $s_msg ='mot de passe modifié';
+  else if ($step = 'errtkn')
+    $s_msg = 'erreur de token'
   else
     $s_msg ='bonjour';
-
-   $i_token = $_GET['token'];
 ?>
 
 <main>
   <h1> nouveau mdp </h1>
-  <form  action="../controller/generatePwdC.php?step=ok" method="post">
+  <form  action="../controller/generatePwdC.php?step=ok&token=<?= $i_token ?>" method="post">
     <input type="text" name="newPwd" placeholder="nouveau mot de passe"><br>
     <p> Confirmez votre mot de passe <br></p>
     <input type="password" name="confMdp" placeholder="confirmer mot de passe"><br>
