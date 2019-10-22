@@ -10,6 +10,10 @@
       else
          $s_msg ="bonjour";
 
+
+      print_r($_GET);
+      exit();
+
 ?>
 
 <main>
