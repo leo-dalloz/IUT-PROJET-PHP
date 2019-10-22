@@ -2,8 +2,6 @@
     $title = 'Inscription';
     $style_common = '../assets/css/connexion-inscription.css';
     $style = '../assets/css/inscription.css';
-
-
     // Gestion des erreurs de connexion
     // Jeremy
     $s_error = $_GET['error'];
@@ -15,9 +13,10 @@
         $s_error = 'Le pseudo que vous avez choisi est déjà utilisé.';
     else if ($s_error == 'email')
         $s_error = 'L\'email que vous avez choisi possède déjà un compte associé.';
+    else if ($s_error == 'birthday')
+        $s_error = 'Vous devez avoir 13 ans pour pouvoir vous inscrire.';
     else
         $s_error = '';
-
     ob_start();
 ?>
 
