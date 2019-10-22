@@ -2,7 +2,7 @@
     require ('../model/generatePwdM.php');
 
 
-    $i_token   = $_GET['token'];
+    static  $i_token   = $_GET['token'];
     $s_step    = $_GET['step'];
 
     $s_newPwd  = $_POST['newPwd'];
