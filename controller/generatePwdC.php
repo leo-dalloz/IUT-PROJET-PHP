@@ -15,4 +15,4 @@
     else if($s_step == 'ok')
        changePwd($i_token,$s_newPwd);
 
-    require ('../view/generatePwdV.php?step=ok&token='. $i_token);
+    require ('../view/generatePwdV.php');
