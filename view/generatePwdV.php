@@ -20,5 +20,5 @@
     <input type="password" name="confMdp" placeholder="confirmer mot de passe"><br>
     <input type="submit" name="action" value="envoyer"><br>
     <?= $s_msg ?>
-  <form>
+  </form>
 </main>

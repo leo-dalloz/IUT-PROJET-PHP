@@ -11,4 +11,5 @@
 
     if($s_newMdp == $s_confMdp)
        header("Location :../view/generatePwdV.php?token=0");
+       
     changePwd($i_token,$s_newPwd);
