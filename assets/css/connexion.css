@@ -105,21 +105,6 @@ input[type="checkbox"]:hover {
 }
 
 
-/* 
-    ERRORS
-*/
-#ErrorContainer {
-    width : 80%;
-    
-    padding : 10px;
-
-    background-color : #ff5e57;
-
-    margin-left : auto;
-    margin-right : auto;
-
-    font-size : 17px;
-}
 
 
 /* 
