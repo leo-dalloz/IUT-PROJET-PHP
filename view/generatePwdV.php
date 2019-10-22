@@ -7,7 +7,7 @@
          $s_msg = "vous ne pouvez pas modifier votre mot de passe";
        if ($step == 'errconf')
          $s_msg = "les 2 mots de passes entrés sont differenets";
-      else
+       else if($step = 'ok')
          $s_msg ="bonjour";
 
 
