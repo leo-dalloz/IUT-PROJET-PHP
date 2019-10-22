@@ -8,6 +8,7 @@
   else if($step = 'mdp')
     $s_msg ="mot de passe modifié";
 
+   $i_token = $_GET['token'];
 ?>
 
 <main>
