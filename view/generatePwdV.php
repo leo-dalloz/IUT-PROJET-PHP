@@ -9,9 +9,11 @@
          $s_msg = "les 2 mots de passes entrés sont differenets";
        else if($step = 'ok')
          $s_msg ="bonjour";
+       else if($step = 'mdp')
+         $s_msg ="mot de passe modifié";
 
 
-      
+
 
 ?>
 

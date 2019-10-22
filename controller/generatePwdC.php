@@ -13,3 +13,4 @@
        header('Location :../view/generatePwdV.php?token="'. $i_token . '&step=errconf"');
     else
       changePwd($i_token,$s_newPwd);
+      header('Location :../view/generatePwdV.php?token="'. $i_token . '&step=mdp"');
