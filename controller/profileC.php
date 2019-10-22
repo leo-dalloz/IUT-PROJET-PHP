@@ -1,4 +1,8 @@
 <?php
+    /*
+        @brief : controler modification du profile de l'utilisateur
+        @Authors : Jeremy & Audrey
+    */
 
     require '../Model/profileM.php';
     session_start();
@@ -6,85 +10,71 @@
     {
         die('Erreur d\'authentification');
     }
-
-//    $s_action = $_POST['button'];
-
-    $s_surname = $_POST['Surname'];
-    $s_name = $_POST['Name'];
-    $s_pseudo = $_POST['Pseudo'];
-    $d_birth = $_POST['Birth'];
-    $s_pwd = $_POST['Pwd'];
-    $s_gender = $_POST['Gender'];
-
-
-    if ($s_surname != NULL)
-    {
-        changeSurname($s_surname);
-        $_SESSION['user']->setMySurname($s_surname);
+    
+    
+    // Test si l'utilisateur arrive sur ce lien sans action définie au préalable
+    if (!isset($_GET['action'])) {
+        echo "error l.10";
+        die();
     }
-    if ($s_name != NULL)
-    {
-        changeName($s_name);
-        $_SESSION['user']->setMyName($s_name);
-    }
-    if ($s_pseudo != NULL)
-    {
-        if (checkPseudo($s_pseudo) == 0)
-        {
-            changePseudo($s_pseudo);
-            $_SESSION['user']->setMyPseudo($s_pseudo);
-        }
-    }
-    if ($d_birth != NULL)
-    {
-        changeBirth($d_birth);
-        $_SESSION['user']->setMyBirth($d_birth);
-    }
-    if ($s_pwd != NULL)
-    {
-        $s_pwd = password_hash($s_pwd, PASSWORD_DEFAULT);
-        changePassword($s_pwd);
-        $_SESSION['user']->setMyPassword($s_pwd);
-    }
-    changeGender($s_gender);
-    $_SESSION['user']->setMyGender($s_gender);
+    $s_action = $_GET['action'];
 
-//
-//    if ($s_action == 'chSurname')
-//    {
-//        $s_newSurname = $_POST['Surname'];
-//        changeSurname($s_newSurname);
-//        $_SESSION['user']->setMySurname($s_newSurname);
-//    }
-//    else if ($s_action == 'chName')
-//    {
-//        $s_newName = $_POST['Name'];
-//        changeName($s_newName);
-//        $_SESSION['user']->setMyName($s_newName);
-//    }
-//    else if ($s_action == 'chPseudo')
-//    {
-//        $s_newPseudo = $_POST['Pseudo'];
-//        changePseudo($s_newPseudo);
-//        $_SESSION['user']->setMyPseudo($s_newPseudo);
-//    }
-//    else if ($s_action == 'chBirth')
-//    {
-//        $d_newBirth = $_POST['Birth'];
-//        changeBirth($d_newBirth);
-//        $_SESSION['user']->setMyBirth($d_newBirth);
-//    }
-//    else if ($s_action == 'chPwd')
-//    {
-//        $s_newPwd = $_POST['Pwd'];
-//        changePassword($s_newPwd);
-//        $_SESSION['user']->setMyPassword($s_newPwd);
-//    }
-//    else if ($s_action == 'chGender')
-//    {
-//        $s_newGender = $_POST['Gender'];
-//        changeGender($s_newGender);
-//        $_SESSION['user']->setMyGender($s_newGender);
-//    }
-    header('Location: ../View/basicProfileV.php');
 
+    // Test pour savoir si le $_GET n'a pas été modifié par l'utilisateur
+    $a_editable_user = array(   'nickname',
+                                'surname',
+                                'firstname',
+                                'birthday',
+                                'gender',
+                                'email',
+                                'password'
+                            );
+    if (!in_array($s_action, $a_editable_user)) {
+        echo "error l.25";
+        die();
+    }
+    
+    switch ($s_action) {
+        case 'nickname' :
+            if ($_POST['nickname'] != null) {
+                changePseudo($_POST['nickname']);
+                $_SESSION['user']->setMyPseudo($_POST['nickname']);
+            }
+            break;
+        case 'surname' :
+            if ($_POST['surname'] != NULL) {
+                changeSurname($_POST['surname']);
+                $_SESSION['user']->setMySurname($_POST['surname']);
+            }
+            break; 
+        case 'firstname' :
+            if ($_POST['firstname'] != NULL) {
+                changeName($_POST['firstname']);
+                $_SESSION['user']->setMyName($_POST['firstname']);
+            }
+            break; 
+        case 'birthday' :
+            //  on récupère la date actuelle pour voir si l'utilisateur a plus de 13 ans. 
+            $d_actualdate = new DateTime(date("Y-m-d"));   
+            $d_postdate = new DateTime($_POST['birthday']);
+
+            if ($_POST['birthday'] != null && ($d_actualdate->diff($d_postdate)->format('%y') >= 13)) {
+                changeBirth($d_birth);
+                $_SESSION['user']->setMyBirth($d_birth);
+            }           
+            break;
+        case 'password' :
+            if ($_POST['password'] != NULL) {
+                $s_pwd = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                changePassword($s_pwd);
+                $_SESSION['user']->setMyPassword($s_pwd);
+            }
+            break;
+        // case 'email' :
+
+        //     break;
+        default:
+            # code...
+            break;
+    }
+?>
