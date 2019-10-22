@@ -3,6 +3,12 @@
 
        $i_token = $_GET['token'];
 
+       if($i_token == null)
+         $s_msg = "vous ne pouvez pas modifier votre mot de passe";
+      else if ($i_token == 0)
+         $s_msg = "les 2 mots de passes entrés sont differenets";
+      else
+        $s_msg ="bonjour";
 
 ?>
 
@@ -13,6 +19,6 @@
     <p> Confirmez votre mot de passe <br></p>
     <input type="password" name="confMdp" placeholder="confirmer mot de passe"><br>
     <input type="submit" name="action" value="envoyer"><br>
-    <?= $i_token ?>
+    <?= $s_msg ?>
   <form>
 </main>
