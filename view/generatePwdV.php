@@ -2,13 +2,13 @@
 
 
        $i_token = $_GET['token'];
-
+       $step    = $_GET['step'];
        if($i_token == null)
          $s_msg = "vous ne pouvez pas modifier votre mot de passe";
-      else if ($i_token == 0)
+       if ($step == 'errconf')
          $s_msg = "les 2 mots de passes entrés sont differenets";
       else
-        $s_msg ="bonjour";
+         $s_msg ="bonjour";
 
 ?>
 
