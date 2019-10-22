@@ -12,7 +12,7 @@
 
     if($s_newMdp != $s_confMdp)
        header('Location: ../view/generatePwdV.php?step=errconf');
-    else if {
+    else {
        changePwd($i_token,$s_newPwd);
        header('Location: ../view/generatePwdV.php?step=mdp');
     }
