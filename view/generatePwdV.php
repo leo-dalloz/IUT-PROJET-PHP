@@ -6,7 +6,7 @@
   else if($step = 'mpd')
     $s_msg ='mot de passe modifié';
   else if ($step = 'errtkn')
-    $s_msg = 'erreur de token'
+    $s_msg = 'erreur de token';
   else
     $s_msg ='bonjour';
 ?>
