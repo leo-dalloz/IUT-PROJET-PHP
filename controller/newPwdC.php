@@ -29,7 +29,7 @@
       $s_msg .= '<h1 style="color : #ff793f">Mot de passe oublié ? </h1>';
       $s_msg .= '<h2 style="color : #ff793f">pas de panique !</h2>';
       $s_msg .= '<p> Dirigez vous sur ce lien : <br>';
-      $s_msg .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/view/generatePwdV.php?token=' . $i_token . '&step=ok <br><br>';
+      $s_msg .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/view/generatePwdC.php?token=' . $i_token . '<br><br>';
       $s_msg .= 'Si vous n\'êtes pas à l\'origine de ce changement de mot de passe ignorez ce mail. <br><br>';
       $s_msg .= 'Faites attention peut-être que quelqu\'un essaie de vous pirater<br><p>';
       $s_msg .= '</body></html>';
