@@ -2,18 +2,24 @@
 
 
 
-  if (!isset($_GET['step'])){
+  if (empty($_GET['step'])){
     $s_msg = 'bonjour';
   }
 
   $step    = $_GET['step'];
-  
+
   if ($step == 'errconf') {
     $s_msg = 'les 2 mots de passes entrés sont differenets';
   }
   else if($step = 'mpd') {
-    $s_msg ='mot de passe modifié';
+    $s_msg = 'mot de passe modifié';
   }
+
+  if($step = 'errconf')
+  {
+    $i_token = $_GET['token'];
+  }
+
 ?>
 
 <main>
