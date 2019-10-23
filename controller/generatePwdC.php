@@ -2,7 +2,7 @@
     require ('../model/generatePwdM.php');
 
 
-    if(!isset($_GET['token']))
+    if(empty($_GET['token']))
         header('Location: accesInterdit.html');
 
 
