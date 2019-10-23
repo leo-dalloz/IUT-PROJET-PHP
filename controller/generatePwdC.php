@@ -6,9 +6,7 @@
 
     $i_token  =  $_GET['token'];
 
-    if (!verifToken($i_token))
-      echo 'token innexistant';
-
+  
 
     if(isset($_POST['newPwd'])
     && isset($_POST['confPwd']))
