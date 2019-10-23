@@ -2,11 +2,13 @@
 
 
 
-  if (empty($_GET['step']) || isset($_GET['step'])){
+
+  $step    = $_GET['step'];
+
+  if ($step = 'hello'){
     $s_msg = 'bonjour';
   }
 
-  $step    = $_GET['step'];
 
   if ($step == 'errconf') {
     $s_msg = 'les 2 mots de passes entrés sont differenets';
