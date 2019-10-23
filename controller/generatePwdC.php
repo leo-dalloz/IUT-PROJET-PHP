@@ -1,12 +1,14 @@
 <?php
     require ('../model/generatePwdM.php');
 
-    if(!isset($_GET['token']) || !verifToken($i_token))
+    if(!isset($_GET['token']))
       header ("Loaction : accesInterdit.html");
 
+    $i_token  =  $_GET['token'];
 
+    if (!verifToken($i_token))
+      header ("Loaction : accesInterdit.html");
 
-    $i_token  = $_GET['token'];
 
     if(isset($_POST['newPwd'])
     && isset($_POST['confPwd']))
