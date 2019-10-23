@@ -2,14 +2,15 @@
     require ('../model/generatePwdM.php');
 
 
-    const $i_token  = $_GET['token'];
-    echo "testtestestesttestds " . $i_token ;
+    $i_token  = $_GET['token'];
 
     if(isset($_POST['newPwd'])){
+       $i_token  = $_GET['token'];
        $s_newPwd = $_POST['newPwd'];
 
        echo "testtestestesttestds " . $i_token ;
        verifToken($i_token);
+       echo 'wsh';
        // changePwd($i_token,$s_newPwd);
     }
     require ('../view/generatePwdV.php');
