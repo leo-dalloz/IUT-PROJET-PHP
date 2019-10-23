@@ -1,8 +1,5 @@
 <?php
 
-
-
-
   $step    = $_GET['step'];
 
   if ($step = 'hello'){
