@@ -12,7 +12,7 @@
        $s_confPwd = $_POST['confPwd'];
 
         if($s_newPwd != $s_confPwd)
-           header("Location : ../view/generatePwdV.php?step=errconf");
+           header('Location: ../view/generatePwdV.php?step=errconf');
 
 
        changePwd($i_token,$s_newPwd);
