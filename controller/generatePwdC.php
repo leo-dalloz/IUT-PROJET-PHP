@@ -6,7 +6,7 @@
 
     $i_token   = $_GET['token'];
 
-    if(!verifToken($i_toknen))
+    if(!verifToken($i_token))
       header('Location: accesInterdit.html');
 
 
