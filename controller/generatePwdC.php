@@ -2,12 +2,12 @@
     require ('../model/generatePwdM.php');
 
     if(!isset($_GET['token']))
-      header ("Location : accesInterdit.html");
+      echo 'token vide';
 
     $i_token  =  $_GET['token'];
 
     if (!verifToken($i_token))
-      header ("Location : accesInterdit.html");
+      echo 'token innexistant';
 
 
     if(isset($_POST['newPwd'])
@@ -27,4 +27,7 @@
 
        header("Location : ../view/generatePwdV.php?step=mdp");
     }
+
+
+
     require ('../view/generatePwdV.php');
