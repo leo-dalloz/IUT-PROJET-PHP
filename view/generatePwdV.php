@@ -2,7 +2,7 @@
 
 
 
-  if (empty($_GET['step'])){
+  if (empty($_GET['step']) || isset($_GET['step'])){
     $s_msg = 'bonjour';
   }
 
