@@ -1,7 +1,14 @@
 <?php
     require ('../model/generatePwdM.php');
 
+    if(!isset($_GET['token']))
+      header('Location: accesInterdit.html');
+
     $i_token   = $_GET['token'];
+
+    if(!verifToken($i_toknen))
+      header('Location: accesInterdit.html');
+
 
     if(isset($_POST['newPwd'])
     && isset($_POST['confPwd']))
@@ -17,7 +24,7 @@
 
        changePwd($i_token,$s_newPwd);
 
-       //header("Location : ../view/generatePwdV.php?step=mdp");
+       header('Location: ../view/generatePwdV.php?step=mdp');
     }
 
 
