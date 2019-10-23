@@ -50,3 +50,5 @@
 
       header('Location: ../view/newPwdV.php?step=error');
     }
+
+    require ('../view/newPwdV.php');
