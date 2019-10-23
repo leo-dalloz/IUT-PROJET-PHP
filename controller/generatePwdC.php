@@ -7,7 +7,7 @@
     && isset($_POST['confPwd']))
     {
 
-
+       $i_token   = $_GET['token'];
        $s_newPwd  = $_POST['newPwd'];
        $s_confPwd = $_POST['confPwd'];
 
