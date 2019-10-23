@@ -1,12 +1,14 @@
 <?php
 
+
+
+  if (!isset($_GET['step']))
+    $s_msg = 'bonjour';
   $step    = $_GET['step'];
   if ($step == 'errconf')
     $s_msg = 'les 2 mots de passes entrés sont differenets';
   else if($step = 'mpd')
     $s_msg ='mot de passe modifié';
-  else
-    $s_msg ='bonjour';
 ?>
 
 <main>
