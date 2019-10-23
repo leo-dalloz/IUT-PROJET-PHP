@@ -2,7 +2,8 @@
     require ('../model/generatePwdM.php');
 
 
-    $i_token  = $_GET['token'];
+    const $i_token  = $_GET['token'];
+    echo "testtestestesttestds " . $i_token ;
 
     if(isset($_POST['newPwd'])){
        $s_newPwd = $_POST['newPwd'];
