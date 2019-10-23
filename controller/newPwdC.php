@@ -40,15 +40,14 @@
     } // sendMail()
 
     if (isset($_POST['mail'])) {
-    // si le mail existe dans la bd on averti l'utilisateur de l'envoie du mail sinon en le previent de la non existance du mail
       $s_mail = $_POST['mail'];
+      // si le mail existe dans la bd on averti l'utilisateur de l'envoie du mail sinon en le previent de la non existance du mail
       if(getMail($s_mail))
       {
         sendMail($s_mail);
         header('Location: ../view/newPwdV.php?step=ok');
       }
       else {
-
         header('Location: ../view/newPwdV.php?step=error');
       }
     }
