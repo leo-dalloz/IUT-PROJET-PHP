@@ -1,12 +1,6 @@
 <?php
     require ('../model/generatePwdM.php');
 
-    if(!isset($_GET['token']))
-      echo 'token vide';
-
-    $i_token  =  $_GET['token'];
-
-  
 
     if(isset($_POST['newPwd'])
     && isset($_POST['confPwd']))
