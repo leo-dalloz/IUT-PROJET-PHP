@@ -3,7 +3,6 @@
 
     require ('../model/newPwdM.php');
 
-    $s_mail = $_POST['mail'];
     /**
     * Laurent
     * genere un token aléatoire de 6 chiffres
@@ -40,15 +39,18 @@
 
     } // sendMail()
 
+    if (isset($_POST['mail'])) {
     // si le mail existe dans la bd on averti l'utilisateur de l'envoie du mail sinon en le previent de la non existance du mail
-    if(getMail($s_mail))
-    {
-      sendMail($s_mail);
-      header('Location: ../view/newPwdV.php?step=ok');
-    }
-    else {
+      $s_mail = $_POST['mail'];
+      if(getMail($s_mail))
+      {
+        sendMail($s_mail);
+        header('Location: ../view/newPwdV.php?step=ok');
+      }
+      else {
 
-      header('Location: ../view/newPwdV.php?step=error');
+        header('Location: ../view/newPwdV.php?step=error');
+      }
     }
 
     require ('../view/newPwdV.php');
