@@ -17,7 +17,7 @@
 
       $a_tokenAndDate  = array (
                       "token" => $s_token,
-                      "date"  => $d_dateToken;
+                      "date"  => $d_dateToken
       );
 
       return $a_tokenAndDate
@@ -31,7 +31,7 @@
     function sendMail($s_mail) {
 
       $a_tokenAndDate  = generateToken();
-      
+
       $s_obj    = 'mot de passe oublié' ;
       $headers  = "MIME-Version: 1.0" . "\r\n";
       $headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
