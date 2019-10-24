@@ -20,7 +20,7 @@
                       "date"  => $d_dateToken
       );
 
-      return $a_tokenAndDate
+      return $a_tokenAndDate;
     } //generateToken()
 
     /*
