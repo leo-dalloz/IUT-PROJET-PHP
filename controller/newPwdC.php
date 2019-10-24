@@ -9,7 +9,7 @@
     * out : int
     */
     function generateToken() {
-      return  mt_rand(100000,999999);
+      return  md5(mt_rand(100000,999999));
     } //generateToken()
 
     /*
