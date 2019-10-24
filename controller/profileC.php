@@ -86,4 +86,4 @@
 //        changeGender($s_newGender);
 //        $_SESSION['user']->setMyGender($s_newGender);
 //    }
-    header('Location: ../view/basicProfileV.php');
+    require '../view/basicProfileV.php';
