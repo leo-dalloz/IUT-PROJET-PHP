@@ -37,23 +37,20 @@
             <section id="FooterContainer">
                 <div id="NameContainer">
                     <p class="AuthorName">
-                        <a href="https://github.com/leo-dalloz"><i class="fab fa-github"></i>Léo Dalloz</a>
+                        <a href="https://github.com/leo-dalloz" target="_blank"><i class="fab fa-github"></i>Léo Dalloz</a>
                     </p>
                     <p class="AuthorName">
-                        <a href="https://github.com/jeremy-pouzargues"><i class="fab fa-github"></i> Jérémy Pouzargues</a>
+                        <a href="https://github.com/jeremy-pouzargues" target="_blank"><i class="fab fa-github"></i> Jérémy Pouzargues</a>
                     </p>
                     <p class="AuthorName">
-                        <a href="https://github.com/LucasUrgenti"><i class="fab fa-github"></i> Lucas Urgenti</a>
+                        <a href="https://github.com/LucasUrgenti" target="_blank"><i class="fab fa-github"></i> Lucas Urgenti</a>
                     </p>
                     <p class="AuthorName">
-                        <a href="https://github.com/laurent-vouriot"><i class="fab fa-github"></i> Laurent Vouriot</a>
+                        <a href="https://github.com/laurent-vouriot" target="_blank"><i class="fab fa-github"></i> Laurent Vouriot</a>
                     </p>
                     <p class="AuthorName">
-                        <a href="https://github.com/audreywagner"><i class="fab fa-github"></i> Audrey Wagner</a>
+                        <a href="https://github.com/audreywagner" target="_blank"><i class="fab fa-github"></i> Audrey Wagner</a>
                     </p>
-                    <button id="ToUpButton">
-                        <i class="far fa-arrow-alt-circle-up"></i>
-                    </button>
                 </div>
             </section>
         </footer>

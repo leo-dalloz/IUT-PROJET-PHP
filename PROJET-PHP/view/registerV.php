@@ -23,7 +23,7 @@
 
 	<main>
         <a id="LogoMainContainer" href="indexV.php">
-            <img id="LogoMain" src="https://imagizer.imageshack.com/img922/7716/Xxjiro.png" alt="logo FreeNote">
+            <img id="LogoMain" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
 
         <section id="PageTitleContainer">
@@ -33,29 +33,31 @@
         </section>
 
         <section id="FormContainer">
-            <form action="" method="post">
-                <input type="text" name="Nom"  class="FormInput" placeholder="Nom">
-                <input type="text" name="Prenom"  class="FormInput" placeholder="Prénom">
+            <form action="../controller/registerC.php" method="post">
+                <input type="text" name="Name"  class="FormInput" placeholder="Nom">
+                <input type="text" name="Surname"  class="FormInput" placeholder="Prénom">
                 <input type="text" name="Pseudo" class="FormInput" placeholder="Pseudo">
 
                 <select name="Gender" class="FormInput">
-                    <option class="OptionInput" value="H">
+                    <option class="OptionInput" value="Homme">
                         Homme
                     </option>
-                    <option class="OptionInput" value="M">
+                    <option class="OptionInput" value="Femme">
                         Femme
                     </option>
-                    <option class="OptionInput" value="NS">
-                        Non spécifié
+                    <option class="OptionInput" value="Autre">
+                        Autre
                     </option>
                 </select>
 
                 <input type="email" name="Email" class="FormInput" placeholder="Adresse Mail">
 
-                <input type="date" name="Naissance" class="FormInput" placeholder="Date">
+                <input type="date" name="Birth" class="FormInput" placeholder="Date">
 
                 <input type="password" name="Pwd" class="FormInput" placeholder="Mot de passe">
                 <input type="password" name="Pwd1" class="FormInput" placeholder="Confirmer mot de passe">
+
+                <?php echo $s_error; ?>
 
                 <div id="SubmitContainer">
                     <input id="submitButton" type="submit" value="S'inscrire">

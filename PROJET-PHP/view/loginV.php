@@ -7,8 +7,8 @@
 ?>
 
     <main>
-        <a id="LogoMainContainer" href="indexV.php">
-            <img id="LogoMain" src="https://imagizer.imageshack.com/img922/7716/Xxjiro.png" alt="logo FreeNote">
+        <a id="LogoMainContainer" href="index.php">
+            <img id="LogoMain" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
 
         <section id="PageTitleContainer">

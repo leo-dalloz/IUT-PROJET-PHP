@@ -13,9 +13,9 @@
         $_SESSION['login'] = 'ok';
         $_SESSION['user'] = returnUser($s_pseudo);
         if ($_SESSION['user']->getMyAdmin() == 1)
-            header('Location: ../view/pageTestV.php?admin=oui');
+            header('Location: ../view/basicProfileV.php');
         else
-            header('Location: ../view/pageTestV.php?admin=non');
+            header('Location: ../view/basicProfileV.php');
     }
     else
         header('Location: ../view/loginV.php?step=error');

@@ -7,7 +7,9 @@
 	ob_start()
 ?>
 
-<!-- Contenu index -->
+<a href="#" id="ToUpButton">
+    <i class="far fa-arrow-alt-circle-up"></i>
+</a>
 
 <?php
 	$content = ob_get_clean();

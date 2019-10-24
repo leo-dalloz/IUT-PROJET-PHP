@@ -1,22 +1,17 @@
 <?php
     require '../utils.inc.php';
-
-    require '../Model/User.php';
-
-
+    require '../model/User.php';
     session_start();
     if($_SESSION['login']!='ok')
     {
         die('Erreur d\'authentification');
     }
-
     start_page('Profil');
 ?>
 
 
 <?php
 $s_error = $_GET['error'];
-
 if ($s_error == 'wrongPseudo')
     $s_error = 1;
 else if ($s_error == 'wrongEmail')
@@ -33,7 +28,7 @@ else
 
     <h1>Votre profil</h1>
 
-    <form action="../Controller/profileC.php" method="post">
+    <form action="../controller/profileC.php" method="post">
         <p>
             Votre prénom : <?php echo $_SESSION['user']->getMySurname(); ?> <br/>
             <input type="text" name="Surname" placeholder="Changer votre prénom" /> <br/>
@@ -47,7 +42,7 @@ else
             Votre pseudo : <?php echo $_SESSION['user']->getMyPseudo(); ?> <br/>
             <input type="text" name="Pseudo" placeholder="Changer votre pseudo" /> <br/>
             <?php if ($s_error == 1) echo 'Le pseudo que vous avez choisi est déjà utilisé.';
-                    else echo '';   ?>
+                                else echo '';   ?>
             <br/>
 
             Votre date de naissance : <?php echo $_SESSION['user']->getMyBirth(); ?> <br/>

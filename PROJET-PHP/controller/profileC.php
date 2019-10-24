@@ -1,13 +1,16 @@
 <?php
+/*
+    @brief : controller modification du profil de l'utilisateur
+    @Authors : Jeremy & Audrey
+*/
 
-    require '../Model/profileM.php';
+    require '../model/profileM.php';
     session_start();
     if($_SESSION['login']!='ok')
     {
         die('Erreur d\'authentification');
     }
 
-//    $s_action = $_POST['button'];
 
     $s_surname = $_POST['Surname'];
     $s_name = $_POST['Name'];
@@ -15,8 +18,6 @@
     $d_birth = $_POST['Birth'];
     $s_pwd = $_POST['Pwd'];
     $s_gender = $_POST['Gender'];
-
-
     if ($s_surname != NULL)
     {
         changeSurname($s_surname);
@@ -48,7 +49,6 @@
     }
     changeGender($s_gender);
     $_SESSION['user']->setMyGender($s_gender);
-
 //
 //    if ($s_action == 'chSurname')
 //    {
@@ -86,5 +86,4 @@
 //        changeGender($s_newGender);
 //        $_SESSION['user']->setMyGender($s_newGender);
 //    }
-    header('Location: ../View/basicProfileV.php');
-
+    require '../view/basicProfileV.php';
