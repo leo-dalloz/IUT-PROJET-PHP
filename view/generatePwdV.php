@@ -2,14 +2,14 @@
 
   $step    = $_GET['step'];
 
-  if ($step = 'hello'){
+  if ($step == 'hello'){
     $s_msg = 'bonjour';
   }
   else if ($step == 'errconf') {
     $s_msg = 'les 2 mots de passes entrés sont differenets';
     $i_token = $_GET['token'];
   }
-  else if($step = 'mpd') {
+  else if($step == 'mpd') {
     $s_msg = 'mot de passe modifié';
   }
 ?>
