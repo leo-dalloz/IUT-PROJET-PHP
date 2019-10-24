@@ -1,5 +1,4 @@
 <?php
-//require 'dbTest.php';
 require 'Discussion.php';
 function getDiscussions()
 {
@@ -12,4 +11,11 @@ function getDiscussions()
         $tab_discussions[] = new Discussion($dbRow['discussionId']);
     }
     return $tab_discussions;
+}
+
+function createNewDiscussion($s_nomDiscussion)
+{
+    $dbLink = dbConnect();
+    $query = "INSERT INTO Dicussion (discussionName, nbMaxWords, nbLike, state, nbMaxMessages) VALUES ('$s_nomDiscussion', 2, 0, 1, 'rand(3,10)')";
+    testError($dbLink,$query);
 }
