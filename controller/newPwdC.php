@@ -5,21 +5,22 @@
 
     /**
     * Laurent
-    * genere un token aléatoire de 6 chiffres
-    * out : array de string 
+    * genere un token aléatoire avec sa date de création
+    * out : array de string avec le token et la date
     */
     function generateToken() {
-      #array de string
+
 
       $s_token          = md5(mt_rand(100000,999999));
-      $d_dateToken      = ...;
+      $d_dateToken      = date("Y-m-d H:i:s");
 
-      $as_tokenAndDate  = array (
+
+      $a_tokenAndDate  = array (
                       "token" => $s_token,
                       "date"  => $d_dateToken;
       );
 
-      return $as_tokenAndDate
+      return $a_tokenAndDate
     } //generateToken()
 
     /*
@@ -29,7 +30,8 @@
     */
     function sendMail($s_mail) {
 
-      $s_token  = generateToken();
+      $a_tokenAndDate  = generateToken();
+      
       $s_obj    = 'mot de passe oublié' ;
       $headers  = "MIME-Version: 1.0" . "\r\n";
       $headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
@@ -44,7 +46,7 @@
       $s_msg .= '</body></html>';
 
 
-      addToken($s_token,$s_mail);
+      addToken($a_tokenAndDate['token'],$a_tokenAndDate['date'],$s_mail);
       mail($s_mail,$s_obj,$s_msg,$headers);
 
     } // sendMail()
