@@ -32,6 +32,7 @@
       if($s_newPwd != $s_confPwd)
         header('Location: ../view/generatePwdV.php?step=errconf&token='. $i_token);
       else {
+        $s_newPwd = password_hash($s_newPwd,PASSWORD_DEFAULT);
         changePwd($i_token,$s_newPwd);
         header('Location: ../view/generatePwdV.php?step=mdp');
       }
