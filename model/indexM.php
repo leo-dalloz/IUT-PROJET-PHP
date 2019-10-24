@@ -20,5 +20,4 @@ function createNewDiscussion($s_nomDiscussion)
     $i_rand = rand(3,10);
     $query = "INSERT INTO Discussion (discussionName, nbMaxWords, nbLike, state, nbMaxMessages) VALUES ('$s_nomDiscussion', 2, 0, 1, '$i_rand')";
     testError($dbLink,$query);
-    header('Location: ../view/indexV.php');
 }

@@ -9,6 +9,11 @@ if($s_action == 'createDiscussion')
     if ($i_tailleDiscussion > 1 && $i_tailleDiscussion < 20)
     {
         createNewDiscussion($s_nomDiscussion);
+        header('Location: ../view/indexV.php');
+    }
+    else
+    {
+        header('Location: ../view/indexV.php?error=nomIncorrect');
     }
 }
 
