@@ -1,5 +1,6 @@
 <?php
 require 'Discussion.php';
+
 function getDiscussions()
 {
     $tab_discussions = array();
@@ -18,4 +19,5 @@ function createNewDiscussion($s_nomDiscussion)
     $dbLink = dbConnect();
     $query = "INSERT INTO Dicussion (discussionName, nbMaxWords, nbLike, state, nbMaxMessages) VALUES ('$s_nomDiscussion', 2, 0, 1, 'rand(3,10)')";
     testError($dbLink,$query);
+    header('location : ../view/indexV.php');
 }

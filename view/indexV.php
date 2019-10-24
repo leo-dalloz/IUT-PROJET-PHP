@@ -23,14 +23,14 @@
                     nbWordsMax: <?echo $value->getNbMaxWords() ?><br>
                     nbLike: <?echo $value->getNbLike() ?></p>
             </a>
-            <form action="../controller/pageDiscussionC.php?discussionId=<?echo $i_numDiscussion?>" method="post" >
-                <label for="nomDiscussion">Nom de la discussion</label><br/>
-                <input type="submit" name="action" value="createDiscussion">
-            </form>
+
             <?php
         }
         ?>
-
+        <form action="../controller/pageDiscussionC.php?discussionId=<?echo $i_numDiscussion?>" method="post" >
+            <label for="nomDiscussion">Nom de la discussion</label><br/>
+            <input type="submit" name="action" value="createDiscussion">
+        </form>
     </aside>
 </main>
 
