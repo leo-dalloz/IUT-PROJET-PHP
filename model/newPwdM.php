@@ -30,7 +30,7 @@
   function addToken($i_token,$s_mail){
     $dbLink = dbConnect();
     $query  = 'UPDATE User
-               SET token = ' . $i_token . '
+               SET token = \'' . $i_token .'\'
                WHERE email = \'' . $s_mail . '\'';
     $result = testError($dbLink,$query);
   }//addToken()
