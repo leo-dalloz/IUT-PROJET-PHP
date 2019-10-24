@@ -10,30 +10,28 @@
         header('Location: accesInterdit.html');
 
 
-    $i_token   = $_GET['token'];
+    $s_token   = $_GET['token'];
     /*
       si le token n'existe oas dans la bd c'est que la personne essaye d'acceder à
       la page avec un token au hasard. pas sympa
     */
-    if(!verifToken($i_token))
+    if(!verifToken($s_token))
       header('Location: accesInterdit.html');
-
-
 
 
     if(isset($_POST['newPwd'])
     && isset($_POST['confPwd']))
     {
 
-       $i_token   = $_GET['token'];
+       $s_token   = $_GET['token'];
        $s_newPwd  = $_POST['newPwd'];
        $s_confPwd = $_POST['confPwd'];
 
       if($s_newPwd != $s_confPwd)
-        header('Location: ../view/generatePwdV.php?step=errconf&token='. $i_token);
+        header('Location: ../view/generatePwdV.php?step=errconf&token='. $s_token);
       else {
         $s_newPwd = password_hash($s_newPwd,PASSWORD_DEFAULT);
-        changePwd($i_token,$s_newPwd);
+        changePwd($s_token,$s_newPwd);
         header('Location: ../view/generatePwdV.php?step=mdp');
       }
     }

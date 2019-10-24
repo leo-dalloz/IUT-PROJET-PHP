@@ -27,10 +27,10 @@
   * in : int token
   * in : string mail de l'utilisateur qui veut changer de mot de passe, l'adresse mail est clé primaire de la table user car elle est unique
   */
-  function addToken($i_token,$s_mail){
+  function addToken($s_token,$s_mail){
     $dbLink = dbConnect();
     $query  = 'UPDATE User
-               SET token = \'' . $i_token .'\'
+               SET token = \'' . $s_token .'\'
                WHERE email = \'' . $s_mail . '\'';
     $result = testError($dbLink,$query);
   }//addToken()

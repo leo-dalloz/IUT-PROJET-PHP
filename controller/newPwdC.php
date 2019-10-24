@@ -6,10 +6,20 @@
     /**
     * Laurent
     * genere un token aléatoire de 6 chiffres
-    * out : int
+    * out : array de string 
     */
     function generateToken() {
-      return  md5(mt_rand(100000,999999));
+      #array de string
+
+      $s_token          = md5(mt_rand(100000,999999));
+      $d_dateToken      = ...;
+
+      $as_tokenAndDate  = array (
+                      "token" => $s_token,
+                      "date"  => $d_dateToken;
+      );
+
+      return $as_tokenAndDate
     } //generateToken()
 
     /*
@@ -19,7 +29,7 @@
     */
     function sendMail($s_mail) {
 
-      $i_token  = generateToken();
+      $s_token  = generateToken();
       $s_obj    = 'mot de passe oublié' ;
       $headers  = "MIME-Version: 1.0" . "\r\n";
       $headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
@@ -28,13 +38,13 @@
       $s_msg .= '<h1 style="color : #ff793f">Mot de passe oublié ? </h1>';
       $s_msg .= '<h2 style="color : #ff793f">pas de panique !</h2>';
       $s_msg .= '<p> Dirigez vous sur ce lien : <br>';
-      $s_msg .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $i_token . '&step=hello <br><br>';
+      $s_msg .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
       $s_msg .= 'Si vous n\'êtes pas à l\'origine de ce changement de mot de passe ignorez ce mail. <br><br>';
       $s_msg .= 'Faites attention peut-être que quelqu\'un essaie de vous pirater<br><p>';
       $s_msg .= '</body></html>';
 
 
-      addToken($i_token,$s_mail);
+      addToken($s_token,$s_mail);
       mail($s_mail,$s_obj,$s_msg,$headers);
 
     } // sendMail()
