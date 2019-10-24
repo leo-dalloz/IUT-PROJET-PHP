@@ -1,12 +1,12 @@
 <?php
-require '../utils.inc.php';
-require '../model/User.php';
-session_start();
-if($_SESSION['login']!='ok')
-{
-    die('Erreur d\'authentification');
-}
-start_page('Profil');
+    require '../utils.inc.php';
+    require '../model/User.php';
+    session_start();
+    if($_SESSION['login']!='ok')
+    {
+        die('Erreur d\'authentification');
+    }
+    start_page('Profil');
 ?>
 
 
@@ -42,7 +42,7 @@ else
             Votre pseudo : <?php echo $_SESSION['user']->getMyPseudo(); ?> <br/>
             <input type="text" name="Pseudo" placeholder="Changer votre pseudo" /> <br/>
             <?php if ($s_error == 1) echo 'Le pseudo que vous avez choisi est déjà utilisé.';
-            else echo '';   ?>
+                                else echo '';   ?>
             <br/>
 
             Votre date de naissance : <?php echo $_SESSION['user']->getMyBirth(); ?> <br/>
@@ -77,5 +77,5 @@ else
 
 
 <?php
-end_page();
+    end_page();
 ?>
