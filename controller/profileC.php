@@ -3,7 +3,7 @@
     @brief : controler modification du profile de l'utilisateur
     @Authors : Jeremy & Audrey
 */
-require '../Model/profileM.php';
+require '../model/profileM.php';
 session_start();
 if($_SESSION['login']!='ok')
 {
