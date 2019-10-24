@@ -1,5 +1,5 @@
 <?php
-require 'dbTest.php';
+//require 'dbTest.php';
 require 'Discussion.php';
 function getDiscussions()
 {
