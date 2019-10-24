@@ -12,7 +12,7 @@
 
 
       // selectionne dans le tuple dans la bd qui a le même token que celui passé en paramètre
-      $query  = 'SELECT * from User where token =' . $i_token;
+      $query  = 'SELECT * from User where token =\'' . $i_token .'\'';
       $result = testError($dbLink,$query);
 
       $dbRow  = mysqli_fetch_assoc($result);
