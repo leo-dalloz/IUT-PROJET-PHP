@@ -28,7 +28,7 @@
         }
         ?>
         <form action="../controller/pageDiscussionC.php?discussionId=<?echo $i_numDiscussion?>" method="post" >
-            <label for="nomDiscussion">Nom de la discussion</label><br/>
+            <input type="text" name="nomDiscussion" placeholder="Nom de la discussion"><br/>
             <input type="submit" name="action" value="createDiscussion">
         </form>
     </aside>
