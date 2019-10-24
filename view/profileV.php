@@ -28,7 +28,7 @@ else
 
     <h1>Votre profil</h1>
 
-    <form action="../Controller/profileC.php" method="post">
+    <form action="../controller/profileC.php" method="post">
         <p>
             Votre prénom : <?php echo $_SESSION['user']->getMySurname(); ?> <br/>
             <input type="text" name="Surname" placeholder="Changer votre prénom" /> <br/>
