@@ -19,33 +19,17 @@
       if($dbRow == null)
         return false;
 
-       // on doit verifier la date du token
-       // date("Y-m-d H:i")
-       $d_actualDate = new DateTime('now');
-
-       /*
-       * str to date car dateToken est stocké sous forme de string dans la bd sinon on
-       * ne peut pas stocker les heures min est sec
-       */
-
-       echo 'date token : ' . $dbRow['dateToken'] . '\n';
-       $date = $d_actualDate->format('Y-m-d H:i:s');
-       echo 'actual date : ' . $date . '\n';
-
-
-       $d_dateToken = DateTime::createFromFormat('Y-m-d H:i',$dbRow['dateToken']);
+       $d_currentDate = new DateTime('now');
+       $d_dateToken   = $dbRow['dateToken'];
 
       //si la date du token est superieur à 15 min kaput
-      if($d_actualDate->diff($d_dateToken)->format('%Y') < 1
-        && $d_actualDate->diff($d_dateToken)->format('%m') < 1
-        && $d_actualDate->diff($d_dateToken)->format('%d') < 1
-        && $d_actualDate->diff($d_dateToken)->format('%i') < 1)// on met à 1 min pour les testes
-        {
+      if($d_currentDate->diff($d_dateToken)->format('%Y') < 1
+        && $d_currentDate->diff($d_dateToken)->format('%m') < 1
+        && $d_currentDate->diff($d_dateToken)->format('%d') < 1
+        && $d_currentDate->diff($d_dateToken)->format('%i') < 1)// on met à 1 min pour les testes
            return false;
-        }
-       else {
+        else
            return true;
-       }
   }//verifToken()
 
 
