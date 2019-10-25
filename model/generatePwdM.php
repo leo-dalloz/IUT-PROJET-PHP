@@ -26,10 +26,10 @@
        $dateToken = $dbRow['dateToken'];
 
       //si la date du token est superieur à 15 min kaput
-       else if(($actualDate->diff($dateToken)->format('%Y') < 1)
-           && ($actualDate->diff($dateToken)->format('%m') < 1)
-           && ($actualDate->diff($dateToken)->format('%d') < 1)
-           && ($actualDate->diff($dateToken)->format('%i') < 1))// on met à 1 min pour les testes
+      if(($actualDate->diff($dateToken)->format('%Y') < 1)
+        && ($actualDate->diff($dateToken)->format('%m') < 1)
+        && ($actualDate->diff($dateToken)->format('%d') < 1)
+        && ($actualDate->diff($dateToken)->format('%i') < 1))// on met à 1 min pour les testes
 
            return false;
 
