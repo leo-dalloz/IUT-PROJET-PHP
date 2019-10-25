@@ -12,12 +12,12 @@
 
 
       $s_token          = md5(mt_rand(100000,999999));
-      $s_dateToken      = date("Y-m-d H:i:s");
+      $s_dateToken      = date("Y-m-d H:i");
 
 
       $a_tokenAndDate  = array (
-                      "token" => $s_token,
-                      "date"  => $s_dateToken
+                      'token' => $s_token,
+                      'date'  => $s_dateToken
       );
 
       return $a_tokenAndDate;

@@ -7,18 +7,31 @@
  *in : int token
  *out : bool
  */
-  function verifToken($i_token) {
+  function verifToken($s_token) {
       $dbLink = dbConnect();
 
-
       // selectionne dans le tuple dans la bd qui a le même token que celui passé en paramètre
-      $query  = 'SELECT * from User where token =\'' . $i_token .'\'';
+      $query  = 'SELECT * from User where token =\'' . $s_token .'\'';
       $result = testError($dbLink,$query);
 
       $dbRow  = mysqli_fetch_assoc($result);
 
-       if($dbRow == null)
+      if($dbRow == null)
         return false;
+
+       // on doit verifier la date du token
+       // date("Y-m-d H:i")
+       $actualDate = new DateTime('now');
+
+       $dateToken = $dbRow['dateToken'];
+
+      //si la date du token est superieur à 15 min kaput
+       else if(($actualDate->diff($dateToken)->format('%Y') < 1)
+           && ($actualDate->diff($dateToken)->format('%m') < 1)
+           && ($actualDate->diff($dateToken)->format('%d') < 1)
+           && ($actualDate->diff($dateToken)->format('%i') < 1))// on met à 1 min pour les testes
+
+           return false;
 
        return true;
   }//verifToken()
@@ -29,13 +42,13 @@
   *in : int token de l'user
   *in : string nouveau mot de passe
   */
-  function changePwd($i_token,$s_newPwd) {
+  function changePwd($s_token,$s_newPwd) {
     $dbLink  = dbConnect();
 
     // met à jour  dans la BD le mot de passe de l'utilisateur qui à le même token passé en paramètre
     $query  = 'UPDATE User
                SET password = \'' . $s_newPwd .'\'
-               WHERE token  = \'' . $i_token . '\'';
+               WHERE token  = \'' . $s_token . '\'';
 
     $result = testError($dbLink,$query);
 
