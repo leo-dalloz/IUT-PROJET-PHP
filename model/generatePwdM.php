@@ -28,7 +28,11 @@
        * ne peut pas stocker les heures min est sec
        */
 
-       echo $dbRow['dateToken'];
+       echo 'date token : ' . $dbRow['dateToken'] . '\n';
+       $date = $d_actualDate->format('Y-m-d H:i:s');
+       echo 'actual date : ' . $date . '\n';
+
+
        $d_dateToken = DateTime::createFromFormat('Y-m-d H:i',$dbRow['dateToken']);
 
       //si la date du token est superieur à 15 min kaput
