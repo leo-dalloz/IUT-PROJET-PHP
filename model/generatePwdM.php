@@ -21,6 +21,7 @@
 
        $d_currentDate = new DateTime('now');
        $d_dateToken   = $dbRow['dateToken'];
+       var_dump($d_dateToken);
 
       //si la date du token est superieur à 15 min kaput
       if($d_currentDate->diff($d_dateToken)->format('%Y') < 1
