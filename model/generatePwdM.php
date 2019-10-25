@@ -21,9 +21,12 @@
 
        // on doit verifier la date du token
        // date("Y-m-d H:i")
-       $actualDate = new DateTime('now');
+       $d_actualDate = new DateTime('now');
+       /*str to date car dateToken est stocké sous forme de string dans la bd sinon on
+       * ne peut pas stocker les heures min est sec
+       */
+       $d_dateToken  = DateTime::createFromFormat('Y-m-d H:i:s',$dbRow['dateToken']);
 
-       $dateToken = $dbRow['dateToken'];
 
       //si la date du token est superieur à 15 min kaput
       if(($actualDate->diff($dateToken)->format('%Y') < 1)
