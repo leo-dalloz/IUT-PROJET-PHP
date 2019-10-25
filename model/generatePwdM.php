@@ -35,10 +35,12 @@
         && $d_actualDate->diff($d_dateToken)->format('%m') < 1
         && $d_actualDate->diff($d_dateToken)->format('%d') < 1
         && $d_actualDate->diff($d_dateToken)->format('%i') < 1)// on met à 1 min pour les testes
-
+        {
            return false;
-
-       return true;
+        }
+       else {
+           return true;
+       }
   }//verifToken()
 
 
