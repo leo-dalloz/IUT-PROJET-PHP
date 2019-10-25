@@ -23,11 +23,14 @@
        // date("Y-m-d H:i")
        $d_actualDate = new DateTime('now');
        print_r($actualDate);
-       /*str to date car dateToken est stocké sous forme de string dans la bd sinon on
+       exit();
+       /*
+       * str to date car dateToken est stocké sous forme de string dans la bd sinon on
        * ne peut pas stocker les heures min est sec
        */
        $d_dateToken  = DateTime::createFromFormat('Y-m-d H:i:s',$dbRow['dateToken']);
-
+        print_r($actualDate);
+        exit();
 
       //si la date du token est superieur à 15 min kaput
       if($d_actualDate->diff($d_dateToken)->format('%Y') < 1
