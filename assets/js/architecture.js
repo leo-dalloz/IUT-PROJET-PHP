@@ -7,19 +7,19 @@ var IconThemeButton = document.getElementById('IconThemeButton');
 ThemeButton.addEventListener("click", switchCss);
 
 
-if (window.localStorage.theme == 'night') {
-    changeTheme('night');
+if (window.localStorage.theme == 'Night') {
+    changeTheme('Night');
 } else {
-    window.localStorage.theme == 'day';
-    changeTheme('day');
+    window.localStorage.theme == 'Day';
+    changeTheme('Day');
 }
 
 
 function changeTheme(newTheme) {    
-    document.getElementById('ThemeStylesheet').setAttribute('href', './assets/css/' + newTheme + '.css');
+    document.getElementById('ThemeStylesheet').setAttribute('href', './assets/css/theme/' + newTheme + '.css');
     window.localStorage.theme = newTheme;
 
-    if (window.localStorage.theme == 'day') {
+    if (window.localStorage.theme == 'Day') {
         IconThemeButton.classList = 'fa fa-moon';
     } else {
         IconThemeButton.classList = 'fa fa-sun';
@@ -28,9 +28,9 @@ function changeTheme(newTheme) {
 
 
 function switchCss() {
-    if (window.localStorage.theme == 'day') {
-        changeTheme('night');
+    if (window.localStorage.theme == 'Day') {
+        changeTheme('Night');
     } else {
-        changeTheme('day');
+        changeTheme('Day');
     }
 } // switchCss()
