@@ -20,7 +20,9 @@
         return false;
 
        $d_currentDate = new DateTime('now');
-       $d_dateToken   = $dbRow['dateToken'];
+       $d_dateToken   = DateTime::createFromFormat('Y-m-d H:i:s.u',$dbRow['dateToken']);
+
+
        $d_diff        = $d_currentDate->diff($d_dateToken);
 
        // si la diffence d'année, de mois, de jours ou d'heure est superieur à 1
