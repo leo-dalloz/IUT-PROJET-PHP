@@ -33,7 +33,6 @@
 
   }//verifToken()
 
-
   /*
   *Laurent
   *in : int token de l'user
@@ -55,6 +54,6 @@
                       dateToken = NULL
                WHERE token  = \'' . $s_token . '\'';
 
-    $result = testError($dbLink,$query);
+    $result = testError($dbLink,$query2);
 
   }//changeMail()
