@@ -20,9 +20,8 @@
         return false;
 
        $d_currentDate = new DateTime('now');
+       // on doit faire ça car on recupère la date sous forme de string
        $d_dateToken   = DateTime::createFromFormat('Y-m-d H:i:s.u',$dbRow['dateToken']);
-
-
        $d_diff        = $d_currentDate->diff($d_dateToken);
 
        // si la diffence d'année, de mois, de jours ou d'heure est superieur à 1
@@ -32,14 +31,6 @@
        else
         return true;
 
-/*
-      if($d_currentDate->diff($d_dateToken)->format('%Y') > 1
-        && $d_currentDate->diff($d_dateToken)->format('%m') > 1
-        && $d_currentDate->diff($d_dateToken)->format('%d') > 1
-        && $d_currentDate->diff($d_dateToken)->format('%i') > 1)// on met à 1 min pour les testes
-           return false;
-        else
-           return true;*/
   }//verifToken()
 
 
@@ -54,6 +45,14 @@
     // met à jour  dans la BD le mot de passe de l'utilisateur qui à le même token passé en paramètre
     $query  = 'UPDATE User
                SET password = \'' . $s_newPwd .'\'
+               WHERE token  = \'' . $s_token . '\'';
+
+    $result = testError($dbLink,$query);
+
+    // une fois que le mdp est mis à jour on réinitialise le token et la date
+    $query2 = 'UPDATE User
+               SET    token     = NULL,
+                      dateToken = NULL
                WHERE token  = \'' . $s_token . '\'';
 
     $result = testError($dbLink,$query);
