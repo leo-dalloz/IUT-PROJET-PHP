@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+        <link rel="stylesheet" href="../assets/css/template.css">
+        <link id="ThemeStylesheet" rel="stylesheet" href="../assets/css/theme/night.css">
         <link rel="stylesheet" href="<?= $style ?>">
-        <link id="ThemeStylesheet" rel="stylesheet" href="<?= $style_theme ?>">
         <script src="https://kit.fontawesome.com/b18ab37082.js" crossorigin="anonymous"></script>
 
         <title><?= $title ?></title>
@@ -54,5 +55,5 @@
             </section>
         </footer>
     </body>
-    <script src="./assets/js/architecture.js"></script>
+    <script src="../assets/js/architecture.js"></script>
 </html>
