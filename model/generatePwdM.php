@@ -20,16 +20,24 @@
         return false;
 
        $d_currentDate = new DateTime('now');
-       $d_dateToken   = DateTime::createFromFormat('Y-m-d H:i:s.u', $dbRow['dateToken']);
+       $d_dateToken   = $dbRow['dateToken'];
+       $d_diff        = $d_currentDate->diff($d_dateToken);
 
-      //si la date du token est superieur à 15 min kaput
-      if($d_currentDate->diff($d_dateToken)->format('%Y') < 1
-        && $d_currentDate->diff($d_dateToken)->format('%m') < 1
-        && $d_currentDate->diff($d_dateToken)->format('%d') < 1
+       // si la diffence d'année, de mois, de jours ou d'heure est superieur à 1
+       // la delai est dépassé, si les nombres de minutes est supérieur à 15, de même
+       if( $d_diff-> format('%Y%m%d%H') >= 1 ||  $d_diff->format('%i') >= 1)// 1 min pour testes
+        return false;
+       else
+        return true;
+
+/*
+      if($d_currentDate->diff($d_dateToken)->format('%Y') > 1
+        && $d_currentDate->diff($d_dateToken)->format('%m') > 1
+        && $d_currentDate->diff($d_dateToken)->format('%d') > 1
         && $d_currentDate->diff($d_dateToken)->format('%i') > 1)// on met à 1 min pour les testes
            return false;
         else
-           return true;
+           return true;*/
   }//verifToken()
 
 

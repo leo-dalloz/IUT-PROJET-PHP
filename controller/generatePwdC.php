@@ -13,7 +13,7 @@
     $s_token   = $_GET['token'];
     /*
       si le token n'existe oas dans la bd c'est que la personne essaye d'acceder à
-      la page avec un token au hasard. pas sympa
+      la page avec un token au hasard ou alors il a dépassé le temps du token. pas sympa
     */
     if(!verifToken($s_token))
       header('Location: accesInterdit.html');
