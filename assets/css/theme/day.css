@@ -18,3 +18,10 @@ main > * {
 .AuthorName > a, .AuthorName > a:active  {
     color : white;
 }
+
+/* 
+    Discussion
+*/
+#submitButton >i {
+    color : #212121;
+}
