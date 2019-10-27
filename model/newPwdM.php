@@ -31,7 +31,7 @@
     $dbLink = dbConnect();
     $query  = 'UPDATE User
                SET token     = \'' . $s_token .'\',
-               dateToken     = NOW(),
+               dateToken     = NOW()
                WHERE email   = \'' . $s_mail . '\'';
     $result = testError($dbLink,$query);
   }//addToken()
