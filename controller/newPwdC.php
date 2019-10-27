@@ -12,15 +12,16 @@
 
 
       $s_token          = md5(mt_rand(100000,999999));
-      $d_dateToken      = new DateTime('now');
+      /*$d_dateToken      = date("Y-m-d H:i");
 
 
       $a_tokenAndDate  = array (
                       'token' => $s_token,
-                      'date'  => $d_dateToken
+                      //'date'  => $d_dateToken
       );
 
-      return $a_tokenAndDate;
+      return $a_tokenAndDate; */
+      return $s_token;
     } //generateToken()
 
     /*
@@ -30,7 +31,7 @@
     */
     function sendMail($s_mail) {
 
-      $a_tokenAndDate  = generateToken();
+      $s_token  = generateToken();
 
       $s_obj    = 'mot de passe oublié' ;
       $headers  = "MIME-Version: 1.0" . "\r\n";
@@ -46,7 +47,7 @@
       $s_msg .= '</body></html>';
 
 
-      addToken($a_tokenAndDate['token'],$a_tokenAndDate['date'],$s_mail);
+      addToken($s_token,$s_mail);
       mail($s_mail,$s_obj,$s_msg,$headers);
 
     } // sendMail()
