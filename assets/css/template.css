@@ -19,7 +19,10 @@ i {
     padding : 5px;
 }
 
-
+ul, li {
+    list-style: none;
+    display: inline;
+}
 
 html, body {
     min-height : 100%;
