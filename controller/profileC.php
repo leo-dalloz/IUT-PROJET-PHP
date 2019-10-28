@@ -4,7 +4,7 @@
         @Authors : Jeremy & Audrey
     */
 
-    require '../Model/profileM.php';
+    require '../model/profileM.php';
     session_start();
     if($_SESSION['login']!='ok')
     {
@@ -26,7 +26,6 @@
                                 'firstname',
                                 'birthday',
                                 'gender',
-                                'email',
                                 'password'
                             );
     if (!in_array($s_action, $a_editable_user)) {
@@ -59,9 +58,11 @@
             $d_postdate = new DateTime($_POST['birthday']);
 
             if ($_POST['birthday'] != null && ($d_actualdate->diff($d_postdate)->format('%y') >= 13)) {
-                changeBirth($d_birth);
+                changeBirth($_POST['birthday']);
                 $_SESSION['user']->setMyBirth($d_birth);
-            }           
+            } else {
+		echo 'erreur vous avez moins de 13 ans';                
+            }
             break;
         case 'password' :
             if ($_POST['password'] != NULL) {
@@ -70,9 +71,12 @@
                 $_SESSION['user']->setMyPassword($s_pwd);
             }
             break;
-        // case 'email' :
+        case 'gender' :
+	    if ($_POST['gender'] != NULL && ($_POST['gender'] == 'Homme' || $_POST['gender'] == 'Femme')) {
+		changeGender($_POST['gender']);
+		$_SESSION['user']->setMyGender($_POST['gender']);
+	    }
 
-        //     break;
         default:
             # code...
             break;
