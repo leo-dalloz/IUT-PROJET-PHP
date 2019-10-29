@@ -18,7 +18,7 @@
       $mail2    = '../view/email2.html';
 
       $handle1  = fopen($mail1,'r');
-      //$handle2  = fopen($mail2,'r');
+      $handle2  = fopen($mail2,'r');
 
       $headers  = "MIME-Version: 1.0\r\n";
       $s_obj   .= "mot de passe oublié";
@@ -34,7 +34,7 @@
 
       $message .= fread($handle1,filesize($mail1));
       $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
-      //$message .= fread($handle2,filesize($mail2));
+      $message .= fread($handle2,filesize($mail2));
 
       $message .= "\r\n\r\n--" . $boundary . "--";
 
