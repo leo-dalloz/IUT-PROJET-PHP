@@ -25,8 +25,8 @@
        $d_diff        = $d_currentDate->diff($d_dateToken);
 
        // si la diffence d'année, de mois, de jours ou d'heure est superieur à 1
-       // la delai est dépassé, si les nombres de minutes est supérieur à 15, de même
-       if( $d_diff-> format('%Y%m%d%H') >= 1 ||  $d_diff->format('%i') >= 1)// 1 min pour testes
+       // la delai est dépassé, si les nombres de minutes est supérieur à 20, de même
+       if( $d_diff-> format('%Y%m%d%H') >= 1 ||  $d_diff->format('%i') >= 20)
         return false;
        else
         return true;

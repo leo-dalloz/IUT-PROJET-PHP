@@ -3,27 +3,6 @@
 
     require ('../model/newPwdM.php');
 
-    /**
-    * Laurent
-    * genere un token aléatoire avec sa date de création
-    * out : array de string avec le token et la date
-    */
-    function generateToken() {
-
-
-      $s_token          = md5(mt_rand(100000,999999));
-      /*$d_dateToken      = date("Y-m-d H:i");
-
-
-      $a_tokenAndDate  = array (
-                      'token' => $s_token,
-                      //'date'  => $d_dateToken
-      );
-
-      return $a_tokenAndDate; */
-      return $s_token;
-    } //generateToken()
-
     /*
     * Laurent
     * Envoie un mail avec le token généré à l'utilisateur souhaitant changer son mot de passe
@@ -31,7 +10,7 @@
     */
     function sendMail($s_mail) {
 
-      $s_token  = generateToken();
+      $s_token  = uniqid(md5(mt_rand(100000,999999)));
 
       $s_obj    = 'mot de passe oublié' ;
       $headers  = "MIME-Version: 1.0" . "\r\n";
