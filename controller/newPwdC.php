@@ -21,7 +21,7 @@
 
       $s_msg     = 'test';
       $s_msg    .= '--' . $bndary . "\n";
-      $s_msg    .= "Content-type: text/plain;charset=utf-8\r\n\r\n";*
+      $s_msg    .= "Content-type: text/plain;charset=utf-8\r\n\r\n";
       $s_msg    .= "plain text version";
       $s_msg    .= '--' . $bndary . "\n";
       $s_msg    .= "Content-type: text/html;charset=utf-8\r\n\r\n";
