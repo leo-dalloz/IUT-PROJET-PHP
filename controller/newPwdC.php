@@ -24,14 +24,15 @@
       $s_obj   .= "mot de passe oublié";
       $headers .= "Content-Type: multipart/alternative;boundary=" . $boundary . "\r\n";
 
+      // mail au format texte
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/plain;charset=utf-8\r\n\r\n";
       $message .= "mot de passe oublié ? cliquez sur ce lien : \n";
       $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello';
 
+      //    mail au format html
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/html;charset=utf-8\r\n\r\n";
-
       $message .= fread($handle1,filesize($mail1));
       $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
       $message .= fread($handle2,filesize($mail2));
