@@ -46,24 +46,28 @@
       $boundary = uniqid('np');
 
       $headers = "MIME-Version: 1.0\r\n";
-      $headers .= "From: Foo <foo@bar.com>\r\n";
-      $headers .= "Subject: Test mail\r\n";
+      $headers .= "mot de passe oublié";
       $headers .= "Content-Type: multipart/alternative;boundary=" . $boundary . "\r\n";
-
-
-      $message = "This is a MIME encoded message.";
 
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/plain;charset=utf-8\r\n\r\n";
-      $message .= "This is the text/plain version.";
+      $message .= "mot de passe oublié ? cliquez sur ce lien : \n";
+      $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello';
 
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/html;charset=utf-8\r\n\r\n";
-      $message .= "This is the <b>text/html</b> version.";
+      $message .= '<html><body style="background-color : #20232A; color : #fff">';
+      $message .= '<h1 style="color : #ff793f">Mot de passe oublié ? </h1>';
+      $message .= '<h2 style="color : #ff793f">pas de panique !</h2>';
+      $message .= '<p> Dirigez vous sur ce lien : <br>';
+      $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
+      $message .= 'Si vous n\'êtes pas à l\'origine de ce changement de mot de passe ignorez ce mail. <br><br>';
+      $message .= 'Faites attention peut-être que quelqu\'un essaie de vous pirater<br><p>';
+      $message .= '</body></html>';
 
       $message .= "\r\n\r\n--" . $boundary . "--";
 
-      mail($s_mail, 'Test mail', $message, $headers);
+      mail($s_mail,$s_obj,$message, $headers);
     } // sendMail()
 
     if (isset($_POST['mail'])) {
