@@ -13,7 +13,8 @@
 
       $s_token  = md5(uniqid(mt_rand(100000,999999)));
       $boundary = uniqid('np');
-      $handle   = fopen('../view/email.html','r');
+      $mail_html= '../view/email.html';
+      $handle   = fopen($mail_html,'r');
 
       $headers  = "MIME-Version: 1.0\r\n";
       $s_obj  .= "mot de passe oublié";
@@ -26,7 +27,8 @@
 
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/html;charset=utf-8\r\n\r\n";
-      $message .= fread($handle,100);
+      $message .= fread($handle,filesize($mail_html));
+      
   /*  $message .= '<html><body style="background-color : #20232A; color : #fff">';
       $message .= '<h1 style="color : #ff793f">Mot de passe oublié ? </h1>';
       $message .= '<h2 style="color : #ff793f">pas de panique !</h2>';
