@@ -28,20 +28,14 @@
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/html;charset=utf-8\r\n\r\n";
       $message .= fread($handle,filesize($mail_html));
-      
-  /*  $message .= '<html><body style="background-color : #20232A; color : #fff">';
-      $message .= '<h1 style="color : #ff793f">Mot de passe oublié ? </h1>';
-      $message .= '<h2 style="color : #ff793f">pas de panique !</h2>';
-      $message .= '<p> Dirigez vous sur ce lien : <br>';
-      $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
-      $message .= 'Si vous n\'êtes pas à l\'origine de ce changement de mot de passe ignorez ce mail. <br><br>';
-      $message .= 'Faites attention peut-être que quelqu\'un essaie de vous pirater<br><p>';
-      $message .= '</body></html>';*/
+      $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello';
 
       $message .= "\r\n\r\n--" . $boundary . "--";
 
       addToken($s_token,$s_mail);
       mail($s_mail,$s_obj,$message, $headers);
+
+      $handle   = fclose($mail_html,'r');
     } // sendMail()
 
     if (isset($_POST['mail'])) {
