@@ -14,6 +14,7 @@
       $s_token  = md5(uniqid(mt_rand(100000,999999)));
       $boundary = uniqid('np');
       $mail_html= '../view/email.html';
+
       $handle   = fopen($mail_html,'r');
 
       $headers  = "MIME-Version: 1.0\r\n";
@@ -27,9 +28,9 @@
 
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/html;charset=utf-8\r\n\r\n";
-      $message .= fread($handle,filesize($mail_html));
-      $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello';
-      $message .= '</p></body></html>';
+      $message .= fread($handle,612/*filesize($mail_html)*/);
+      $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
+      $message .= fread($handle,497)
 
       $message .= "\r\n\r\n--" . $boundary . "--";
 
