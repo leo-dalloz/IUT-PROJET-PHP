@@ -9,16 +9,19 @@
     * in : string mail de user
     */
     function sendMail($s_mail) {
-      // testes :
+      
 
       $s_token  = md5(uniqid(mt_rand(100000,999999)));
       $boundary = uniqid('np');
-      $mail_html= '../view/email.html';
 
-      $handle   = fopen($mail_html,'r');
+      $mail1    = '../view/email1.html';
+      $mail2    = '../view/email2.html';
+
+      $handle1   = fopen($mail1,'r');
+      $handle2   = fopen($mail2,'r');
 
       $headers  = "MIME-Version: 1.0\r\n";
-      $s_obj  .= "mot de passe oublié";
+      $s_obj   .= "mot de passe oublié";
       $headers .= "Content-Type: multipart/alternative;boundary=" . $boundary . "\r\n";
 
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
@@ -28,16 +31,17 @@
 
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/html;charset=utf-8\r\n\r\n";
-      $message .= fread($handle,612/*filesize($mail_html)*/);
+      $message .= fread($handle1,filesize($mail1));
       $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
-      $message .= fread($handle,497);
+      $message .= fread($handle2,filesize($mail2));
 
       $message .= "\r\n\r\n--" . $boundary . "--";
 
       addToken($s_token,$s_mail);
       mail($s_mail,$s_obj,$message, $headers);
 
-      $handle   = fclose($mail_html,'r');
+      $handle1   = fclose($mail1,'r');
+      $handle2   = fclose($mail2,'r');
     } // sendMail()
 
     if (isset($_POST['mail'])) {
