@@ -13,7 +13,7 @@
 
       $s_token  = md5(uniqid(mt_rand(100000,999999)));
       $boundary = uniqid('np');
-      $handle   = fopen('../view/email.txt','r');
+      $handle   = fopen('../view/email.html','r');
 
       $headers  = "MIME-Version: 1.0\r\n";
       $s_obj  .= "mot de passe oublié";
