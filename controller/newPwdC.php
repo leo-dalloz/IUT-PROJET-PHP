@@ -15,12 +15,8 @@
       $s_obj    = 'mot de passe oublié' ;
 
       $bndary   =  md5(uniqid(mt_rand()));
-      $headers  = "MIME-Version: 1.0" . "\r\n";
+      //  $headers  = "MIME-Version: 1.0" . "\r\n";
       $headers .= 'Content-type: multipart/alternative; boundary="' . $bndary. '"';
-
-
-
-      //$headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
 
       $s_msg_txt =  'Mot de passe oublié ? cliquez sur ce lien' .  "\r\n";
       $s_msg_txt .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello';
@@ -38,6 +34,7 @@
       $s_msg      .=  'Content-Type: text/plain; charset=utf-8' . "\n\n";
       $s_msg      .=  $s_msg_txt . "\n\n";
       $s_msg      .=  '--' . $bndary . "\n";
+      $s_msg      .=  "MIME-Version: 1.0" . "\r\n";
       $s_msg      .=  "Content-type:text/html; charset=UTF-8" . "\r\n";
       $s_msg      .=  $s_msg_html . "\n\n";
 
