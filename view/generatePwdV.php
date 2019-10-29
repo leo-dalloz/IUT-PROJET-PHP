@@ -1,5 +1,4 @@
 <?php
-
   $step    = $_GET['step'];
 
   if ($step == 'hello'){
@@ -12,10 +11,17 @@
   else if($step == 'mdp') {
     $s_msg = 'mot de passe modifié';
   }
+
+  $title = 'Nouveau mot de passe';
+  $style = '../assets/css/';
+  $style_theme = '../assets/css/theme/day.css';
+
+
+  	ob_start()
 ?>
 
 <main>
-  <h1> nouveau mdp </h1>
+  <h1> nouveau mot de passe </h1>
   <?= $s_msg ?>
   <form  action="../controller/generatePwdC.php?token=<?= $s_token ?>"  method="post">
     <input type="password" name="newPwd" placeholder="nouveau mot de passe"><br>
@@ -24,3 +30,8 @@
     <input type="submit" name="action" value="envoyer"><br>
   </form>
 </main>
+
+<?php
+	$content = ob_get_clean();
+	require ('../template.php');
+?>
