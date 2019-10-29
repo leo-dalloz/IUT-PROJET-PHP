@@ -30,7 +30,7 @@
       $message .= "Content-type: text/html;charset=utf-8\r\n\r\n";
       $message .= fread($handle,612/*filesize($mail_html)*/);
       $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
-      $message .= fread($handle,497)
+      $message .= fread($handle,497);
 
       $message .= "\r\n\r\n--" . $boundary . "--";
 
