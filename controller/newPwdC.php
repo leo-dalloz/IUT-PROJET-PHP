@@ -45,8 +45,8 @@
 
       $boundary = uniqid('np');
 
-      $headers = "MIME-Version: 1.0\r\n";
-      $headers .= "mot de passe oublié";
+      $headers  = "MIME-Version: 1.0\r\n";
+      $s_obbj  .= "mot de passe oublié";
       $headers .= "Content-Type: multipart/alternative;boundary=" . $boundary . "\r\n";
 
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
