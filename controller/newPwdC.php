@@ -10,7 +10,6 @@
     */
     function sendMail($s_mail) {
       /*
-      $s_token  = md5(uniqid(mt_rand(100000,999999)));
 
       $s_obj    = 'mot de passe oublié' ;
 
@@ -43,10 +42,11 @@
       */
       // testes :
 
+      $s_token  = md5(uniqid(mt_rand(100000,999999)));
       $boundary = uniqid('np');
 
       $headers  = "MIME-Version: 1.0\r\n";
-      $s_obbj  .= "mot de passe oublié";
+      $s_obj  .= "mot de passe oublié";
       $headers .= "Content-Type: multipart/alternative;boundary=" . $boundary . "\r\n";
 
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
