@@ -7,7 +7,7 @@
       modification de passe sans avoir reçu de mail
     */
     if(empty($_GET['token']))
-        header('Location: accesInterdit.html');
+        header('Location: ../view/accesInterdit.html');
 
 
     $s_token   = $_GET['token'];
@@ -16,7 +16,7 @@
       la page avec un token au hasard ou alors il a dépassé le temps du token. pas sympa
     */
     if(!verifToken($s_token))
-      header('Location: accesInterdit.html');
+      header('Location: ../view/accesInterdit.html');
 
 
     if(isset($_POST['newPwd'])
@@ -32,7 +32,7 @@
       else {
         $s_newPwd = password_hash($s_newPwd,PASSWORD_DEFAULT);
         changePwd($s_token,$s_newPwd);
-        header('Location: ../view/generatePwdV.php?step=mdp');
+        header('Location: ../view/mdpModifie.html');
       }
     }
     require ('../view/generatePwdV.php');
