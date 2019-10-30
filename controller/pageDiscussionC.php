@@ -1,9 +1,6 @@
 <?php
 
 require '../model/pageDiscussionM.php';
-echo 'lol';
-require '../model/indexM.php';
-echo 'lol';
 $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
 $i_discussionId = $_GET['discussionId'];
