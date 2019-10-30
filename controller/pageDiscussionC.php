@@ -1,8 +1,11 @@
 <?php
 
+use mysql_xdevapi\BaseResult;
+
 require '../model/pageDiscussionM.php';
 $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
+echo ':' . $s_action . '<br>';
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
 if ($s_action == 'sendMessage')
