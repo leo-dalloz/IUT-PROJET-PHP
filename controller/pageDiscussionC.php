@@ -5,16 +5,18 @@ $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
+echo 'lol';
 if ($s_action == 'Envoyer message')
 {
     if (! $D_discussion->getState())
     {
+        echo 'a';
         header('Location: ../view/pageDiscussionV.php?etat='. 'Discussion fermé' . '&discussionId=' .$i_discussionId);
     }
     else if(str_word_count($s_contents,0,'123456789') <= $D_discussion->getNbMaxWords()
         && str_word_count($s_contents,0,'123456789') != 0)
     {
-
+        echo 'b';
         $i_lastMessageID = $D_discussion->lastMessage();
         if ( -1 == $i_lastMessageID)
         {
@@ -40,6 +42,7 @@ if ($s_action == 'Envoyer message')
     }
     else
     {
+        echo 'c';
         header('Location: ../view/pageDiscussionV.php?etat=error&discussionId=' .$i_discussionId);
     }
 }
