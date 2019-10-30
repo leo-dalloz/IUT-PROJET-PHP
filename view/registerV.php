@@ -16,7 +16,7 @@
     else if ($s_error == 'email')
         $s_error = 'L\'email que vous avez choisi possède déjà un compte associé.';
     else if ($s_error == 'wrongPwd')
-        $s_error = 'Le mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule et un chiffre';
+        $s_error = 'Le mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule et un chiffre.';
     else
         $s_error = '';
 

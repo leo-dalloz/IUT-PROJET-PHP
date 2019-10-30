@@ -46,7 +46,7 @@
 
 
                 <div id="SubmitContainer">
-                    <input id="submitButton" name="loginn" type="submit" value="Se connecter">
+                    <input id="submitButton" name="login" type="submit" value="Se connecter">
                 </div>
             </form>
 
