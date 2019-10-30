@@ -62,8 +62,8 @@ footer{
     flex-direction : column;
 }
 
-#LConvContainer ul:nth-child(odd) {
-    background-color : rgba(50, 50, 50, 0.2);
+#LConvContainer .buttonLConv:nth-child(odd) {
+    background-color : rgba(200, 200, 200, 0.2);
 }
 
 
@@ -197,7 +197,7 @@ footer{
     height : 50px;
 
     background : none;
-    color : white;
+    color : #ff793f;
 
     border : none;
     font-size : 30px;
