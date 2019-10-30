@@ -5,8 +5,6 @@ $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
-
-echo $D_discussion->getState() . '<br>';
 if ($s_action == 'Envoyer message')
 {
     if (! $D_discussion->getState())
@@ -17,7 +15,7 @@ if ($s_action == 'Envoyer message')
         && str_word_count($s_contents,0,'123456789') != 0)
     {
 
-        $i_lastMessageID = $D_discussion->LastMessage();
+        $i_lastMessageID = $D_discussion->lastMessage();
         if ( -1 == $i_lastMessageID)
         {
             if(1 == $D_discussion->canOpenDiscussion())
@@ -36,7 +34,6 @@ if ($s_action == 'Envoyer message')
         }
         if ( ! (strpos($s_contents,'.') == FALSE))
         {
-//                echo strpos($s_contents,'.');
             $D_discussion->closeAMessage();
         }
         header('Location: ../view/pageDiscussionV.php?etat=' . 'message envoyé' . '&discussionId=' . $i_discussionId);
