@@ -12,7 +12,7 @@
 
     $s_token   = $_GET['token'];
     /*
-      si le token n'existe oas dans la bd c'est que la personne essaye d'acceder à
+      si le token n'existe pas dans la bd c'est que la personne essaye d'acceder à
       la page avec un token au hasard ou alors il a dépassé le temps du token. pas sympa
     */
     if(!verifToken($s_token))

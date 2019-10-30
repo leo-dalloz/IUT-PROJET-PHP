@@ -12,7 +12,7 @@
 
 
       $s_token  = md5(uniqid(mt_rand(100000,999999)));
-      $boundary = uniqid('np');
+      $boundary = uniqid(mt_rand(1,1000));
 
       $mail1    = '../view/email1.html';
       $mail2    = '../view/email2.html';
