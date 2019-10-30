@@ -2,7 +2,7 @@
 
 
 
-    if (isset($s_surname) AND isset($s_name) AND isset($s_pseudo) AND isset($s_email) AND isset($d_birth) AND isset($s_pwd) AND isset($s_pwd2) AND isset($s_gender))
+    if (isset($_POST['Surname']) AND isset($_POST['Name']) AND isset($_POST['Pseudo']) AND isset($_POST['Email']) AND isset($_POST['Birth']) AND isset($_POST['Pwd']) AND isset($_POST['Pwd1']) AND isset($_POST['Gender']))
     {
         $s_surname = $_POST['Surname'];
         $s_name = $_POST['Name'];
@@ -10,10 +10,10 @@
         $s_email = $_POST['Email'];
         $d_birth = $_POST['Birth'];
         $s_pwd = $_POST['Pwd'];
-        $s_pwd2 = $_POST['Pwd1'];
+        $s_pwd1 = $_POST['Pwd1'];
         $s_gender = $_POST['Gender'];
 
-        if ($s_pwd != $s_pwd2)
+        if ($s_pwd != $s_pwd1)
         {
             header('Location: ../view/registerV.php?error=pwd');
         }
