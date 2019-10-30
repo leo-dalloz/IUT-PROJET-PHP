@@ -9,17 +9,17 @@
     $s_token = $_GET['token'];
   }
   else if ($step = 'errmdp') {
-    $s_msg = 'vous ne respectez pas les règles concernant le mot de passe';
+    $s_msg = 'vous ne respectez pas les critères de sécurité';
     $s_token = $_GET['token'];
   }
 
 
-/*  $title = 'Nouveau mot de passe';
-  $style = '../assets/css/';
-  $style_theme = '../assets/css/theme/day.css';
+  $title        = 'Nouveau mot de passe';
+  $style        = '../assets/css/generatePwd.css';
+  $style_common = '../assets/css/connexion-inscription.css';
 
 
-  	ob_start()*/
+  	ob_start()
 ?>
 
 <main>
@@ -34,8 +34,8 @@
 </main>
 
 <?php
-/*
+
 	$content = ob_get_clean();
-	require ('../template.php');
-  */
+	require('../template_empty.php');
+
 ?>
