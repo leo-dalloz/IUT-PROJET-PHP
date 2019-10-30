@@ -15,7 +15,7 @@
 <body>
 <header>
     <div id="HeaderContainer">
-        <a id="LogoHeaderContainer" href="./view/indexV.php">
+        <a id="LogoHeaderContainer" href="view/indexV.php">
             <img id="LogoHeader" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
 
