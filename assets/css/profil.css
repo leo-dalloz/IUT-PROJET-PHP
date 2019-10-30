@@ -66,6 +66,8 @@
 
     font-size : 30px;
 
+	color : #212121;
+
     transition : 1s;
 }
 .CategLink:hover {
@@ -96,6 +98,43 @@
     background-image: url("https://static.makeuseof.com/wp-content/uploads/2015/11/perfect-profile-picture-all-about-face.jpg");
     background-position: center center;
     background-size : cover;
+}
+
+
+footer {
+    position: absolute;
+    bottom : 0;
+}
+
+#ErrorContainer {
+    width : 80%;
+    
+    padding : 10px;
+
+    background-color : #ff5e57;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    font-size : 17px;
+
+    color : white;
+}
+
+
+#SuccessContainer {
+    width : 80%;
+    
+    padding : 10px;
+
+    background-color : #6ab04c;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    font-size : 17px;
+
+    color : white;
 }
 
 
