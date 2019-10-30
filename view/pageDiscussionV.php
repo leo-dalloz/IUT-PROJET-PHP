@@ -34,7 +34,6 @@
 
 <?php
 require '../utils.inc.php';
-echo 'lol';
 require '../controller/pageDiscussionC.php';
 
 $i_numDiscussion = $_GET['discussionId'];
