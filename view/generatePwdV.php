@@ -1,4 +1,10 @@
 <?php
+
+
+
+
+  if(!isset($_GET['step']) || empty($_GET['step']))
+    header("Location: accesInterdit.html");
   $step    = $_GET['step'];
 
   if ($step == 'hello'){
