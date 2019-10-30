@@ -64,7 +64,7 @@ ob_start();
         <div id="SendMessageContainer">
             <form id="formMessage" action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post" >
                 <input id="contentInput" type="text" name="contents" placeholder="Message">
-                <input id="submitButton" type="submit" name="sendMessage"><i class="fab fa-telegram-plane"></i></input>
+                <button id="submitButton" type="submit" name="action" value="sendMessage"><i class="fab fa-telegram-plane"></i></button>
             </form>
         </div>
     </section>
