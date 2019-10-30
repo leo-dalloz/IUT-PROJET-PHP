@@ -1,10 +1,5 @@
 <?php
 
-
-
-
-  if(!isset($_GET['step']) || empty($_GET['step']))
-    header("Location: accesInterdit.html");
   $step    = $_GET['step'];
 
   if ($step == 'hello'){
@@ -17,8 +12,6 @@
   else if($step == 'mdp') {
     $s_msg = 'mot de passe modifié';
   }
-  else
-    header("Location: ../view/accesInterdit.html");
 
 
   $title = 'Nouveau mot de passe';
