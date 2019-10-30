@@ -5,7 +5,6 @@ use mysql_xdevapi\BaseResult;
 require '../model/pageDiscussionM.php';
 $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
-echo ':' . $s_action . '<br>';
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
 if ($s_action == 'sendMessage')
@@ -18,7 +17,6 @@ if ($s_action == 'sendMessage')
         && str_word_count($s_contents,0,'123456789') != 0)
     {
         $i_lastMessageID = $D_discussion->lastMessage();
-        echo $i_lastMessageID;
         if ( -1 == $i_lastMessageID)
         {
             if(1 == $D_discussion->canOpenDiscussion())
@@ -46,10 +44,7 @@ if ($s_action == 'sendMessage')
         header('Location: ../view/pageDiscussionV.php?etat=error&discussionId=' .$i_discussionId);
     }
 }
-else
-{
-    echo 'non';
-}
+
 
 function getTabDiscussion()
 {
