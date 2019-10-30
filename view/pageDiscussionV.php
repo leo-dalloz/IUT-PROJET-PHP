@@ -35,6 +35,7 @@
 <?php
 require '../utils.inc.php';
 require '../controller/pageDiscussionC.php';
+echo 'lol';
 $i_numDiscussion = $_GET['discussionId'];
 if (!isset($_GET['etat']) || !isset($_GET['discussionId'])){
     header('Location: indexV.php');
