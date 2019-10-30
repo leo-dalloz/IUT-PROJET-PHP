@@ -25,7 +25,7 @@
         </div>
         <div id="PageTitleContainer">
           <h1 id="PageTitle"> Mot de passe oublié </h1>
-          <h2 id="message"> msg  </h2>
+          <h2 id="message"> <?= $msg ?>  </h2>
         </div>
         <div id="FormMailContainer">
           <form  action = "../controller/newPwdC.php" method="post" id="FormMail">
