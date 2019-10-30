@@ -1,5 +1,6 @@
 <?php
 require '../model/pageDiscussionM.php';
+require '../model/indexM.php';
 $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
 $i_discussionId = $_GET['discussionId'];
@@ -44,4 +45,9 @@ if ($s_action == 'Envoyer message')
     {
         header('Location: ../view/pageDiscussionV.php?etat=error&discussionId=' .$i_discussionId);
     }
+}
+
+function getTabDiscussion()
+{
+    return getDiscussions();
 }
