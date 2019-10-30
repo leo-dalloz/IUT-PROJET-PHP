@@ -10,7 +10,7 @@
     */
     function sendMail($s_mail) {
 
-
+/*
       $s_token  = md5(uniqid(mt_rand(100000,999999)));
       $boundary = uniqid(mt_rand(1,1000));
 
@@ -38,7 +38,8 @@
       $message .= fread($handle2,filesize($mail2));
 
       $message .= "\r\n\r\n--" . $boundary . "--";
-
+*/
+      $message = 'debug';
       addToken($s_token,$s_mail);
       mail($s_mail,$s_obj,$message, $headers);
 
