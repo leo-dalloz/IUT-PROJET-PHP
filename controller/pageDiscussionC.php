@@ -18,6 +18,7 @@ if ($s_action == 'sendMessage')
         && str_word_count($s_contents,0,'123456789') != 0)
     {
         $i_lastMessageID = $D_discussion->lastMessage();
+        echo $i_lastMessageID;
         if ( -1 == $i_lastMessageID)
         {
             if(1 == $D_discussion->canOpenDiscussion())
