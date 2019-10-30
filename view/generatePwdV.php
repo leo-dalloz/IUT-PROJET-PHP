@@ -17,6 +17,9 @@
   else if($step == 'mdp') {
     $s_msg = 'mot de passe modifié';
   }
+  else
+    header("Location: accesInterdit.html");
+
 
   $title = 'Nouveau mot de passe';
   $style = '../assets/css/';
