@@ -33,10 +33,13 @@
                     <input type="checkbox" name="rememberC" id="rememberC">
                     <label id="rememberCLabel" for="rememberC">Se souvenir de moi</label>
                 </div>
-                <?php if (isset($_GET['step']) && $_GET['step'] == 'error') {?>
+                <?php if (isset($_GET['step'])) {?>
                     <div id="ErrorContainer">
                         <p id="Error">
-                            <?= 'L\'identifiant et le mot de passe ne correspondent pas' ?>
+                            <?php if ($_GET['step'] == 'error')
+                                echo 'L\'identifiant et le mot de passe ne correspondent pas.';
+                            else if ($_GET['step'] == 'missing')
+                                echo 'Vous avez oublié un des champs.'?>
                         </p>
                     </div>
                 <?php } ?>
