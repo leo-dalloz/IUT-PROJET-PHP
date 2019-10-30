@@ -11,6 +11,7 @@ if (!isset($_GET['etat']) || !isset($_GET['discussionId'])){
 $tab_discussions = getTabDiscussion();
 $title = 'Discussion ' .$D_discussion->getName().' | Freenote';
 $style = '../assets/css/discussion.css';
+$style_theme = '../assets/css/theme/day.css';
 ob_start();
 ?>
 
