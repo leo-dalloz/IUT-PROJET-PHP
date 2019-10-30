@@ -18,7 +18,7 @@
     $s_msg = 'mot de passe modifié';
   }
   else
-    header("Location: accesInterdit.html");
+    header("Location: ../view/accesInterdit.html");
 
 
   $title = 'Nouveau mot de passe';
