@@ -8,6 +8,11 @@
     $s_msg = 'les 2 mots de passes entrés sont differenets';
     $s_token = $_GET['token'];
   }
+  else if ($step = 'errmdp')
+    $s_msg = 'vous ne respectez pas les règles concernant le mot de passe';
+    $s_token = $_GET['token'];
+  }
+
 
 /*  $title = 'Nouveau mot de passe';
   $style = '../assets/css/';
