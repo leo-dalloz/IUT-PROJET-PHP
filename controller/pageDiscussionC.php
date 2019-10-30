@@ -45,7 +45,7 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
         header('Location: ../view/pageDiscussionV.php?etat=error&discussionId=' .$i_discussionId);
     }
 }
-if($_SESSION['login'] != 'ok')
+if ($s_action == 'sendMessage' AND $_SESSION['login'] != 'ok')
 {
     header('Location: ../view/pageDiscussionV.php?etat=pasConnecté&discussionId=' .$i_discussionId);
 }
