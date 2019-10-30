@@ -41,8 +41,8 @@
       addToken($s_token,$s_mail);
       mail($s_mail,$s_obj,$message, $headers);
 
-      // fclose($handle1);
-      // fclose($handle2);
+      fclose($handle1);
+      fclose($handle2);
     } // sendMail()
 
     if (isset($_POST['mail'])) {

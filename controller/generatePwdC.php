@@ -1,7 +1,5 @@
 <?php
     require ('../model/generatePwdM.php');
-
-
     /*
       si il n'y pas de token c'est que quelqu'un essaye d'acceder à la page de
       modification de passe sans avoir reçu de mail
