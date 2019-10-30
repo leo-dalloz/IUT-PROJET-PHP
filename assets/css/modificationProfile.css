@@ -1,0 +1,81 @@
+/* 
+    modificationProfile.css
+*/
+
+footer {
+    position: absolute;
+    bottom : 0;
+}
+
+main {
+    min-width : auto;
+}
+
+input, select {
+    width : 80%;
+
+    padding : 10px 20px 10px 20px;
+
+    background : none;
+
+    border : none;
+    border: 1px solid #ff793f;
+    border-radius : 10px;
+    font-size: 19px;
+	
+}
+input[type = 'text'] {
+    margin : 0 0 25px 0;
+}
+input[type = 'text']:focus, input[type = 'password']:focus {
+    outline: none;
+}
+
+#linkBack {
+    color : #212121;
+}
+
+#submitButton {
+    padding : 7px 15px 7px 15px;
+
+    width : 100px;
+    height : 100%;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    border-radius : 20px;
+    background-color : #ff793f;
+
+    font-size : 22px;
+
+    border : none;
+}
+#submitButton:hover {
+    background-color : #EAB543;
+    cursor : pointer;
+
+    transition : 0.2s;
+}
+
+#HeadController {
+    margin-bottom : 50px;
+}
+
+#form {
+    display : flex;
+}
+
+#ErrorContainer {
+    width : 80%;
+    
+    padding : 10px;
+
+    background-color : #ff5e57;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    font-size : 17px;
+}
+
