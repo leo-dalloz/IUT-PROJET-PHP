@@ -19,9 +19,6 @@ main > * {
     color : white;
 }
 
-/* 
-    Discussion
-*/
-#submitButton >i {
-    color : #212121;
+.categLink > i {
+	color : #212121;
 }
