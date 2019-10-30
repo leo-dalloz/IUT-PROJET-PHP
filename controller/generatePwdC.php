@@ -29,7 +29,7 @@
         header('Location: ../view/generatePwdV.php?step=errconf&token='. $s_token);
       else {
         // le mdp doit contenir une majuscule, un chiffre, une minuscule et faire au moins 8 caractères
-        if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#', $s_newPwd) && len($s_newPwd) > 8)
+        if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])#', $s_newPwd) && strlen($s_newPwd) > 8)
 	      {
           $s_newPwd = password_hash($s_newPwd,PASSWORD_DEFAULT);
           changePwd($s_token,$s_newPwd);
