@@ -20,6 +20,9 @@
             }
             else
             {
+                // le mdp doit contenir une majuscule, un chiffre, une minuscule et faire au moins 8 caractères
+                if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])#', $s_pwd) && strlen($s_pwd) > 8)
+                    header('Location: ../view/registerV.php?error=wrongPwd');
                 require '../model/checkM.php';
 
                 require '../model/registerM.php';
@@ -33,7 +36,7 @@
 
                     registration($newUser);
 
-                    header('Location: loginC.php');
+                    header('Location: ./loginC.php');
 
                 }
                 else if (!checkPseudo($s_pseudo))
