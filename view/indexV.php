@@ -9,29 +9,39 @@
 	ob_start();
 ?>
 <main>
-    <aside>
-        <?php
-        foreach ($tab_discussions as $value)
-        {
-            ?>
-            <a href="pageDiscussionV.php?etat=login&discussionId=<?echo $value->getDiscussionId()?>"id="lien_salon_1">
-                <p>  <?echo $value->getName()?> <br>
-                    <?$b_isOuvert = $value->getState()?>
-                    status :<span id="span_status_discussion_<?echo ($b_isOuvert) ? 'ouvert' : 'ferme' ?>">
-                              <? echo ($b_isOuvert) ? 'Ouvert' : 'Fermé';?> </span> <br>
-                    messages :   <?echo $value->getNbMessages()?><br>
-                    nbWordsMax: <?echo $value->getNbMaxWords() ?><br>
-                    nbLike: <?echo $value->getNbLike() ?></p>
-            </a>
-
-            <?php
-        }
-        ?>
-        <form action="../controller/indexC.php" method="post" >
-            <input type="text" name="nomDiscussion" placeholder="Nom de la discussion"><br/>
-            <input type="submit" name="action" value="createDiscussion">
-        </form>
-    </aside>
+    <section id="ListConversationContainer">
+        <p id="ListConversation">
+            Conversations
+        </p>
+        <div id="LConvContainer">
+            <?php foreach ($tab_discussions as $value) { ?>
+                <button class="buttonLConv" onclick="window.location.href='pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0'">
+                    <ul class="LConv">
+                        <div class="FirstLine">
+                            <li>
+                                <a href="pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
+                            </li>
+                            <li>
+                                <?= $value->getNbMessages() ?> Messages
+                            </li>
+                        </div>
+                        <div class="SecondLine">
+                            <li>
+                                <?= $value->getNbMaxWords()?> Mots MAX
+                            </li>
+                            <li>
+                                <?php $b_isOuvert = $value->getState()?>
+                                <p class="<?= ($b_isOuvert) ? 'Open' : 'Close' ?>"><?= ($b_isOuvert) ? 'Ouverte' : 'Fermée' ?></p>
+                            </li>
+                            <li >
+                                <?= $value->getNbLike() ?> <i class="fas fa-thumbs-up"></i>
+                            </li>
+                        </div>
+                    </ul>
+                </button>
+            <?php }?>
+        </div>
+    </section>
 </main>
 
 
@@ -39,3 +49,4 @@
 	$content = ob_get_clean();
 	require ('../template.php');
 ?>
+
