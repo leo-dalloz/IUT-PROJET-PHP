@@ -1,10 +1,11 @@
 <?php
+echo 'lol';
 require '../model/pageDiscussionM.php';
 require '../model/indexM.php';
 $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
 $i_discussionId = $_GET['discussionId'];
-echo 'lol';
+
 $D_discussion = new Discussion($i_discussionId);
 
 echo $D_discussion->getState() . '<br>';
