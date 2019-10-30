@@ -21,7 +21,7 @@
 
       <main>
         <div id="LogoMainContainer">
-            <img src="./assets/images/test2.png" id="LogoMain">
+            <img src="../assets/images/test2.png" id="LogoMain">
         </div>
         <div id="PageTitleContainer">
           <h1 id="PageTitle"> Mot de passe oublié </h1>
@@ -38,6 +38,6 @@
         </div>
       </main>
 <?php
-      $content = ob_get_clean;
+      $content = ob_get_clean();
       require('../template_empty.php');
 ?>
