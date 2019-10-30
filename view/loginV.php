@@ -26,7 +26,7 @@
 
                 <div id="PwdContainer">
                     <input type="password" name="Pwd" placeholder="Mot de passe"/> <br/>
-                    <a id="ForgotPwdLink" href="">Mot de passe oublié ?</a>
+                    <a id="ForgotPwdLink" href="../controller/newPwdC.php">Mot de passe oublié ?</a>
                 </div>
 
                 <div id="RememberContainer">
