@@ -7,13 +7,17 @@
 
     font-family: 'Roboto', sans-serif;
 }
-
+table {border-collapse:collapse;}
 a {
     text-decoration: none;
 }
 
 li {
     list-style : none;
+}
+
+td {
+    padding : 5px;
 }
 
 #LDiscussionContainer {
@@ -42,8 +46,10 @@ li {
 #LDiscussionContainer:hover {
     left : 0;
 
+
     transition : 1s;
 }
+
 
 #LDTitle {
     padding : 10px;
@@ -80,15 +86,26 @@ li {
 
     display : flex;
     flex-direction : column;
+    align-items: center;
     
+}
+
+#LDiscussionContainer ::-webkit-scrollbar {
+    width: 9px;
+}
+#LDiscussionContainer ::-webkit-scrollbar-track {
+    background: #888;
+}
+#LDiscussionContainer ::-webkit-scrollbar-thumb {
+    background: #ff5252;
+}
+#LDiscussionContainer ::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 
 .Discussion {
-    display : flex;
-    flex-direction : row;
-    justify-content: space-around;
-    flex-wrap : wrap;
+    width:  100%;
 
     padding-top : 20px;
     padding-bottom : 20px;
@@ -96,6 +113,9 @@ li {
     cursor : default;
 
     font-size : 17px;
+}
+.Discussion > tr {
+    margin-bottom : 10px;
 }
 
 .Discussion:hover {
@@ -113,17 +133,47 @@ li {
     color : #ff5252;
 }
 
+#LDiscussion .Discussion:nth-child(odd) {
+    background-color : rgba(200,200,200,0.1);
+}
+
+td > a {
+    color : #ff793f;
+}
+td > a {
+    color: #ec7c4c;
+}
+
 #DescriptionTitle {
     font-size : 50px;
 
     font-family : 'Archivo Black', sans-serif;
+    text-align : center;
 
 }
 #DescriptionText {
-    text-align: justify;
-    font-size : 20px;
-
+    font-size: 25px;
+    text-align: center;
     padding : 20px;
+}
+
+
+
+/* 
+    button return top
+*/
+#returnTopContainer {
+    position : fixed;
+    bottom : 10px;
+    right : 10px;
+
+    font-size : 40px;
+}
+#returnTopContainer > a > i {
+    color: #ff793f;
+}
+#returnTopContainer:hover > a > i {
+    animation: flottant 1s ease-in-out 0s infinite alternate-reverse;
 }
 
 /* 
@@ -134,10 +184,7 @@ li {
     align-items: stretch;
 }
 
-#FirstPartImage {
-    width : 500px;
-    height : auto;
-}
+
 #DescriptionButtons {
     display : flex;
     flex-direction : row;
@@ -159,14 +206,91 @@ li {
     background-color : #ec7c4c;
 }
 
+/* 
+    secondPartSection
+*/
+#secondPartSection {
+    width : 100%;
+
+    margin-top : 50px;
+    margin-bottom : 50px;
+
+    background-image : url("../images/bgIndex.jpg");
+    background-repeat : no-repeat;
+}
+
+#listArg {
+    margin-top : auto;
+    margin-bottom : auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color : white;
+    font-size : 25px;
+
+    box-shadow: 0 0 15px rgba(21, 21, 21, 0.8);
+}
+.Arg {
+    padding-bottom : 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.Arg > i {
+    font-size : 35px;
+    padding-right : 20px;
+}
+
+
+#responsiveSection {
+    margin-top : 50px;
+    margin-bottom : 50px;
+
+    display : flex;
+    flex-direction : row;
+    justify-content: center;
+    align-items: center;
+
+}
+#responsiveTel {
+    width: 320px;
+}
+#responsiveText {
+    font-size : 40px;
+    font-family : 'Archivo Black' sans-serif;
+    font-weight: 700;
+}
+
+
+
 @media screen and (max-width : 600px) {
     #LDiscussionContainer {
-        width : 100%;
-        left : -90%;
+        width : 80%;
+        left : -70%;
     }
 
     #LDiscussionContainer:hover {
         left : 0;
     }
+
+    .Discussion {
+        font-size : 10px;
+    }
+
+    #responsiveSection {
+        flex-direction: column;
+    }
 }
 
+
+@keyframes flottant {
+    0% {
+        margin-bottom: 20px;
+    }
+    100% {
+        margin-bottom : 0px;
+    }
+}
