@@ -56,12 +56,9 @@ class Discussion
         return $i_lastMessage;
     }
 
-    public function show()
+    public function getMessages()
     {
-        foreach ($this->tab_myMessages as $value)
-        {
-            echo $value->getContents() . '<br>';
-        }
+        return $this->tab_myMessages;
     }
     public function getNbMessages()
     {
