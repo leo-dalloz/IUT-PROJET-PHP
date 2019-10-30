@@ -23,8 +23,14 @@
 ?>
 
 <main>
-  <h1> nouveau mot de passe </h1>
-  <?= $s_msg ?>
+  <div id="LogoMainContainer">
+      <img src="../assets/images/test2.png" id="LogoMain">
+  </div>
+  <div id="PageTitleContainer">
+    <div id="LogoMainContainer">
+      <h1> nouveau mot de passe </h1>
+      <h2> <?= $s_msg ?> </h2>
+    </div>
   <form  action="../controller/generatePwdC.php?token=<?= $s_token ?>"  method="post">
     <input type="password" name="newPwd" placeholder="nouveau mot de passe"><br>
     <p> Confirmez votre mot de passe <br></p>
