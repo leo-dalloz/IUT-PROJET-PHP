@@ -28,28 +28,33 @@
                                 'gender',
                                 'password'
                             );
-    if (!in_array($s_action, $a_editable_user)) {
-        echo "error l.25";
-        die();
-    }
-    
+                            
     switch ($s_action) {
         case 'nickname' :
             if ($_POST['nickname'] != null) {
                 changePseudo($_POST['nickname']);
                 $_SESSION['user']->setMyPseudo($_POST['nickname']);
+                header ('location: ../view/profileV.php?success=Le profil a été modifié avec succès');
+            } else {
+                header ('location: ../view/modificationProfileV.php?action=nickname&error=Pseudo invalide');
             }
             break;
         case 'surname' :
             if ($_POST['surname'] != NULL) {
                 changeSurname($_POST['surname']);
                 $_SESSION['user']->setMySurname($_POST['surname']);
-            }
+                header ('location: ../view/profileV.php?success=Le profil a été modifié avec succès');
+            } else {
+		        header ('location: ../view/modificationProfileV.php?action=surname&error=Nom de famille invalide');
+	        }
             break; 
         case 'firstname' :
             if ($_POST['firstname'] != NULL) {
                 changeName($_POST['firstname']);
                 $_SESSION['user']->setMyName($_POST['firstname']);
+                header ('location: ../view/profileV.php?success=Le profil a été modifié avec succès');
+            }else {
+		        header ('location: ../view/modificationProfileV.php?action=firstname&error=Prénom invalide');
             }
             break; 
         case 'birthday' :
@@ -60,25 +65,22 @@
             if ($_POST['birthday'] != null && ($d_actualdate->diff($d_postdate)->format('%y') >= 13)) {
                 changeBirth($_POST['birthday']);
                 $_SESSION['user']->setMyBirth($d_birth);
+                header ('location: ../view/profileV.php?success=Le profil a été modifié avec succès');
             } else {
-		echo 'erreur vous avez moins de 13 ans';                
-            }
-            break;
-        case 'password' :
-            if ($_POST['password'] != NULL) {
-                $s_pwd = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                changePassword($s_pwd);
-                $_SESSION['user']->setMyPassword($s_pwd);
-            }
+		        header ('location: ../view/modificationProfileV.php?action=birthday&error=Date vide ou vous ne pouvez pas avoir avoir moins de 13 ans');
+	        }
             break;
         case 'gender' :
-	    if ($_POST['gender'] != NULL && ($_POST['gender'] == 'Homme' || $_POST['gender'] == 'Femme')) {
-		changeGender($_POST['gender']);
-		$_SESSION['user']->setMyGender($_POST['gender']);
-	    }
-
+            if ($_POST['gender'] != NULL && ($_POST['gender'] == 'Homme' || $_POST['gender'] == 'Femme')) {
+                changeGender($_POST['gender']);
+                $_SESSION['user']->setMyGender($_POST['gender']);
+                header ('location: ../view/profileV.php?success=Le profil a été modifié avec succès');
+            } else {
+                header ('location: ../view/modificationProfileV.php?action=gender&error=Genre vide ou invalide');
+            }
+            break;
         default:
-            # code...
+            header ('location: ../view/modificationProfileV.php?action=gender&error=Champs non modifiable');
             break;
     }
 ?>
