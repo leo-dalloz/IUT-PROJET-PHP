@@ -1,16 +1,12 @@
 <?php
 
   $step    = $_GET['step'];
-
   if ($step == 'hello'){
     $s_msg = 'veuillez entrer votre nouveau mot de passe';
   }
   else if ($step == 'errconf') {
     $s_msg = 'les 2 mots de passes entrés sont differenets';
     $s_token = $_GET['token'];
-  }
-  else if($step == 'mdp') {
-    $s_msg = 'mot de passe modifié';
   }
 
 /*  $title = 'Nouveau mot de passe';
