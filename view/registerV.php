@@ -60,7 +60,7 @@
                 <?php echo $s_error; ?>
 
                 <div id="SubmitContainer">
-                    <input id="submitButton" type="submit" value="S'inscrire">
+                    <input id="submitButton" name="register" type="submit" value="S'inscrire">
                 </div>
             </form>
 
