@@ -13,13 +13,12 @@
     $s_msg = 'mot de passe modifié';
   }
 
-
-  $title = 'Nouveau mot de passe';
+/*  $title = 'Nouveau mot de passe';
   $style = '../assets/css/';
   $style_theme = '../assets/css/theme/day.css';
 
 
-  	ob_start()
+  	ob_start()*/
 ?>
 
 <main>
@@ -34,6 +33,8 @@
 </main>
 
 <?php
+/*
 	$content = ob_get_clean();
 	require ('../template.php');
+  */
 ?>
