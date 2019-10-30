@@ -1,9 +1,9 @@
 <?php
-	$title = 'Freenote';
-	$style = '../assets/css/index.css';
-	$style_theme = '../assets/css/theme/day.css';
-
     require '../controller/indexC.php';
+    $title = 'Freenote';
+    $style = '../assets/css/index.css';
+    $style_theme = '../assets/css/theme/day.css';
+    session_start();
     $tab_discussions = getTabDiscussion();
 	ob_start();
 ?>

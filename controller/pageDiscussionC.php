@@ -1,13 +1,14 @@
 <?php
 
 use mysql_xdevapi\BaseResult;
-
 require '../model/pageDiscussionM.php';
+session_start();
 $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
-if ($s_action == 'sendMessage')
+
+if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
 {
     if (! $D_discussion->getState())
     {
