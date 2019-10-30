@@ -45,7 +45,7 @@
         $result = $dbResult->fetch_assoc();
 
         if ($result['email'] != NULL)
-            return 1;
-        else
             return 0;
+        else
+            return 1;
     }
