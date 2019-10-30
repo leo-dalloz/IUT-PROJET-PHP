@@ -1,5 +1,3 @@
-
-
 <?php
 require '../utils.inc.php';
 require '../controller/pageDiscussionC.php';
@@ -9,6 +7,7 @@ if (!isset($_GET['etat']) || !isset($_GET['discussionId'])){
     header('Location: indexV.php');
 }
 $tab_discussions = getTabDiscussion();
+
 $title = 'Discussion ' .$D_discussion->getName().' | Freenote';
 $style = '../assets/css/discussion.css';
 $style_theme = '../assets/css/theme/day.css';

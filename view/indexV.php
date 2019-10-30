@@ -5,7 +5,6 @@
 
     require '../controller/indexC.php';
     $tab_discussions = getTabDiscussion();
-
 	ob_start();
 ?>
 <main>
