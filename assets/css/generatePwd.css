@@ -28,7 +28,7 @@
 }
 
 input[type = 'password'], input[type = 'text']  {
-    width : 80%;
+    width : 100%;
 
     padding : 10px 0 10px 0;
 
