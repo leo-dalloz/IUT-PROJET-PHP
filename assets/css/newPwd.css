@@ -59,6 +59,13 @@ input[type = 'text']:focus {
     outline: none;
 }
 
+#submitContainer {
+  display: flex;
+  align-items: center;
+  margin: 20px;   
+}
+
+
 
 
 
