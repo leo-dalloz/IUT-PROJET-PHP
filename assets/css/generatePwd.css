@@ -13,20 +13,6 @@
 
 
 
-
-/*
-    PageTitleContainer & components
-*/
-#PageTitleContainer {
-    width: 100%;
-    display : flex;
-    flex-direction : column;
-    align-items : center;
-}
-#PageTitle {
-    margin-bottom : 0px;
-    font-size : 30px;
-}
 #message {
   margin-bottom : 0px;
   padding: 15px;
