@@ -47,11 +47,15 @@ function addLike($i_discussionId, $i_userId)
     $dbLink = dbConnect();
     $query = "INSERT INTO LikeDiscussion (discussionId, userID) VALUES ('$i_discussionId', '$i_userId')";
     testError($dbLink,$query);
+    $query = 'UPDATE Discussion SET nblike = nbLike + 1';
+    testError($dbLink,$query);
 }
 
 function removeLike ($i_discussionId, $i_userId)
 {
     $dbLink = dbConnect();
-    $query = "DELETE FROM LikeDiscussion WHERE discussionId = '$i_discussionId' AND userID = '$i_userId')";
+    $query = "DELETE FROM LikeDiscussion WHERE discussionId = '$i_discussionId' AND userID = '$i_userId'";
+    testError($dbLink,$query);
+    $query = 'UPDATE Discussion SET nblike = nbLike - 1';
     testError($dbLink,$query);
 }
