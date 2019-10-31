@@ -33,9 +33,10 @@
   <div id="FormPwdContainer">
     <form  action="../controller/generatePwdC.php?token=<?= $s_token ?>"  method="post">
       <input type="password" name="newPwd" placeholder="nouveau mot de passe"><br>
-      <p> Confirmez votre mot de passe <br></p>
       <input type="password" name="confPwd" placeholder="confirmer mot de passe"><br>
-      <input type="submit" name="action" value="envoyer"><br>
+      <div id="submitContainer">
+        <input type="submit" name="action" value="envoyer" id="submitButton"><br>
+      </div>
     </form>
   </div>
 </main>
