@@ -22,8 +22,12 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
         {
             if(1 == $D_discussion->canOpenDiscussion())
             {
-                createMessage('0001',$i_discussionId, $s_contents);
-                addToMessage($s_contents, $i_lastMessageID);
+                createMessage('0001',$i_discussionId,$s_contents);
+                if ( strpos($s_contents,'.') == TRUE)
+                {
+                    $i_lastMessageID = $D_discussion->lastMessage();
+                    $D_discussion->closeAMessage();
+                }
             }
             else
             {
