@@ -23,9 +23,8 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
             if(1 == $D_discussion->canOpenDiscussion())
             {
                 createMessage('0001',$i_discussionId,$s_contents);
-                if ( strpos($s_contents,'.') == TRUE)
+                if ( !( strpos($s_contents,'.') == FALSE))
                 {
-                    $i_lastMessageID = $D_discussion->lastMessage();
                     $D_discussion->closeAMessage();
                 }
             }
@@ -35,7 +34,7 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
                 header('Location: ../view/pageDiscussionV.php?etat=' . 'discussion full' . '&discussionId=' . $i_discussionId);
             }
         }
-        else if ( strpos($s_contents,'.') == TRUE)
+        else if ( !( strpos($s_contents,'.') == FALSE))
         {
             addToMessage($s_contents, $i_lastMessageID);
             $D_discussion->closeAMessage();
