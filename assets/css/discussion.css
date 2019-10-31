@@ -33,12 +33,12 @@ footer{
 #ListConversationContainer {
     width : 33%;
     max-height : 100vh;
-    
+
     background-color : rgba(100,100,100,0.1);
 
     display : flex;
     flex-direction : column;
-    
+
 
     border-right : 3px solid #ff793f;
 
@@ -171,8 +171,8 @@ footer{
 
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     position : relative;
+    align-items: flex-end;
 }
 
 #SendMessageContainer {
@@ -185,6 +185,7 @@ footer{
     position: absolute;
     bottom : 75px;
 }
+
 
 #formMessage {
     width : 100%;
@@ -204,7 +205,7 @@ footer{
 }
 #submitButton:hover > i {
     color : #ff793f;
-    
+
     cursor : pointer;
     transition : 0.2s;
 }
@@ -217,7 +218,7 @@ footer{
 
     background : none;
     background-color : rgba(50,50,50,0.2);
-    
+
     border : none;
     border : 1px solid white;
     border-radius: 20px;
@@ -236,6 +237,64 @@ footer{
     outline : none;
 }
 
+
+/*
+    headConversationContainer
+*/
+#headConversationContainer {
+    width : 100%;
+    height: auto;
+
+    padding-top : 10px;
+    padding-bottom : 10px;
+
+    border-bottom: 3px solid rgba(200,200,200,0.5);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#titleConversation {
+    font-size : 25px;
+    font-weight: 600;
+
+    text-align: center;
+
+}
+
+.likeButton {
+    margin-left : 10px;
+    padding : 5px;
+
+    background: none;
+    border:  none;
+    border-radius : 5px;
+
+    background-color  : #ff793f;
+    color : white;
+}
+.likeButton:hover {
+    background-color : #e66e3b;
+    cursor : pointer;
+}
+
+#LMessageContainer {
+    max-height : 70%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow-y : auto;
+}
+
+#likeContainer {
+    font-size : 15px;
+}
+
+
 /* 
     message
 */
@@ -246,7 +305,7 @@ footer{
 .line {
     margin : 5px;
     padding : 5px;
-    
+
     display : flex;
     flex-direction: row;
     flex-wrap : wrap;

@@ -15,7 +15,6 @@ $style = '../assets/css/discussion.css';
 $style_theme = '../assets/css/theme/day.css';
 ob_start();
 ?>
-
 <main>
     <section id="ListConversationContainer">
         <p id="ListConversation">
@@ -52,27 +51,42 @@ ob_start();
     </section>
 
     <section id="conversationContainer">
-        <?php $Messages = $D_discussion->getMessages();
-        foreach ($Messages as $message) {
-            ?>
-            <div id="listMessage">
-                <div class="line">
-                    <p class="message">
-                        <?= $message->getContents(); ?>
-                    </p>
+        <div id="headConversationContainer">
+            <p id="titleConversation">
+                <?= $D_discussion->getName(); ?>
+            </p>
+            <p id="likeContainer">
+                <?= $D_discussion->getNbLike(); ?>
+                likes
+                <button class="likeButton">
+                    Like <i class="fas fa-heart"></i>
+                </button>
+            </p>
+        </div>
+        <div id="LMessageContainer">
+            <?php $Messages = $D_discussion->getMessages();
+            foreach ($Messages as $message) {
+                ?>
+                <div id="listMessage">
+                    <div class="line">
+                        <p class="message">
+                            <?= $message->getContents(); ?>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        <?php } ?>
+                <?php
+            }
+            ?>
+        </div>
         <div id="SendMessageContainer">
             <form id="formMessage" action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post" >
                 <input id="contentInput" type="text" name="contents" placeholder="Message">
-                <button id="submitButton" type="submit" name="action" value="sendMessage"><i class="fab fa-telegram-plane"></i></button>
+                <button id="submitButton" type="submit" name="action"><i class="fab fa-telegram-plane"></i></button>
             </form>
         </div>
     </section>
 </main>
-
 <?php
 $content = ob_get_clean();
-require ('../template.php');
-?>
+require('../template.php');
+?>?>
