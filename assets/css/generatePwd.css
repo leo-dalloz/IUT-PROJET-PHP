@@ -17,6 +17,7 @@
   margin-bottom : 0px;
   padding: 15px;
   font-size : 20px;
+  text-align: center;
 }
 
 #FormPwdContainer {
@@ -38,6 +39,13 @@ input[type = 'password'], input[type = 'text']  {
 
     font-size: 19px;
 }
+
+#submitContainer {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
 
 
 /*
