@@ -1,0 +1,187 @@
+/* 
+    @title : general
+    @started on : 15/10/2019
+    @finished on : 15/10/2019
+*/
+
+/* 
+    Import font
+*/
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap');
+
+
+
+/* 
+    General
+*/
+* {
+    margin : 0;
+    padding : 0;
+
+    color : white;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    width : 100%;
+    height : auto;
+    min-height : 100%;
+
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    width : 100%;
+    min-height : 100%;
+    height : auto;
+
+    display : flex;
+    justify-content : center;
+    align-items : center;
+
+    background : linear-gradient(#6a7c88, rgb(25, 33, 41));
+}
+
+a {
+    color : #ff793f;
+    text-decoration : none;
+
+}
+a:hover {
+    color : #EAB543;
+
+    transition : 0.2s;
+}
+
+label {
+    user-select : none;
+}
+label:hover {
+    cursor : pointer;
+}
+label:hover {
+    color : #ff793f;
+
+    transition : 0.5s;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height : 20px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #d3d3d3;
+    opacity: 1; /* Firefox */
+} 
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #d3d3d3;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #d3d3d3;
+}
+
+
+
+/* 
+    Main
+*/
+main {
+    max-width : 1024px;
+    height: auto;
+
+    display : flex;
+    flex-direction: column;
+
+    border-radius : 10px;
+
+    background-color : rgba(21, 21, 21, 0.6);
+    box-shadow: 0 0 15px rgba(21, 21, 21, 0.6);
+
+}
+
+/* 
+    LogoMainContainer & LogoMain
+*/
+#LogoMainContainer {
+    text-align: center;
+}
+#LogoMain {
+    width : 175px;
+    filter: drop-shadow(0 0 3px rgba(255, 121, 63, 0.7));
+
+    margin : 50px auto 15px auto;
+}
+
+
+/* 
+    PageTitleContainer & components
+*/
+#PageTitleContainer {
+    width: 100%;
+
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+}
+#PageTitle {
+    margin-bottom : 0px;
+    
+    font-size : 30px;
+}
+/* 
+    submitButton
+*/
+#submitButton {
+    padding : 7px 15px 7px 15px;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    border-radius : 20px;
+    background-color : #ff793f;
+
+    font-size : 22px;
+
+    border : none;
+}
+#submitButton:hover {
+    background-color : #EAB543;
+    cursor : pointer;
+
+    transition : 0.2s;
+}
+
+/* 
+    SubmitContainer
+*/
+#SubmitContainer {
+    width : 100%;
+
+    margin-top : 25px;
+
+    padding-top : 20px;
+    padding-bottom : 20px;
+
+
+    text-align: center;
+}
+
+
+/* 
+    ERRORS
+*/
+#ErrorContainer {
+    width : 80%;
+    
+    margin-left : auto;
+    padding : 10px;
+    margin-right : auto;
+
+    background-color : #ff5e57;
+
+    font-size : 17px;
+}

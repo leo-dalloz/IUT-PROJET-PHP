@@ -1,0 +1,24 @@
+
+a, a:active {
+    color : black;
+}
+
+html {
+    background : white;
+}
+
+main {
+    color : black;
+}
+
+main > * {
+    color : #212121;
+}
+
+.AuthorName > a, .AuthorName > a:active  {
+    color : white;
+}
+
+.categLink > i {
+	color : #212121;
+}
