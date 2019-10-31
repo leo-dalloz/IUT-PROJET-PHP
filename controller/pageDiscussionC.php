@@ -32,6 +32,7 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
         }
         else if ( ! (strpos($s_contents,'.') == FALSE))
         {
+            addToMessage($s_contents, $i_lastMessageID);
             $D_discussion->closeAMessage();
         }
         else
