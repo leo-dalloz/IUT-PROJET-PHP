@@ -1,5 +1,4 @@
 <?php
-
 use mysql_xdevapi\BaseResult;
 require '../model/pageDiscussionM.php';
 session_start();
