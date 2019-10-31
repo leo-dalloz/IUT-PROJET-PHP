@@ -264,7 +264,7 @@ footer{
     
 }
 
-.likeButton {
+.likeButton, .dislikeButton {
     margin-left : 10px;
     padding : 5px;
 
@@ -272,16 +272,22 @@ footer{
     border:  none;
     border-radius : 5px;
     
-    background-color  : #ff793f;
     color : white;
 }
+.likeButton {
+    background-color: #ff793f;
+}
+.dislikeButton {
+    background-color  : #ff3f34;
+}
+
 .likeButton:hover {
     background-color : #e66e3b;
     cursor : pointer;
 }
 
 #LMessageContainer {
-    max-height : 70%;
+    max-height : 67%;
     width: 100%;
 
     display: flex;
