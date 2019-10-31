@@ -23,6 +23,7 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
             if(1 == $D_discussion->canOpenDiscussion())
             {
                 createMessage('0001',$i_discussionId,$s_contents);
+                $D_discussion = new Discussion($i_discussionId);
                 if ( !( strpos($s_contents,'.') == FALSE))
                 {
                     $D_discussion->closeAMessage();
