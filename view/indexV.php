@@ -7,39 +7,35 @@
     $tab_discussions = getTabDiscussion();
 	ob_start();
 ?>
-    <section id="ListConversationContainer">
-        <p id="ListConversation">
-            Conversations
-        </p>
-        <div id="LConvContainer">
-            <?php foreach ($tab_discussions as $value) { ?>
-                <button class="buttonLConv" onclick="window.location.href='pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0'">
-                    <ul class="LConv">
-                        <div class="FirstLine">
-                            <li>
-                                <a href="pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
-                            </li>
-                            <li>
-                                <?= $value->getNbMessages() ?> Messages
-                            </li>
-                        </div>
-                        <div class="SecondLine">
-                            <li>
-                                <?= $value->getNbMaxWords()?> Mots MAX
-                            </li>
-                            <li>
-                                <?php $b_isOuvert = $value->getState()?>
-                                <p class="<?= ($b_isOuvert) ? 'Open' : 'Close' ?>"><?= ($b_isOuvert) ? 'Ouverte' : 'Fermée' ?></p>
-                            </li>
-                            <li >
-                                <?= $value->getNbLike() ?> <i class="fas fa-thumbs-up"></i>
-                            </li>
-                        </div>
-                    </ul>
-                </button>
-            <?php }?>
+
+    <div id="LDiscussionContainer">
+        <div id="LDTitle">
+            DISCUSSIONS
         </div>
-    </section>
+
+        <table id="LDiscussion">
+            <?php foreach ($tab_discussions as $value) { ?>
+                <tr class="Discussion">
+                    <td>
+                        <a href="pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
+                    </td>
+                    <td>
+                        <?= $value->getNbMessages() ?> Messages
+                    </td>
+                    <td>
+                        <?= $value->getNbMaxWords()?> Mots MAX
+                    </td>
+                    <td>
+                        <?php $b_isOuvert = $value->getState()?>
+                        <p class="<?= ($b_isOuvert) ? 'Open' : 'Close' ?>"><?= ($b_isOuvert) ? 'Ouverte' : 'Fermée' ?></p>
+                    </td>
+                    <td>
+                        <?= $value->getNbLike() ?> <i class="fas fa-thumbs-up"></i>
+                    </td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
     <main id="top">
         <section id="FirstPartContainer">
             <div id="DescriptionContainer">
