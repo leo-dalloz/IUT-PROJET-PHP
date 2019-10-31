@@ -49,6 +49,7 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] != 'ok')
 {
     header('Location: ../view/pageDiscussionV.php?etat=pasConnecté&discussionId=' .$i_discussionId);
 }
+require '../view/pageDiscussionV.php';
 
 
 function getTabDiscussion()
