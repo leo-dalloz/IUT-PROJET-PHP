@@ -58,10 +58,11 @@ ob_start();
             <p id="likeContainer">
                 <?= $D_discussion->getNbLike(); ?>
                 likes
-            <form action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post"></form>
+            <form action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post">
                 <button class="likeButton" type="submit" name="action" value="like">
                     Like <i class="fas fa-heart"></i>
                 </button>
+            </form>
             </p>
         </div>
         <div id="LMessageContainer">
