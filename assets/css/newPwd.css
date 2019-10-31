@@ -29,23 +29,34 @@
 }
 #message {
   margin-bottom : 0px;
-  margin : 15px;
+  padding: 15px;
   font-size : 20px;
 }
-input[type = 'password']  {
-    width : 80%;
 
-    padding : 10px 0 10px 0;
-
-    background : none;
-
-    border : none;
-    border-bottom: 3px solid #ff793f;
-
-    font-size: 19px;
+#FormMailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
 }
 
+input[type = 'text']  {
+   width : 100%;
 
+   padding : 10px 0 10px 0;
+
+   background : none;
+
+   border : none;
+   border-bottom: 3px solid #ff793f;
+
+   font-size: 19px;
+   margin : 0 0 25px 0;
+}
+
+input[type = 'text']:focus {
+    outline: none;
+}
 
 
 /*
