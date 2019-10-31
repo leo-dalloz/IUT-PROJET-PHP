@@ -171,8 +171,8 @@ footer{
 
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     position : relative;
+    align-items: flex-end;
 }
 
 #SendMessageContainer {
@@ -185,6 +185,7 @@ footer{
     position: absolute;
     bottom : 75px;
 }
+
 
 #formMessage {
     width : 100%;
@@ -235,6 +236,64 @@ footer{
 #contentInput:focus {
     outline : none;
 }
+
+
+/* 
+    headConversationContainer
+*/
+#headConversationContainer {
+    width : 100%;
+    height: auto;
+
+    padding-top : 10px;
+    padding-bottom : 10px;
+
+    border-bottom: 3px solid rgba(200,200,200,0.5);
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#titleConversation {
+    font-size : 25px;
+    font-weight: 600;
+
+    text-align: center;
+    
+}
+
+.likeButton {
+    margin-left : 10px;
+    padding : 5px;
+
+    background: none;
+    border:  none;
+    border-radius : 5px;
+    
+    background-color  : #ff793f;
+    color : white;
+}
+.likeButton:hover {
+    background-color : #e66e3b;
+    cursor : pointer;
+}
+
+#LMessageContainer {
+    max-height : 70%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    overflow-y : auto;
+}
+
+#likeContainer {
+    font-size : 15px;
+}
+
 
 /* 
     message
