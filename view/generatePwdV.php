@@ -27,16 +27,17 @@
       <img src="../assets/images/test2.png" id="LogoMain">
   </div>
   <div id="PageTitleContainer">
-    <div id="LogoMainContainer">
-      <h1> nouveau mot de passe </h1>
-      <h2> <?= $s_msg ?> </h2>
-    </div>
-  <form  action="../controller/generatePwdC.php?token=<?= $s_token ?>"  method="post">
-    <input type="password" name="newPwd" placeholder="nouveau mot de passe"><br>
-    <p> Confirmez votre mot de passe <br></p>
-    <input type="password" name="confPwd" placeholder="confirmer mot de passe"><br>
-    <input type="submit" name="action" value="envoyer"><br>
-  </form>
+      <h1 id="PageTitle"> nouveau mot de passe </h1>
+      <h2 id="message"> <?= $s_msg ?> </h2>
+  </div>
+  <div id="FormPwdContainer">
+    <form  action="../controller/generatePwdC.php?token=<?= $s_token ?>"  method="post">
+      <input type="password" name="newPwd" placeholder="nouveau mot de passe"><br>
+      <p> Confirmez votre mot de passe <br></p>
+      <input type="password" name="confPwd" placeholder="confirmer mot de passe"><br>
+      <input type="submit" name="action" value="envoyer"><br>
+    </form>
+  </div>
 </main>
 
 <?php
