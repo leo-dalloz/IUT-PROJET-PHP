@@ -57,9 +57,23 @@
             <p id="likeContainer">
                 <?= $D_discussion->getNbLike(); ?>
                 likes
-                <button class="likeButton">
-                    Like <i class="fas fa-heart"></i>                
-                </button>
+                <?php
+                    if (testIfLike($D_discussion->getDiscussionId(), $_SESSION['id']) == 0) {
+                ?>
+                <form action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post">
+                    <button class="likeButton" type="submit" name="action" value="like">
+                        Like <i class="fas fa-heart"></i>
+                    </button>
+                </form>
+                <?php
+                    } else {
+                ?>
+                <form action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post">
+                    <button class="dislikeButton" type="submit" name="action" value="like">
+                        dislike <i class="fas fa-heart"></i>
+                    </button>
+                </form>
+                <?php } ?>
             </p>
         </div>
         <div id="LMessageContainer">
