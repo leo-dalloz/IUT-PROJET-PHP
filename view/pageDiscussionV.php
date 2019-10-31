@@ -58,7 +58,8 @@ ob_start();
             <p id="likeContainer">
                 <?= $D_discussion->getNbLike(); ?>
                 likes
-                <button class="likeButton">
+            <form action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post"></form>
+                <button class="likeButton" type="submit" name="action" value="like">
                     Like <i class="fas fa-heart"></i>
                 </button>
             </p>
@@ -81,7 +82,7 @@ ob_start();
         <div id="SendMessageContainer">
             <form id="formMessage" action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post" >
                 <input id="contentInput" type="text" name="contents" placeholder="Message">
-                <button id="submitButton" type="submit" name="action"><i class="fab fa-telegram-plane"></i></button>
+                <button id="submitButton" type="submit" name="action" value="sendMessage"><i class="fab fa-telegram-plane"></i></button>
             </form>
         </div>
     </section>

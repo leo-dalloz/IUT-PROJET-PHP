@@ -56,6 +56,20 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] != 'ok')
     header('Location: ../view/pageDiscussionV.php?etat=pasConnecté&discussionId=' .$i_discussionId);
 }
 
+if ($s_action == 'like' AND $_SESSION['login'] == 'ok')
+{
+    if(0 == testIfLike($i_discussionId,23))
+    {
+        addLike($i_discussionId,23);
+        header('Location: ../view/pageDiscussionV.php?etat=like&discussionId=' .$i_discussionId);
+    }
+    else
+    {
+        removeLike($i_discussionId,23);
+        header('Location: ../view/pageDiscussionV.php?etat=delike&discussionId=' .$i_discussionId);
+    }
+}
+
 
 function getTabDiscussion()
 {
