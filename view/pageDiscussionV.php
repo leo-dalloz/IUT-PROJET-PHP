@@ -50,17 +50,33 @@
 </section>
 
 <section id="conversationContainer">
-        <?php $Messages = $D_discussion->getMessages();
-            foreach ($Messages as $message) {
-        ?>
-        <div id="listMessage">
-            <div class="line">
-                <p class="message">
-                    <?= $message->getContents(); ?>
-                </p>
-            </div>
+        <div id="headConversationContainer">
+            <p id="titleConversation">
+                <?= $D_discussion->getName(); ?>
+            </p>
+            <p id="likeContainer">
+                <?= $D_discussion->getNbLike(); ?>
+                likes
+                <button class="likeButton">
+                    Like <i class="fas fa-heart"></i>                
+                </button>
+            </p>
         </div>
-            <?php } ?>
+        <div id="LMessageContainer">
+            <?php $Messages = $D_discussion->getMessages();
+                foreach ($Messages as $message) {
+            ?>
+            <div id="listMessage">
+                <div class="line">
+                    <p class="message">
+                        <?= $message->getContents(); ?>
+                    </p>
+                </div>
+            </div>
+            <?php 
+                } 
+            ?>
+        </div>
         <div id="SendMessageContainer">
             <form id="formMessage" action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post" >
                 <input id="contentInput" type="text" name="contents" placeholder="Message">
