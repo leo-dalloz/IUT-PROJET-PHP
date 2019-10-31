@@ -1,6 +1,6 @@
 <?php
 require '../utils.inc.php';
-//require '../controller/pageDiscussionC.php';
+require '../controller/pageDiscussionC.php';
 
 session_start();
 
