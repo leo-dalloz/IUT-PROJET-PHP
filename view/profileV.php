@@ -92,6 +92,15 @@
                 </p>
                 <a href="/Freenote/view/modificationProfileV.php?action=gender" class="CategLink"><i class="fas fa-angle-right"></i></a>
             </div>
+            <div class="ProfileLine">
+                <p class="CategName">
+                    Mot de passe
+                </p>
+                <p class="CategValue">
+                    ****************
+                </p>
+                <a href="/Freenote/view/modificationProfileV.php?action=password" class="CategLink"><i class="fas fa-angle-right"></i></a>
+            </div>
             <div class="ProfileLine mailLine">
                 <p class="CategName">
                     ADRESSE E-MAIL
