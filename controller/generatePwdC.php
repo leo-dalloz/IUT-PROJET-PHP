@@ -3,10 +3,7 @@
 
 
     // on verifie que l'url est correcte
-    if(!isset($_GET['step'])
-    || empty($_GET['step'])
-    || empty($_GET['token'])
-    || !isset($_GET['token'])) {
+    if(!isset($_GET['step']) || empty($_GET['step']) || empty($_GET['token']) || !isset($_GET['token'])) {
       header('Location: ../public/accesInterdit.html');
     }
     $step    = $_GET['step'];
