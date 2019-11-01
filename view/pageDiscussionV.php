@@ -1,6 +1,5 @@
 <?php
 require '../utils.inc.php';
-require '../controller/pageDiscussionC.php';
 
 session_start();
 
@@ -8,7 +7,7 @@ $i_numDiscussion = $_GET['discussionId'];
 if (!isset($_GET['etat']) || !isset($_GET['discussionId'])){
     header('Location: indexV.php');
 }
-$tab_discussions = getTabDiscussion();
+$tab_discussions = getDiscussions();
 
 $title = 'Discussion ' .$D_discussion->getName().' | Freenote';
 $style = '../assets/css/discussion.css';
@@ -22,7 +21,7 @@ ob_start();
         </p>
         <div id="LConvContainer">
             <?php foreach ($tab_discussions as $value) { ?>
-                <button class="buttonLConv" onclick="window.location.href='pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0'">
+                <button class="buttonLConv" onclick="window.location.href='../view/pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0'">
                     <ul class="LConv">
                         <div class="FirstLine">
                             <li>
