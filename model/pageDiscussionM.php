@@ -59,3 +59,16 @@ function removeLike ($i_discussionId, $i_userId)
     $query = "UPDATE Discussion SET nblike = nbLike - 1 WHERE discussionId = '$i_discussionId'";
     testError($dbLink,$query);
 }
+
+function isAlreadyWrite($i_messageId, $i_userId)
+{
+    $i_cpt = 0;
+    $dbLink = dbConnect();
+    $query = "SELECT discussionId FROM LikeDiscussion WHERE discussionId = '$i_discussionId' AND userId = '$i_userId'";
+    $dbResult = testError($dbLink,$query);
+    while($dbRow = mysqli_fetch_assoc($dbResult))
+    {
+        ++$i_cpt;
+    }
+    return $i_cpt;
+}

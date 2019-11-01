@@ -39,13 +39,6 @@ class Message
     /**
      * @return mixed
      */
-    public function getDiscussionId()
-    {
-        return $this->i_myDiscussionId;
-    }
-    /**
-     * @return mixed
-     */
     public function getContents()
     {
         return $this->s_myContents;

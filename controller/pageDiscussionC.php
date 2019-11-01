@@ -10,14 +10,18 @@ $D_discussion = new Discussion($i_discussionId);
 
 if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
 {
+    $i_lastMessageID = $D_discussion->lastMessage();
     if (! $D_discussion->getState())
     {
         header('Location: ../view/pageDiscussionV.php?etat='. 'Discussion fermé' . '&discussionId=' .$i_discussionId);
     }
+    else if (-1 != $i_lastMessageID AND isAlreadyWrite())
+    {
+
+    }
     else if(str_word_count($s_contents,0,'123456789') <= $D_discussion->getNbMaxWords()
         && str_word_count($s_contents,0,'123456789') != 0)
     {
-        $i_lastMessageID = $D_discussion->lastMessage();
         if ( -1 == $i_lastMessageID)
         {
             if(1 == $D_discussion->canOpenDiscussion())
