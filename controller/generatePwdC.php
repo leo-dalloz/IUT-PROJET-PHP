@@ -26,7 +26,7 @@
        $s_confPwd = $_POST['confPwd'];
 
       if($s_newPwd != $s_confPwd)
-        header('Location: ../view/generatePwdV.php?step=errconf&token='. $s_token);
+        header('Location: generatePwdC.php?step=errconf&token='. $s_token);
       else {
         // le mdp doit contenir une majuscule, un chiffre, une minuscule et faire au moins 8 caractères
         if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])#', $s_newPwd) && strlen($s_newPwd) > 8)
@@ -36,7 +36,7 @@
           header('Location: ../view/mdpModifie.html');
         }
         else
-          header('Location: ../view/generatePwdV.php?step=errmdp&token='. $s_token);
+          header('Location: generatePwdC.php?step=errmdp&token='. $s_token);
       }
     }
     require ('../view/generatePwdV.php');
