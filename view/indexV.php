@@ -16,7 +16,7 @@
             <?php foreach ($tab_discussions as $value) { ?>
                 <tr class="Discussion">
                     <td>
-                        <a href="pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
+                        <a href="../view/pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
                     </td>
                     <td>
                         <?= $value->getNbMessages() ?> Messages
