@@ -17,7 +17,7 @@ if (isset($_POST['action']))
     if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok') {
         $i_lastMessageID = $D_discussion->lastMessage();
         if (!$D_discussion->getState()) {
-            header('Location: ../view/pageDiscussionV.php?etat=' . 'Discussion fermé' . '&discussionId=' . $i_discussionId);
+            header('Location: ../controller/pageDiscussionC.php?etat=' . 'Discussion fermé' . '&discussionId=' . $i_discussionId);
         }
         else if (str_word_count($s_contents, 0, '123456789') <= $D_discussion->getNbMaxWords()
             && str_word_count($s_contents, 0, '123456789') != 0) {

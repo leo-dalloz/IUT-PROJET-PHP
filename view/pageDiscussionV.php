@@ -5,7 +5,7 @@ session_start();
 
 $i_numDiscussion = $_GET['discussionId'];
 if (!isset($_GET['etat']) || !isset($_GET['discussionId'])){
-    header('Location: indexV.php');
+    header('Location: indexC.php');
 }
 $tab_discussions = getDiscussions();
 
