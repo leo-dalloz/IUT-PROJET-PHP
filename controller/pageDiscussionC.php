@@ -6,8 +6,11 @@ session_start();
 
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
+$s_etat = $_GET['etat'];
+$s_discussionID = $_GET['discussionId'];
 
-if (isset($_POST['action'])) {
+if (isset($_POST['action']))
+{
     $s_contents = $_POST['contents'];
     $s_action = $_POST['action'];
 
@@ -27,7 +30,7 @@ if (isset($_POST['action'])) {
                     }
                 } else {
                     $D_discussion->closeDiscussion();
-                    header('Location: ../view/pageDiscussionV.php?etat=' . 'discussion full' . '&discussionId=' . $i_discussionId);
+                    header('Location: ./pageDiscussionC.php?etat=' . 'discussion full' . '&discussionId=' . $i_discussionId);
                 }
             } else if (!(strpos($s_contents, '.') == FALSE)) {
                 addToMessage($s_contents, $i_lastMessageID);
@@ -36,28 +39,22 @@ if (isset($_POST['action'])) {
                 addToMessage($s_contents, $i_lastMessageID);
             }
 
-            header('Location: ../view/pageDiscussionV.php?etat=' . 'message envoyé' . '&discussionId=' . $i_discussionId);
+            header('Location: ./pageDiscussionC.php?etat=' . 'message envoyé' . '&discussionId=' . $i_discussionId);
         } else {
-            header('Location: ../view/pageDiscussionV.php?etat=error&discussionId=' . $i_discussionId);
+            header('Location: ./pageDiscussionC.php?etat=error&discussionId=' . $i_discussionId);
         }
     }
     if ($s_action == 'sendMessage' AND $_SESSION['login'] != 'ok') {
-        header('Location: ../view/pageDiscussionV.php?etat=pasConnecté&discussionId=' . $i_discussionId);
+        header('Location: ./pageDiscussionC.php?etat=pasConnecté&discussionId=' . $i_discussionId);
     }
 
     if ($s_action == 'like' AND $_SESSION['login'] == 'ok') {
         if (0 == testIfLike($i_discussionId, $_SESSION['user']->getMyId())) {
             addLike($i_discussionId, $_SESSION['user']->getMyId());
-            header('Location: ../view/pageDiscussionV.php?etat=like&discussionId=' . $i_discussionId);
+            header('Location: ./pageDiscussionC.php?etat=like&discussionId=' . $i_discussionId);
         } else {
             removeLike($i_discussionId, $_SESSION['user']->getMyId());
-            header('Location: ../view/pageDiscussionV.php?etat=delike&discussionId=' . $i_discussionId);
+            header('Location: ./pageDiscussionC.php?etat=delike&discussionId=' . $i_discussionId);
         }
     }
-}
-
-
-function getTabDiscussion()
-{
-    return getDiscussions();
 }
