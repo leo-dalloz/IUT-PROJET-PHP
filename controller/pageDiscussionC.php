@@ -58,3 +58,5 @@ if (isset($_POST['action']))
         }
     }
 }
+
+require '../view/pageDiscussionV.php';
