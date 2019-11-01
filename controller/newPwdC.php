@@ -1,7 +1,17 @@
 <?php
 
 
+
     require ('../model/newPwdM.php');
+
+
+    $step = $_GET['step'];
+    if ($step == null)
+        $msg = 'verification mail';
+    else if($step == 'ok')
+        $msg = 'un mail à été envoyé' ;
+    else if ($step == 'error')
+        $msg = 'adresse mail inexistante dans notre base de données ';
 
     /*
     * Laurent
