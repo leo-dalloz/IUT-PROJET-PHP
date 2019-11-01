@@ -21,7 +21,7 @@ ob_start();
         </p>
         <div id="LConvContainer">
             <?php foreach ($tab_discussions as $value) { ?>
-                <button class="buttonLConv" onclick="window.location.href='../view/pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0'">
+                <button class="buttonLConv" onclick="window.location.href='../controller/pageDiscussionC.php?discussionId=<?= $value->getDiscussionId()?>&etat=0'">
                     <ul class="LConv">
                         <div class="FirstLine">
                             <li>
