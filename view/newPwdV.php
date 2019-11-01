@@ -1,8 +1,5 @@
 <?php
 
-
-
-
       $title = 'Mot de passe oublié';
       $style_common = '../assets/css/connexion-inscription.css';
       $style = '../assets/css/newPwd.css';
