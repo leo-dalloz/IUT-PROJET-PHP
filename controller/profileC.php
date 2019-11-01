@@ -71,13 +71,33 @@
 	        }
             break;
         case 'gender' :
-            if ($_POST['gender'] != NULL && ($_POST['gender'] == 'Homme' || $_POST['gender'] == 'Femme')) {
-                changeGender($_POST['gender']);
-                $_SESSION['user']->setMyGender($_POST['gender']);
-                header ('location: ../view/profileV.php?success=Le profil a été modifié avec succès');
-            } else {
-                header ('location: ../view/modificationProfileV.php?action=gender&error=Genre vide ou invalide');
+            if ($_POST['firstPwd'] != NUll && $_POST['secondPwd'] != NULL &&($_POST['firstPwd'] == $_POST['secondPwd'])) {
+
             }
+            break;
+        case 'password' : 
+        var_dump($_POST['firstPwd']);
+            $s_pwd1 = $_POST['firstPwd'];
+            $s_pwd2 = $_POST['secondPwd'];
+            
+            if ($s_pwd1 == NULL  || $s_pwd2 == NULL) {
+                echo 1; 
+                    header ('location: ../view/modificationProfileV.php?action=password&error=Mot de passe non valide');
+            }
+            else if ($s_pwd1 != $s_pwd2) {
+                echo 2;
+                header ('location: ../view/modificationProfileV.php?action=gender&passwors=Les deux mots de passe de correspondent pas');
+            }
+            else {
+                $s_pwd = password_hash($s_pwd1, PASSWORD_DEFAULT);
+                changePassword($s_pwd);
+                $_SESSION['user']->setMyPassword($s_pwd);
+                header ('location: ../view/profileV.php?success=Le profil a été modifié avec succès');
+
+            }
+            
+
+            // }
             break;
         default:
             header ('location: ../view/modificationProfileV.php?action=gender&error=Champs non modifiable');
