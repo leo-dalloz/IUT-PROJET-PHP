@@ -61,10 +61,10 @@
       if(getMail($s_mail))
       {
         sendMail($s_mail);
-        header('Location: ../view/newPwdV.php?step=ok');
+        header('Location: newPwdC.php?step=ok');
       }
       else {
-        header('Location: ../view/newPwdV.php?step=error');
+        header('Location: newPwdC.php?step=error');
       }
     }
 
