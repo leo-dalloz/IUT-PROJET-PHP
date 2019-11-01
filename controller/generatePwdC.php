@@ -45,7 +45,7 @@
 	      {
           $s_newPwd = password_hash($s_newPwd,PASSWORD_DEFAULT);
           changePwd($s_token,$s_newPwd);
-          header('Location: ../view/mdpModifie.html');
+          header('Location: ../public/mdpModifie.html');
         }
         else
           header('Location: generatePwdC.php?step=errmdp&token='. $s_token);

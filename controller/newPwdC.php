@@ -23,8 +23,8 @@
       $s_token  = md5(uniqid(mt_rand(100000,999999)));
       $boundary = uniqid(mt_rand(1,1000));
 
-      $mail1    = '../view/email1.html';
-      $mail2    = '../view/email2.html';
+      $mail1    = '../public/email1.html';
+      $mail2    = '../public/email2.html';
 
       $handle1  = fopen($mail1,'r');
       $handle2  = fopen($mail2,'r');

@@ -28,7 +28,7 @@
                     <input type="password" name="Pwd" placeholder="Mot de passe"/> <br/>
                     <!-- On est obligé de rediriger vers mon serveur pour pouvoir envoyer un email car le serveur du groupe est considéré comme spam
                         à cause des testes -->
-                    <a id="ForgotPwdLink" href="http://laurent-vouriot.alwaysdata.net/PROJET-PHP/view/newPwdV.php">Mot de passe oublié ?</a>
+                    <a id="ForgotPwdLink" href="http://laurent-vouriot.alwaysdata.net/PROJET-PHP/controller/newPwdC.php">Mot de passe oublié ?</a>
                 </div>
 
                 <div id="RememberContainer">
