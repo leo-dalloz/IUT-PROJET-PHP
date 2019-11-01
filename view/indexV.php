@@ -1,10 +1,10 @@
 <?php
-    require '../controller/indexC.php';
+    require '../model/indexM.php';
     $title = 'Freenote';
     $style = '../assets/css/index.css';
     $style_theme = '../assets/css/theme/day.css';
     session_start();
-    $tab_discussions = getTabDiscussion();
+    $tab_discussions = getDiscussions();
 	ob_start();
 ?>
 
