@@ -12,7 +12,7 @@ if(isset($_POST['action']))
         if ($i_tailleDiscussion > 1 && $i_tailleDiscussion < 20)
         {
             createNewDiscussion($s_nomDiscussion);
-            header('Location: ../view/indexV.php');
+            header('Location: ./indexC.php');
         }
         else
         {

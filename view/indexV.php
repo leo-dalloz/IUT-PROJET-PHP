@@ -1,5 +1,4 @@
 <?php
-    require '../model/indexM.php';
     $title = 'Freenote';
     $style = '../assets/css/index.css';
     $style_theme = '../assets/css/theme/day.css';
