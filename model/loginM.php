@@ -1,6 +1,6 @@
 <?php
 require 'User.php';
-require 'dbConnect.php';
+require 'dbTest.php';
 function login($s_pseudo,$s_pwd)
 {
     $dbLink = dbConnect();
