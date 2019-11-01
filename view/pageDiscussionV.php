@@ -25,7 +25,7 @@ ob_start();
                     <ul class="LConv">
                         <div class="FirstLine">
                             <li>
-                                <a href="pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
+                                <a href="../view/pageDiscussionV.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
                             </li>
                             <li>
                                 <?= $value->getNbMessages() ?> Messages
