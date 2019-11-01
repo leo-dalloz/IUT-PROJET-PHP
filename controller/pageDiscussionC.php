@@ -21,7 +21,7 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok')
         {
             if(1 == $D_discussion->canOpenDiscussion())
             {
-                createMessage('0001',$i_discussionId,$s_contents);
+                createMessage($_SESSION['user']->getMyId(),$i_discussionId,$s_contents);
                 $D_discussion = new Discussion($i_discussionId);
                 if ( !( strpos($s_contents,'.') == FALSE))
                 {
@@ -58,14 +58,14 @@ if ($s_action == 'sendMessage' AND $_SESSION['login'] != 'ok')
 
 if ($s_action == 'like' AND $_SESSION['login'] == 'ok')
 {
-    if(0 == testIfLike($i_discussionId,23))
+    if(0 == testIfLike($i_discussionId,$_SESSION['user']->getMyId()))
     {
-        addLike($i_discussionId,23);
+        addLike($i_discussionId,$_SESSION['user']->getMyId());
         header('Location: ../view/pageDiscussionV.php?etat=like&discussionId=' .$i_discussionId);
     }
     else
     {
-        removeLike($i_discussionId,23);
+        removeLike($i_discussionId,$_SESSION['user']->getMyId());
         header('Location: ../view/pageDiscussionV.php?etat=delike&discussionId=' .$i_discussionId);
     }
 }
