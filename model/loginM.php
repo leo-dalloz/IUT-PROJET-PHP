@@ -37,7 +37,7 @@
         $dbLink = dbConnect();
 
 
-        $query = 'SELECT admin, surname, name, pseudo, email, birthdate, password, gender FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
+        $query = 'SELECT id, admin, surname, name, pseudo, email, birthdate, password, gender FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
 
         if (!($dbResult = mysqli_query($dbLink, $query))) {
             echo 'Erreur de requête<br/>';
@@ -49,8 +49,9 @@
         }
 
         $result = $dbResult->fetch_assoc();
-
-        return new User($result['admin'], $result['surname'], $result['name'], $result['pseudo'],$result['email'], $result['birthdate'], $result['password'],$result['gender']);
+        $myUser = new User($result['admin'], $result['surname'], $result['name'], $result['pseudo'],$result['email'], $result['birthdate'], $result['password'],$result['gender']);
+        $myUser->setMyId($result['id']);
+        return $myUser;
     }
 
 

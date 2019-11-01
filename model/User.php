@@ -3,6 +3,7 @@
 
 class User
 {
+    private $i_myId;
     private $b_myAdmin;
     private $s_mySurname;
     private $s_myName;
@@ -22,6 +23,11 @@ class User
         $this->d_myBirth = $d_birth;
         $this->s_myPassword = $s_password;
         $this->s_myGender = $s_gender;
+    }
+
+    public function getMyId()
+    {
+        return $this->i_myId;
     }
 
 
@@ -68,6 +74,11 @@ class User
         return $this->s_myGender;
     }
 
+
+    public function setMyId($i_id)
+    {
+        $this->i_myId = $i_id;
+    }
 
     public function setMySurname($s_surname)
     {
