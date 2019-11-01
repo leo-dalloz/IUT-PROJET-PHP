@@ -1,4 +1,5 @@
-/*
+/* 
+
 */
 
 
@@ -21,7 +22,7 @@
 
     padding : 25px 0 0 25px;
 }
-
+  
 #listProfile {
     width : 100%;
 
@@ -31,12 +32,12 @@
 
 .ProfileLine {
     padding : 25px 60px 25px 60px;
-
+    
     display : flex;
     flex-direction : row;
     justify-content : space-between;
     align-items: center;
-
+    
     border-bottom : 1px solid rgba(50,50,50 ,0.5);
 
     user-select : none;
@@ -65,6 +66,8 @@
 
     font-size : 30px;
 
+	color : #212121;
+
     transition : 1s;
 }
 .CategLink:hover {
@@ -80,7 +83,7 @@
     border : none;
 }
 
-/*
+/* 
     PROFIL PHOTO
 */
 #ProfilImage {
@@ -98,7 +101,44 @@
 }
 
 
-/*
+footer {
+    position: absolute;
+    bottom : 0;
+}
+
+#ErrorContainer {
+    width : 80%;
+    
+    padding : 10px;
+
+    background-color : #ff5e57;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    font-size : 17px;
+
+    color : white;
+}
+
+
+#SuccessContainer {
+    width : 80%;
+    
+    padding : 10px;
+
+    background-color : #6ab04c;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    font-size : 17px;
+
+    color : white;
+}
+
+
+/* 
     responsive
 */
 @media screen and (max-width : 768px) {
@@ -120,7 +160,7 @@
     }
     .CategName {
         font-size : 15px;
-    }
+    }   
     .CategLink {
         width : 0;
         padding : 0;
