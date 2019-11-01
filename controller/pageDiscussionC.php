@@ -1,6 +1,7 @@
 <?php
 use mysql_xdevapi\BaseResult;
 require '../model/pageDiscussionM.php';
+require '../model/User.php';
 session_start();
 $s_contents = $_POST['contents'];
 $s_action = $_POST['action'];
