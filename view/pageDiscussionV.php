@@ -4,11 +4,7 @@ require '../utils.inc.php';
 session_start();
 
 $i_numDiscussion = $_GET['discussionId'];
-if (!isset($_GET['etat']) || !isset($_GET['discussionId'])){
-    header('Location: indexC.php');
-}
 $tab_discussions = getDiscussions();
-
 $title = 'Discussion ' .$D_discussion->getName().' | Freenote';
 $style = '../assets/css/discussion.css';
 $style_theme = '../assets/css/theme/day.css';
