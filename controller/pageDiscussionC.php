@@ -15,9 +15,13 @@ if (isset($_POST['action']))
     $s_action = $_POST['action'];
 
     if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok') {
-        $i_lastMessageID = $D_discussion->lastMessage();
         if (!$D_discussion->getState()) {
-            header('Location: ../controller/pageDiscussionC.php?etat=' . 'Discussion fermé' . '&discussionId=' . $i_discussionId);
+            header('Location: ../controller/pageDiscussionC.php?etat=' . 'DiscussionFerme' . '&discussionId=' . $i_discussionId);
+        }
+        $i_lastMessageID = $D_discussion->lastMessage();
+        if(0 != isAlreadyComment($i_lastMessageID, $_SESSION['user']->getMyId()))
+        {
+            header('Location: ../controller/pageDiscussionC.php?etat=' . 'dejaParticipe' . '&discussionId=' . $i_discussionId);
         }
         else if (str_word_count($s_contents, 0, '123456789') <= $D_discussion->getNbMaxWords()
             && str_word_count($s_contents, 0, '123456789') != 0) {
@@ -41,7 +45,7 @@ if (isset($_POST['action']))
                 addToMessage($s_contents, $i_lastMessageID, $_SESSION['user']->getMyId());
             }
 
-            header('Location: ./pageDiscussionC.php?etat=' . 'message envoyé' . '&discussionId=' . $i_discussionId);
+            header('Location: ./pageDiscussionC.php?etat=' . 'messageEnvoye' . '&discussionId=' . $i_discussionId);
         } else {
             header('Location: ./pageDiscussionC.php?etat=error&discussionId=' . $i_discussionId);
         }

@@ -61,3 +61,16 @@ function removeLike ($i_discussionId, $i_userId)
     testError($dbLink,$query);
 }
 
+function isAlreadyComment($i_messageId, $i_userId)
+{
+    $i_cpt = 0;
+    $dbLink = dbConnect();
+    $query = "SELECT * FROM Post WHERE messageId = '$i_messageId' AND authorId = '$i_userId'";
+    $dbResult = testError($dbLink,$query);
+    while($dbRow = mysqli_fetch_assoc($dbResult))
+    {
+        ++$i_cpt;
+    }
+    return $i_cpt;
+}
+
