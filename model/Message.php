@@ -1,5 +1,5 @@
 <?php
-require 'dbTest.php';
+require 'Post.php';
 
 class Message
 {
