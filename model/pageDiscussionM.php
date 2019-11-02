@@ -1,11 +1,11 @@
 <?php
 require 'Discussion.php';
 
-function createMessage($i_authorId, $i_discussionId,$s_contents)
+function createMessage($i_discussionId)
 {
     $dbLink = dbConnect();
     $d_date = date('Y-m-d H:i:s');
-    $query = "INSERT INTO Message (discussionId, authorId, contents, date, state) VALUES ('$i_discussionId','$d_date', 1)";
+    $query = "INSERT INTO Message (discussionId, date, state) VALUES ('$i_discussionId','$d_date', 1)";
     testError($dbLink,$query);
 }
 

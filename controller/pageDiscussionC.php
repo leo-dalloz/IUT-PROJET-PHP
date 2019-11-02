@@ -23,7 +23,9 @@ if (isset($_POST['action']))
             && str_word_count($s_contents, 0, '123456789') != 0) {
             if (-1 == $i_lastMessageID) {
                 if (1 == $D_discussion->canOpenDiscussion()) {
-                    createMessage($_SESSION['user']->getMyId(), $i_discussionId, $s_contents);
+                    createMessage($i_discussionId);
+                    $i_lastMessageID = $D_discussion->lastMessage();
+                    addToMessage($s_contents, $i_lastMessageID, $_SESSION['user']->getMyId());
                     $D_discussion = new Discussion($i_discussionId);
                     if (!(strpos($s_contents, '.') == FALSE)) {
                         $D_discussion->closeAMessage();
