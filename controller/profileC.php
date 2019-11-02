@@ -3,7 +3,7 @@
 session_start();
 if($_SESSION['login']!='ok')
 {
-    die('Erreur d\'authentification');
+    header('Location: ../controller/indexC.php');
 }
 
 require '../model/User.php';

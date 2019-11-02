@@ -7,7 +7,7 @@ require '../model/profileM.php';
 session_start();
 if( 'ok' != $_SESSION['login'])
 {
-    die('Erreur d\'authentification');
+    header('Location: ../controller/indexC.php');
 }
 
 // Test si l'utilisateur arrive sur ce lien sans action définie au préalable
