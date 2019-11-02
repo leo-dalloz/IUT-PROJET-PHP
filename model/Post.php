@@ -15,4 +15,12 @@ class Post
         $this->s_myContents = $s_contents;
         $this->d_myDate = $d_date;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getContents()
+    {
+        return $this->s_myContents;
+    }
 }

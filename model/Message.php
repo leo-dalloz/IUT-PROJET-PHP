@@ -28,7 +28,7 @@ class Message
         $s_contents = '';
         foreach ($this->tab_myPost as $value)
         {
-            $s_contents = $s_contents . $value;
+            $s_contents = $s_contents . $value->getContents();
         }
         return $s_contents;
     }
