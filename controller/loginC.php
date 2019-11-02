@@ -19,4 +19,15 @@ if (isset($_POST['login']))
     else
         header('Location: ../controller/indexC.php?step=missing');
 }
+if (isset($_GET['step']))
+{
+    if ($_GET['step'] == 'error')
+        $s_error = 'L\'identifiant et le mot de passe ne correspondent pas.';
+    else if ($_GET['step'] == 'missing')
+        $s_error = 'Vous avez oublié de remplir un des champs.';
+    else
+        $s_error = '';
+}
+else
+    $s_error = '';
 require '../view/loginV.php';

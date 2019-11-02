@@ -32,13 +32,10 @@ ob_start()
                     <input type="checkbox" name="rememberC" id="rememberC">
                     <label id="rememberCLabel" for="rememberC">Se souvenir de moi</label>
                 </div>
-                <?php if (isset($_GET['step'])) {?>
+                <?php if ($s_error != '') {?>
                     <div id="ErrorContainer">
                         <p id="Error">
-                            <?php if ($_GET['step'] == 'error')
-                                echo 'L\'identifiant et le mot de passe ne correspondent pas.';
-                            else if ($_GET['step'] == 'missing')
-                                echo 'Vous avez oublié un des champs.'?>
+                            <?php echo $s_error ?>
                         </p>
                     </div>
                 <?php } ?>

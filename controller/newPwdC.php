@@ -1,7 +1,7 @@
 <?php
 
 
-    require ('../model/ModelNewPwd.php');
+    require('../model/newPwdM.php');
 
     $s_mail = $_POST['mail'];
     /**
@@ -30,7 +30,7 @@
       if(mail($s_mail,$s_obj,$s_msg))
       {
         print_r('ok');
-        exit()
+        exit();
       }
 
     } // sendMail()
