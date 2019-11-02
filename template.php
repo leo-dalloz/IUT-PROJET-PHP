@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="assets/css/template.css">
-    <link id="ThemeStylesheet" rel="stylesheet" href="./assets/css/theme/night.css">
+    <link id="ThemeStylesheet" rel="stylesheet" href="../assets/css/theme/night.css">
 
     <!-- Custom page css link -->
-    <link rel="stylesheet" href="./assets/css/<? $style ?>.css">
+    <link rel="stylesheet" href="../assets/css/<? $style ?>.css">
 
     <script src="https://kit.fontawesome.com/b18ab37082.js" crossorigin="anonymous"></script>
 
@@ -19,7 +19,7 @@
 <header>
     <div id="HeaderContainer">
         <a id="LogoHeaderContainer" href="">
-            <img id="LogoHeader" src="./assets/images/test2.png" alt="logo FreeNote">
+            <img id="LogoHeader" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
 
         <nav>
@@ -70,8 +70,8 @@
 </footer>
 
 <?php if (isset($link_js)) { ?>
-    <script src="./assets.js/<?= $link_js ?>"></script>
+    <script src="../assets.js/<?= $link_js ?>"></script>
 <?php } ?>
-<script src="./assets/js/architecture.js"></script>
+<script src="../assets/js/architecture.js"></script>
 </body>
 </html>
