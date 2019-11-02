@@ -65,7 +65,7 @@ ob_start();
                 <div id="listMessage">
                     <div class="line">
                         <p class="message">
-                            <?= $message->getContents(); ?>
+                            <?= $message->show(); ?>
                         </p>
                     </div>
                 </div>

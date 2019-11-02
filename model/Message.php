@@ -23,6 +23,16 @@ class Message
         }
     }
 
+    public function show()
+    {
+        $s_contents = '';
+        foreach ($this->tab_myPost as $value)
+        {
+            $s_contents = $s_contents . $value;
+        }
+        return $s_contents;
+    }
+
     public function closeMessage()
     {
         $this->b_myState = 0;
