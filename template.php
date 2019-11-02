@@ -20,8 +20,8 @@
         </a>
 
         <nav>
-            <a class="navLink" href="loginV.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
-            <a class="navLink" href="registerV.php">Inscription <i class="fas fa-user-plus"></i></a>
+            <a class="navLink" href="loginC.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
+            <a class="navLink" href="registerC.php">Inscription <i class="fas fa-user-plus"></i></a>
         </nav>
         <button id="ChangeThemeButton">
             <i id="IconThemeButton" class="fas fa-sun"></i>
