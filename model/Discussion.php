@@ -23,11 +23,11 @@ class Discussion
             $this->i_myNbMaxMessage = $dbRow['nbMaxMessages'];
         }
         $this->i_myDiscussionId = $i_discussionId;
-        $query = 'SELECT messageId, authorId, contents, date, nbLike, state FROM Message WHERE discussionId = \'' . $i_discussionId . '\' ORDER BY date';
+        $query = 'SELECT messageId, date, state FROM Message WHERE discussionId = \'' . $i_discussionId . '\' ORDER BY date';
         $dbResult = testError($dbLink,$query);
         while($dbRow = mysqli_fetch_assoc($dbResult))
         {
-            $this->tab_myMessages[] = new Message($dbRow['messageId'],$dbRow['authorId'],$dbRow['contents'],$dbRow['date'],$dbRow['nbLike'], $dbRow['state']);
+            $this->tab_myMessages[] = new Message($dbRow['messageId'],$dbRow['date'], $dbRow['state']);
         }
     }
 
