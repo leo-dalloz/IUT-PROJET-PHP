@@ -2,7 +2,7 @@
 require'checkM.php';
 require 'User.php';
 session_start();
-if($_SESSION['login']!='ok')
+if($_SESSION['login'] != 'ok')
 {
     die('Erreur d\'authentification');
 }

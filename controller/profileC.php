@@ -5,11 +5,9 @@
 */
 require '../model/profileM.php';
 session_start();
-
 if( 'ok' != $_SESSION['login'])
 {
-    echo 'mdr';
-//    die('Erreur d\'authentification');
+    die('Erreur d\'authentification');
 }
 
 
