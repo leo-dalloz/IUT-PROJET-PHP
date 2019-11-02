@@ -29,7 +29,7 @@ ob_start();
                     <p class="CategValue">
                         <?php echo $s_name; ?>
                     </p>
-                    <a href="./modificationProfileV.php?action=surname" class="CategLink"><i class="fas fa-angle-right"></i></a>
+                    <a href="../controller/modificationProfileC.php?action=surname" class="CategLink"><i class="fas fa-angle-right"></i></a>
                 </div>
                 <div class="ProfileLine">
                     <p class="CategName">
@@ -38,7 +38,7 @@ ob_start();
                     <p class="CategValue">
                         <?php echo $s_surname; ?>
                     </p>
-                    <a href="./modificationProfileV.php?action=firstname" class="CategLink"><i class="fas fa-angle-right"></i></a>
+                    <a href="../controller/modificationProfileC.php?action=firstname" class="CategLink"><i class="fas fa-angle-right"></i></a>
                 </div>
                 <div class="ProfileLine">
                     <p class="CategName">
@@ -47,7 +47,7 @@ ob_start();
                     <p class="CategValue">
                         <?php echo $s_pseudo; ?>
                     </p>
-                    <a href="./modificationProfileV.php?action=nickname" class="CategLink"><i class="fas fa-angle-right"></i></a>
+                    <a href="../controller/modificationProfileC.php?action=nickname" class="CategLink"><i class="fas fa-angle-right"></i></a>
                 </div>
                 <div class="ProfileLine">
                     <p class="CategName">
@@ -56,7 +56,7 @@ ob_start();
                     <p class="CategValue">
                         <?php echo $s_birth; ?>
                     </p>
-                    <a href="./modificationProfileV.php?action=birthday" class="CategLink"><i class="fas fa-angle-right"></i></a>
+                    <a href="../controller/modificationProfileC.php?action=birthday" class="CategLink"><i class="fas fa-angle-right"></i></a>
                 </div>
                 <div class="ProfileLine">
                     <p class="CategName">
@@ -65,7 +65,7 @@ ob_start();
                     <p class="CategValue">
                         <?php echo $s_gender; ?>
                     </p>
-                    <a href="./modificationProfileV.php?action=gender" class="CategLink"><i class="fas fa-angle-right"></i></a>
+                    <a href="../controller/modificationProfileC.php?action=gender" class="CategLink"><i class="fas fa-angle-right"></i></a>
                 </div>
                 <div class="ProfileLine mailLine">
                     <p class="CategName">
