@@ -21,7 +21,7 @@ ob_start();
 ?>
 
     <main>
-        <a id="LogoMainContainer" href="indexV.php">
+        <a id="LogoMainContainer" href="../controller/indexC.php">
             <img id="LogoMain" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
 
@@ -64,7 +64,7 @@ ob_start();
             </form>
 
             <p id="LoginLink">
-                Vous possédez déja un compte ? <a href="loginV.php">Se connecter</a>
+                Vous possédez déja un compte ? <a href="../controller/loginC.php">Se connecter</a>
             </p>
         </section>
 

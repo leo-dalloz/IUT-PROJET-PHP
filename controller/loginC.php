@@ -11,12 +11,12 @@ if (isset($_POST['login']))
         {
             $_SESSION['login'] = 'ok';
             $_SESSION['user'] = returnUser($s_pseudo);
-            header('Location: ../view/indexV.php');
+            header('Location: ../controller/indexC.php');
         }
         else
-            header('Location: ../view/loginV.php?step=error');
+            header('Location: ../controller/indexC.php?step=error');
     }
     else
-        header('Location: ../view/loginV.php?step=missing');
+        header('Location: ../controller/indexC.php?step=missing');
 }
 require '../view/loginV.php';

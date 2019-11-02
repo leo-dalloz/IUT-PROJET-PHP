@@ -28,18 +28,18 @@ if (isset($_POST['register']))
                     registration($newUser);
                     header('Location: ./loginC.php');
                 } else if (!checkPseudo($s_pseudo)) {
-                    header('Location: ../view/registerV.php?error=pseudo');
+                    header('Location: ../controller/registerC.php.php?error=pseudo');
                 } else if (!checkEmail($s_email)) {
-                    header('Location: ../view/registerV.php?error=email');
+                    header('Location: ../controller/registerC.php.php?error=email');
                 }
             }
             else
-                header('Location: ../view/registerV.php?error=wrongPwd');
+                header('Location: ../controller/registerC.php.php?error=wrongPwd');
         }
     }
     else
     {
-        header('Location: ../view/registerV.php?error=wrong');
+        header('Location: ../controller/registerC.php?error=wrong');
     }
 }
 require '../view/registerV.php';
