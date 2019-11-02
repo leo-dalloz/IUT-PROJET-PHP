@@ -1,12 +1,11 @@
 <?php
-
+require '../model/User.php';
 session_start();
 if($_SESSION['login']!='ok')
 {
     header('Location: ../controller/indexC.php');
 }
 
-require '../model/User.php';
 
 if (isset($_GET['error']))
     $s_error = $_GET['error'];

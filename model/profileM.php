@@ -82,7 +82,7 @@ function changeBirth ($d_newBirth)
         exit();
     }
 }
-function changePassword ($s_newPassword)
+function changePassword($s_newPassword)
 {
     if($s_newPassword == NULL)
     {
