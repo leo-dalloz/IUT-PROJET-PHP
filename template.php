@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +7,32 @@
 
     <link rel="stylesheet" href="../assets/css/template.css">
     <link id="ThemeStylesheet" rel="stylesheet" href="../assets/css/theme/night.css">
-
-    <!-- Custom page css link -->
-    <link rel="stylesheet" href="../assets/css/<? $style ?>.css">
-
+    <link rel="stylesheet" href="<?= $style ?>">
     <script src="https://kit.fontawesome.com/b18ab37082.js" crossorigin="anonymous"></script>
 
-    <title><?= $title ?> | FreeNote</title>
+    <title><?= $title ?></title>
 </head>
 <body>
 <header>
     <div id="HeaderContainer">
-        <a id="LogoHeaderContainer" href="">
+        <a id="LogoHeaderContainer" href="../controller/indexC.php">
             <img id="LogoHeader" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
 
         <nav>
-            <?php if ($is_guest) {?>
-
-                <a class="navLink" href="">Connexion <i class="fas fa-sign-in-alt"></i></a>
-                <a class="navLink" href="">Inscription <i class="fas fa-user-plus"></i></a>
-
-            <?php } else { ?>
-
-                <a class="navLink" href="">Profil
-                    <div id="ProfilImage"></div>
-                </a>
-                <a class="navLink" href="">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
-
-            <?php } ?>
-
-            <button id="ChangeThemeButton">
-                <i id="IconThemeButton" class="fas fa-sun"></i>
-            </button>
+            <a class="navLink" href="loginV.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
+            <a class="navLink" href="registerV.php">Inscription <i class="fas fa-user-plus"></i></a>
         </nav>
+        <button id="ChangeThemeButton">
+            <i id="IconThemeButton" class="fas fa-sun"></i>
+        </button>
     </div>
 </header>
 
-<main>
-    <?= $content ?>
-</main>
+
+<?= $content ?>
+
+
 <footer>
     <section id="FooterContainer">
         <div id="NameContainer">
@@ -68,10 +54,6 @@
         </div>
     </section>
 </footer>
-
-<?php if (isset($link_js)) { ?>
-    <script src="../assets.js/<?= $link_js ?>"></script>
-<?php } ?>
-<script src="../assets/js/architecture.js"></script>
 </body>
+<script src="../assets/js/architecture.js"></script>
 </html>
