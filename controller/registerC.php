@@ -28,13 +28,13 @@ if (isset($_POST['register']))
                     registration($newUser);
                     header('Location: ./loginC.php');
                 } else if (!checkPseudo($s_pseudo)) {
-                    header('Location: ../controller/registerC.php.php?error=pseudo');
+                    header('Location: ../controller/registerC.php?error=pseudo');
                 } else if (!checkEmail($s_email)) {
-                    header('Location: ../controller/registerC.php.php?error=email');
+                    header('Location: ../controller/registerC.php?error=email');
                 }
             }
             else
-                header('Location: ../controller/registerC.php.php?error=wrongPwd');
+                header('Location: ../controller/registerC.php?error=wrongPwd');
         }
     }
     else
