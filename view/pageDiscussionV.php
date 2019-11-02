@@ -1,8 +1,6 @@
 <?php
 require '../utils.inc.php';
 
-session_start();
-
 $i_numDiscussion = $_GET['discussionId'];
 $tab_discussions = getDiscussions();
 $title = 'Discussion ' .$D_discussion->getName().' | Freenote';
@@ -86,4 +84,4 @@ ob_start();
 <?php
 $content = ob_get_clean();
 require('../template.php');
-?>?>
+?>

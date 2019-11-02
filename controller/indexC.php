@@ -1,6 +1,7 @@
 <?php
 require '../model/indexM.php';
-
+session_start();
+$is_guest = $_SESSION['login'];
 
 if(isset($_POST['action']))
 {
@@ -21,3 +22,4 @@ if(isset($_POST['action']))
     }
 }
 require '../view/indexV.php';
+

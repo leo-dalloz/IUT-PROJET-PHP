@@ -2,7 +2,7 @@
     $title = 'Freenote';
     $style = '../assets/css/index.css';
     $style_theme = '../assets/css/theme/day.css';
-    session_start();
+
     $tab_discussions = getDiscussions();
 	ob_start();
 ?>
@@ -77,7 +77,7 @@
             <a class="MainButton" href="">Se connecter</a>
         </section>
         <section id="responsiveSection">
-            <img src="../assets/images/telThemeClair.png" id="responsiveTel"alt="tel image mobile">
+            <img src="../assets/images/telThemeClair.png" id="responsiveTel" alt="tel image mobile">
             <p id="responsiveText">
                 Disponible sur téléphone ! <br>
                 Disponible en thème foncé, <br>
