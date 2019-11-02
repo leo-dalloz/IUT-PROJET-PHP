@@ -1,17 +1,17 @@
-/*
+/* 
     @title : general
     @started on : 15/10/2019
     @finished on : 15/10/2019
 */
 
-/*
+/* 
     Import font
 */
 @import url('https://fonts.googleapis.com/css?family=Oswald|Roboto&display=swap');
 
 
 
-/*
+/* 
     General
 */
 * {
@@ -76,7 +76,7 @@ input[type=checkbox] {
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #d3d3d3;
     opacity: 1; /* Firefox */
-}
+} 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: #d3d3d3;
 }
@@ -86,15 +86,12 @@ input[type=checkbox] {
 
 
 
-/*
+/* 
     Main
 */
 main {
     max-width : 1024px;
-    width : 30%;
     height: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
 
     display : flex;
     flex-direction: column;
@@ -106,7 +103,7 @@ main {
 
 }
 
-/*
+/* 
     LogoMainContainer & LogoMain
 */
 #LogoMainContainer {
@@ -120,7 +117,7 @@ main {
 }
 
 
-/*
+/* 
     PageTitleContainer & components
 */
 #PageTitleContainer {
@@ -132,10 +129,10 @@ main {
 }
 #PageTitle {
     margin-bottom : 0px;
-
+    
     font-size : 30px;
 }
-/*
+/* 
     submitButton
 */
 #submitButton {
@@ -158,7 +155,7 @@ main {
     transition : 0.2s;
 }
 
-/*
+/* 
     SubmitContainer
 */
 #SubmitContainer {
@@ -173,4 +170,18 @@ main {
     text-align: center;
 }
 
-@media screen and (width)
+
+/* 
+    ERRORS
+*/
+#ErrorContainer {
+    width : 80%;
+    
+    margin-left : auto;
+    padding : 10px;
+    margin-right : auto;
+
+    background-color : #ff5e57;
+
+    font-size : 17px;
+}
