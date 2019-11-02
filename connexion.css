@@ -1,0 +1,144 @@
+/*
+    @Title : connexion
+    @For : FreeNote
+    @Started on : 13/10/19
+    @Finished on : 13/10/19
+*/
+
+
+
+
+
+/*
+    PageTitleContainer & components
+*/
+#PageDescription {
+    font-size: 20px;
+}
+
+
+/*
+    Form
+*/
+#FormContainer {
+    padding : 20px 55px 20px 55px;
+}
+
+
+/*
+    input text & password
+*/
+input[type = 'password'], input[type = 'text']  {
+    width : 80%;
+
+    padding : 10px 0 10px 0;
+
+    background : none;
+
+    border : none;
+    border-bottom: 3px solid #ff793f;
+
+    font-size: 19px;
+}
+input[type = 'text'] {
+    margin : 0 0 25px 0;
+}
+input[type = 'text']:focus, input[type = 'password']:focus {
+    outline: none;
+}
+
+
+/*
+    PwdContainer
+*/
+#PwdContainer {
+    margin-bottom : 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+/*
+    input checkbox
+*/
+input[type="checkbox"]:hover + label {
+    color : #ff793f;
+
+    transition : 0.5s;
+}
+input[type="checkbox"]:hover {
+    cursor : pointer;
+}
+
+
+/*
+    RememberContainer
+*/
+#RememberContainer {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+#rememberC {
+    margin-right : 5px;
+}
+#rememberCLabel {
+    font-size : 17px;
+}
+
+
+
+
+/*
+    RegisterLink
+*/
+#RegisterLink {
+    text-align: center;
+
+    margin-top : 25px;
+}
+
+
+<<<<<<< HEAD
+/*
+    ERRORS
+*/
+#ErrorContainer {
+    width : 80%;
+
+    padding : 10px;
+
+    background-color : #ff5e57;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    font-size : 17px;
+}
+=======
+>>>>>>> origin/AudreyDevelop
+
+
+/*
+    TABLET DESIGN
+*/
+@media screen and (max-width : 1024px) {
+    main {
+        width : 60%;
+    }
+}
+
+/*
+    SMARTPHONE DESIGN
+*/
+@media screen and (max-width : 465px) {
+    main {
+        width : 90%;
+    }
+}
