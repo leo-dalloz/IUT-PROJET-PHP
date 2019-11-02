@@ -16,9 +16,9 @@ ob_start();
             </a>
             <hr>
         </div>
-        <form id="form" action="../controller/modificationProfileC.php?action=<?=$s_action?>" method="post">
+        <form id="form" action="../controller/modificationProfileC.php?action=<?=$s_printAction?>" method="post">
             <?php
-            switch ($s_action) {
+            switch ($s_printAction) {
                 case 'nickname':
                     echo '<input type="text" name="nickname" placeholder="Nouveau pseudo">';
                     break;
