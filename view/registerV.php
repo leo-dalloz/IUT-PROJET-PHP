@@ -13,6 +13,8 @@ else if ($s_error == 'pseudo')
     $s_error = 'Le pseudo que vous avez choisi est déjà utilisé.';
 else if ($s_error == 'email')
     $s_error = 'L\'email que vous avez choisi possède déjà un compte associé.';
+else if ($s_error == 'wrongPwd')
+    $s_error = 'Le mot de passe doit contenir au moins 8 caractères, dont une majuscule, une minuscule et un chiffre.';
 else
     $s_error = '';
 ob_start();
@@ -52,12 +54,12 @@ ob_start();
                 <input type="date" name="Birth" class="FormInput" placeholder="Date">
 
                 <input type="password" name="Pwd" class="FormInput" placeholder="Mot de passe">
-                <input type="password" name="Pwd1" class="FormInput" placeholder="Confirmer mot de passe">
+                <input type="password" name="Pwd1" class="FormInput" placeholder="Confirmer mot de passe"><br/>
 
                 <?php echo $s_error; ?>
 
                 <div id="SubmitContainer">
-                    <input id="submitButton" type="submit" value="S'inscrire">
+                    <input id="submitButton" name="register" type="submit" value="S'inscrire">
                 </div>
             </form>
 

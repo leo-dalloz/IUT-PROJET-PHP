@@ -1,9 +1,8 @@
 <?php
-    $title = 'Connexion';
-    $style_common = '../assets/css/connexion-inscription.css';
-    $style = '../assets/css/connexion.css';
-
-    ob_start()
+$title = 'Connexion';
+$style_common = '../assets/css/connexion-inscription.css';
+$style = '../assets/css/connexion.css';
+ob_start()
 ?>
 
     <main>
@@ -33,17 +32,20 @@
                     <input type="checkbox" name="rememberC" id="rememberC">
                     <label id="rememberCLabel" for="rememberC">Se souvenir de moi</label>
                 </div>
-                <?php if (isset($_GET['step']) && $_GET['step'] == 'error') {?>
+                <?php if (isset($_GET['step'])) {?>
                     <div id="ErrorContainer">
                         <p id="Error">
-                            <?= 'L\'identifiant et le mot de passe ne correspondent pas' ?>
+                            <?php if ($_GET['step'] == 'error')
+                                echo 'L\'identifiant et le mot de passe ne correspondent pas.';
+                            else if ($_GET['step'] == 'missing')
+                                echo 'Vous avez oublié un des champs.'?>
                         </p>
                     </div>
                 <?php } ?>
 
 
                 <div id="SubmitContainer">
-                    <input id="submitButton" type="submit" value="Se connecter">
+                    <input id="submitButton" name="login" type="submit" value="Se connecter">
                 </div>
             </form>
 
@@ -55,6 +57,6 @@
     </main>
 
 <?php
-    $content = ob_get_clean();
-    require('../template_empty.php');
+$content = ob_get_clean();
+require('../template_empty.php');
 ?>
