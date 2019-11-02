@@ -35,10 +35,10 @@ if (isset($_POST['action']))
                     header('Location: ./pageDiscussionC.php?etat=' . 'discussion full' . '&discussionId=' . $i_discussionId);
                 }
             } else if (!(strpos($s_contents, '.') == FALSE)) {
-                addToMessage($s_contents, $i_lastMessageID);
+                addToMessage($s_contents, $i_lastMessageID, $_SESSION['user']->getMyId());
                 $D_discussion->closeAMessage();
             } else {
-                addToMessage($s_contents, $i_lastMessageID);
+                addToMessage($s_contents, $i_lastMessageID, $_SESSION['user']->getMyId());
             }
 
             header('Location: ./pageDiscussionC.php?etat=' . 'message envoyé' . '&discussionId=' . $i_discussionId);
