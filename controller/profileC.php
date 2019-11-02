@@ -10,7 +10,6 @@ if( 'ok' != $_SESSION['login'])
     die('Erreur d\'authentification');
 }
 
-
 // Test si l'utilisateur arrive sur ce lien sans action définie au préalable
 if (!isset($_GET['action'])) {
     echo "error l.10";

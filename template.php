@@ -23,7 +23,7 @@
                 <a class="navLink" href="../controller/loginC.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
                 <a class="navLink" href="../controller/registerC.php">Inscription <i class="fas fa-user-plus"></i></a>
             <?php } else { ?>
-                <a class="navLink" href="../controller/profileC.php">Profil</a>
+                <a class="navLink" href="../view/basicProfileV.php">Profil</a>
                 <a class="navLink" href="">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
             <?php } ?>
         </nav>
