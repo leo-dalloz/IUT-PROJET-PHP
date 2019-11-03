@@ -4,7 +4,7 @@ require '../model/pageDiscussionM.php';
 require '../model/User.php';
 session_start();
 $isGuest = $_SESSION['login'];
-$isAdmin = $_SESSION['login']->getMyAdmin();
+$isAdmin = $_SESSION['login'] -> getMyAdmin();
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
 $s_etat = $_GET['etat'];

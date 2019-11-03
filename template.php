@@ -25,7 +25,7 @@
             <?php } else { ?>
                 <a class="navLink" href="../view/basicProfileV.php">Profil</a>
                 <a class="navLink" href="">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
-            <?php }  if ($is_admin) {
+            <?php }  if (1 == $isAdmin) {
                 ?> <a class="navLink" href="../"> <i class="fas fa-plus"></i></a>
             <?php }
             ?>
