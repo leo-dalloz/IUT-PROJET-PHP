@@ -26,7 +26,7 @@ if(isset($_POST['action']))
         }
         else
         {
-            header('Location: ../view/indexV.php?error=nomIncorrect');
+            header('Location: ../view/indexC.php?error=nomIncorrect');
         }
     }
 }
