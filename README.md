@@ -76,7 +76,6 @@ configuration recommandée
 - intel core i9 9900K 
 - nvidia rtx 2080ti  
 
-ata. 
 	
 ####################################################################
 			identifiants de connexion
