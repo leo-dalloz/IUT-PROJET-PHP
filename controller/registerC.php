@@ -1,5 +1,5 @@
 <?php
-require '../model/checkM.php';
+require_once '../model/checkM.php';
 require '../model/registerM.php';
 if (isset($_POST['register']))
 {
@@ -15,7 +15,7 @@ if (isset($_POST['register']))
     {
         if ($s_pwd != $s_pwd1)
         {
-            header('Location: ../view/registerV.php?error=pwd');
+            header('Location: ../controller/registerC.php?error=pwd');
         }
         else
         {
