@@ -1,7 +1,7 @@
 
 Learn more or give us feedback
 <?php
-  require '../base.php';
+  require 'dbTest.php';
   /*
   * Laurent
   * verifie dans la base de donnée si l'adresse mail existe
