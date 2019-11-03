@@ -107,7 +107,7 @@ main {
 
 
 
-/* 
+/*
     FOOTER
 */
 footer {
@@ -235,6 +235,52 @@ footer {
     position : absolute;
     bottom : 0;
 }
+
+/*
+    popup
+*/
+.popup {
+    width: 320px;
+
+    padding : 10px 0px 10px 0px;
+
+    position: fixed;
+    bottom : 0;
+
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    box-shadow: 0 0 10px #212121;
+
+    text-align : center;
+    color : white;
+    font-size : 20px;
+    font-weight: 600;
+
+    animation : fadeout 0.5s;
+    animation-delay: 4.75s;
+    transition : 0.5s;
+}
+
+
+.popupsuccess {
+    background-color : #6ab04c;
+}
+.popuperror {
+    background-color: #eb4d4b;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity : 1;
+    }
+    100% {
+        opacity : 0;
+    }
+}
+
 
 @media screen and (max-width : 600px) {
     .navLink {

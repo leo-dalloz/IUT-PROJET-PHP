@@ -11,6 +11,7 @@ if (isset($_POST['login']))
         {
             $_SESSION['login'] = 'ok';
             $_SESSION['user'] = returnUser($s_pseudo);
+            $_SESSION['popupsuccess'] = 'Vous êtes maintenant connecté';
             header('Location: ../controller/indexC.php');
         }
         else
