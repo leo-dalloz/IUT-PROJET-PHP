@@ -1,7 +1,8 @@
 <?php
 require '../model/indexM.php';
 session_start();
-$is_guest = $_SESSION['login'];
+$isGuest = $_SESSION['login'];
+$isAdmin = $_SESSION['login']->getMyAdmin();
 
 if(isset($_POST['action']))
 {
