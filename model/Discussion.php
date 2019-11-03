@@ -89,13 +89,7 @@ class Discussion
     {
         return $this->s_myName;
     }
-    /**
-     * @return mixed
-     */
-    public function getNbMaxWords()
-    {
-        return $this->i_myNbMaxWords;
-    }
+
     /**
      * @return mixed
      */

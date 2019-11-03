@@ -3,6 +3,8 @@ require 'User.php';
 require 'dbTest.php';
 function login($s_pseudo,$s_pwd)
 {
+    $s_pseudo = addslashes($s_pseudo);
+    $s_pwd = addslashes($s_pwd);
     $dbLink = dbConnect();
     $query = 'SELECT pseudo AS pseudo, password AS password FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
     if (!($dbResult = mysqli_query($dbLink, $query))) {
@@ -21,6 +23,7 @@ function login($s_pseudo,$s_pwd)
 }
 function returnUser ($s_pseudo)
 {
+    $s_pseudo = addslashes($s_pseudo);
     $dbLink = dbConnect();
     $query = 'SELECT id, admin, name , surname, pseudo, email, birthdate, password, gender FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
     if (!($dbResult = mysqli_query($dbLink, $query))) {

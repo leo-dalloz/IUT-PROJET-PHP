@@ -21,7 +21,7 @@ if (isset($_POST['action']))
     $s_contents = $_POST['contents'];
     $s_action = $_POST['action'];
     if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok') {
-        if (!$D_discussion->getState()) {
+        if (1 != $D_discussion->getState()) {
             header('Location: ../controller/pageDiscussionC.php?error=' . 'Discussion fermé' . '&discussionId=' . $i_discussionId);
         }
         else {
@@ -30,6 +30,7 @@ if (isset($_POST['action']))
                 header('Location: ../controller/pageDiscussionC.php?error=' . 'Déja participé' . '&discussionId=' . $i_discussionId);
             } else if (str_word_count($s_contents, 0, '123456789') <= $D_discussion::NbMaxWords
                 && str_word_count($s_contents, 0, '123456789') != 0) {
+                $s_contents = addslashes($s_contents);
                 if (-1 == $i_lastMessageID) {
                     if (1 == $D_discussion->canOpenDiscussion()) {
                         createMessage($i_discussionId);
