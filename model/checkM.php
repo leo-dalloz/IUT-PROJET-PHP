@@ -4,7 +4,7 @@ function checkPseudo($s_pseudo)
 {
     $dbLink = dbConnect();
     $query = 'SELECT pseudo FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
-    $dbRow = testError($dbLink,$query);
+    $dbRow = testError($dbLink, $query);
     $dbResult = $dbRow->fetch_assoc();
     if ($dbResult['pseudo'] != NULL)
         return false;
@@ -15,7 +15,7 @@ function checkEmail($s_email)
 {
     $dbLink = dbConnect();
     $query = 'SELECT email FROM `User` WHERE email = \'' . $s_email . '\'';
-    $dbRow = testError($dbLink,$query);
+    $dbRow = testError($dbLink, $query);
     $dbResult = $dbRow->fetch_assoc();
     if ($dbResult['email'] != NULL)
         return false;

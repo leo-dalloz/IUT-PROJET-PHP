@@ -53,6 +53,8 @@ function changePseudo ($s_newPseudo)
         header('Location: ../controller/profileC.php?error=Pseudo invalide');
     }
     else {
+        print_r(checkPseudo($s_newPseudo));
+        exit();
         $dbLink = dbConnect();
         $query = 'UPDATE `User` SET pseudo = \'' . $s_newPseudo . '\' WHERE id = \'' . $_SESSION['user']->getMyId() . '\'';
         if (!($dbResult = mysqli_query($dbLink, $query))) {
