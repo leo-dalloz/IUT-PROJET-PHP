@@ -81,7 +81,6 @@ if (isset($_GET['action'])) {
             case 'password' :
                 if ($_POST['password'] != NULL && (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])#', $_POST['password']) && strlen($_POST['password']) > 8)) {
                     changePassword($_POST['password']);
-                    //$_SESSION['user']->setMyGender($_POST['gender']); faux à changer plus tard
                     header('location: ../controller/profileC.php?success=Le profil a été modifié avec succès');
                 } else {
                     header('location: ../controller/modificationProfileC.php?action=password&error=Mot de passe invalide ou ne respectant pas les critères de sécurité');

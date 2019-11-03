@@ -52,16 +52,17 @@ function changePseudo ($s_newPseudo)
     {
         header('Location: ../controller/profileC.php?error=Pseudo invalide');
     }
-    $dbLink = dbConnect();
-    $query = 'UPDATE `User` SET pseudo = \'' . $s_newPseudo . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'' ;
-    if (!($dbResult = mysqli_query($dbLink, $query)))
-    {
-        echo 'Erreur de requête<br/>';
-        //Affiche le type d'erreur.
-        echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
-        //Affiche la requête envoyée.
-        echo 'Requête : ' . $query . '<br/>';
-        exit();
+    else {
+        $dbLink = dbConnect();
+        $query = 'UPDATE `User` SET pseudo = \'' . $s_newPseudo . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'';
+        if (!($dbResult = mysqli_query($dbLink, $query))) {
+            echo 'Erreur de requête<br/>';
+            //Affiche le type d'erreur.
+            echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
+            //Affiche la requête envoyée.
+            echo 'Requête : ' . $query . '<br/>';
+            exit();
+        }
     }
 }
 function changeBirth ($d_newBirth)
