@@ -27,9 +27,6 @@ ob_start();
                         </div>
                         <div class="SecondLine">
                             <li>
-                                <?= $value->getNbMaxWords()?> Mots MAX
-                            </li>
-                            <li>
                                 <?php $b_isOuvert = $value->getState()?>
                                 <p class="<?= ($b_isOuvert) ? 'Open' : 'Close' ?>"><?= ($b_isOuvert) ? 'Ouverte' : 'Fermée' ?></p>
                             </li>
