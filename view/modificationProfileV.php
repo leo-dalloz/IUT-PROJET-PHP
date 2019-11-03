@@ -16,7 +16,7 @@ ob_start();
             </a>
             <hr>
         </div>
-        <form id="form" action="../controller/modificationProfileC.php?action=<?=$s_action?>&submitAction=<?=$s_action?>" method="get">
+        <form id="form" action="../controller/modificationProfileC.php?action=<?=$s_action?>" method="post">
             <?php
             switch ($s_action) {
                 case 'nickname':
@@ -48,7 +48,7 @@ ob_start();
             }
             ?>
 
-            <button type="submit" id="submitButton">
+            <button type="submit" name="submitAction" id="submitButton">
                 <i class="fas fa-user-edit"></i>
             </button>
         </form>

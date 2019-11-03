@@ -32,9 +32,9 @@ if (isset($_GET['action'])) {
         echo "error l.25";
         die();
     }
-    if (isset($_GET['sumbitAction'])) {
+    if (isset($_POST['sumbitAction'])) {
 
-        switch ($_GET['sumbitAction']) {
+        switch ($s_action) {
             case 'nickname' :
                 if ($_POST['nickname'] != null) {
                     changePseudo($_POST['nickname']);
