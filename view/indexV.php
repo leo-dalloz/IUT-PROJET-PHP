@@ -3,7 +3,6 @@
     $style = '../assets/css/index.css';
     $style_theme = '../assets/css/theme/day.css';
     $tab_discussions = getDiscussions();
-    $isAdmin = 1;
 	ob_start();
 ?>
 
