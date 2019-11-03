@@ -6,10 +6,7 @@ function checkPseudo($s_pseudo)
     $query = 'SELECT pseudo FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
     $dbRow = testError($dbLink,$query);
     $dbResult = $dbRow->fetch_assoc();
-    if ($dbResult['pseudo'] != NULL)
-        return false;
-    else
-        return true;
+    return false;
 }
 function checkEmail($s_email)
 {
