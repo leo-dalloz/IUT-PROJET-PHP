@@ -1,51 +1,39 @@
 <?php
+<<<<<<< HEAD
 
     require_once '../base.php';
 
     function checkPseudo($s_pseudo)
+=======
+require_once 'dbTest.php';
+function checkPseudo($s_pseudo)
+{
+    $dbLink = dbConnect();
+    $query = 'SELECT pseudo FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
+    $dbResult = testError($dbLink,$query);
+    while($dbRow = mysqli_fetch_assoc($dbResult))
+>>>>>>> finalJeremyDevelop
     {
-        $dbLink = dbConnect();
-
-        $query = 'SELECT pseudo FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
-
-        if (!($dbResult = mysqli_query($dbLink, $query))) {
-            echo 'Erreur de requête<br/>';
-            //Affiche le type d'erreur.
-            echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
-            //Affiche la requête envoyée.
-            echo 'Requête : ' . $query . '<br/>';
-            exit();
-        }
-
-        $result = $dbResult->fetch_assoc();
-
-
-        if ($result['pseudo'] != NULL)
-            return 1;
-        else
+        if ($dbRow['pseudo'] != NULL)
             return 0;
-
+        else
+            return 1;
     }
-
-    function checkEmail($s_email)
+}
+function checkEmail($s_email)
+{
+    $dbLink = dbConnect();
+    $query = 'SELECT email FROM `User` WHERE email = \'' . $s_email . '\'';
+    $dbResult = testError($dbLink,$query);
+    while($dbRow = mysqli_fetch_assoc($dbResult))
     {
-        $dbLink = dbConnect();
-
-        $query = 'SELECT email FROM `User` WHERE email = \'' . $s_email . '\'';
-
-        if (!($dbResult = mysqli_query($dbLink, $query))) {
-            echo 'Erreur de requête<br/>';
-            //Affiche le type d'erreur.
-            echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
-            //Affiche la requête envoyée.
-            echo 'Requête : ' . $query . '<br/>';
-            exit();
-        }
-
-        $result = $dbResult->fetch_assoc();
-
-        if ($result['email'] != NULL)
-            return 1;
-        else
+        if ($dbRow['email'] != NULL)
             return 0;
+<<<<<<< HEAD
     }
+=======
+        else
+            return 1;
+    }
+}
+>>>>>>> finalJeremyDevelop

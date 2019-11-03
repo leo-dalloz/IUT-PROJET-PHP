@@ -1,22 +1,33 @@
 <?php
+require '../model/User.php';
+session_start();
+if($_SESSION['login']!='ok')
+{
+    header('Location: ../controller/indexC.php');
+}
 
+<<<<<<< HEAD
     require '../model/profileM.php';
     session_start();
     if($_SESSION['login']!='ok')
     {
         die('Erreur d\'authentification');
     }
+=======
+>>>>>>> finalJeremyDevelop
 
-//    $s_action = $_POST['button'];
+if (isset($_GET['error']))
+    $s_error = $_GET['error'];
+else
+    $s_error = 0;
 
-    $s_surname = $_POST['Surname'];
-    $s_name = $_POST['Name'];
-    $s_pseudo = $_POST['Pseudo'];
-    $d_birth = $_POST['Birth'];
-    $s_pwd = $_POST['Pwd'];
-    $s_gender = $_POST['Gender'];
+if (isset($_GET['success']))
+    $s_success = $_GET['success'];
+else
+    $s_success = '';
 
 
+<<<<<<< HEAD
     if ($s_surname != NULL)
     {
         changeSurname($s_surname);
@@ -87,3 +98,13 @@
 //        $_SESSION['user']->setMyGender($s_newGender);
 //    }
     header('Location: ../View/basicProfileV.php');
+=======
+$s_pseudo = $_SESSION['user']->getMyPseudo();
+$s_name = $_SESSION['user']->getMyName();
+$s_surname = $_SESSION['user']->getMySurname();
+$s_birth = $_SESSION['user']->getMyBirth();
+$s_gender = $_SESSION['user']->getMyGender();
+$s_email = $_SESSION['user']->getMyEmail();
+
+require '../view/profileV.php';
+>>>>>>> finalJeremyDevelop

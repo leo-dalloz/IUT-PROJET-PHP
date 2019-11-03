@@ -1,4 +1,5 @@
 <?php
+
   function dbConnect()
   {
       $dbLink = mysqli_connect('mysql-projet-iut-info.alwaysdata.net', '191346_admin', 'jullazone')
