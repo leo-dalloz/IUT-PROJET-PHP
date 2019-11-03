@@ -11,7 +11,6 @@ else if (isset($_GET['error']))
 {
     $_SESSION['popuperror'] = $_GET['etat'];
 }
-
 if(isset($_POST['action']))
 {
     $s_action = $_POST['action'];
@@ -23,11 +22,11 @@ if(isset($_POST['action']))
         {
             createNewDiscussion($s_nomDiscussion);
             $_SESSION['popupsuccess'] = 'Discussion créer';
-            header('Location: ./indexC.php?etat=' . 'Discussion créée');
+            header('Location: ../controller/indexC.php?etat=' . 'Discussion créée');
         }
         else
         {
-            header('Location: ../view/indexC.php?error=' . 'Nom incorrect');
+            header('Location: ../controller/indexC.php?error=' . 'Nom incorrect');
         }
     }
 }
