@@ -2,9 +2,9 @@
 require 'Message.php';
 class Discussion
 {
+    const NbMaxWords = 2;
     private $i_myDiscussionId;
     private $s_myName;
-    private $i_myNbMaxWords;
     private $i_myNbLike;
     private $b_myState;
     private $i_myNbMaxMessage;
@@ -12,12 +12,11 @@ class Discussion
     function __construct($i_discussionId)
     {
         $dbLink = dbConnect();
-        $query = 'SELECT discussionName, nbMaxWords, nbLike, state, nbMaxMessages FROM Discussion WHERE discussionId = \'' . $i_discussionId.'\'';
+        $query = 'SELECT discussionName, nbLike, state, nbMaxMessages FROM Discussion WHERE discussionId = \'' . $i_discussionId.'\'';
         $dbResult = testError($dbLink,$query);
         while($dbRow = mysqli_fetch_assoc($dbResult))
         {
             $this->s_myName = $dbRow['discussionName'];
-            $this->i_myNbMaxWords = $dbRow['nbMaxWords'];
             $this->i_myNbLike =$dbRow['nbLike'];
             $this->b_myState = $dbRow['state'];
             $this->i_myNbMaxMessage = $dbRow['nbMaxMessages'];
@@ -30,19 +29,15 @@ class Discussion
             $this->tab_myMessages[] = new Message($dbRow['messageId'],$dbRow['date'], $dbRow['state']);
         }
     }
-
     public function canOpenDiscussion()
     {
         if(count($this->tab_myMessages) < $this->i_myNbMaxMessage) return 1;
         else return 0;
     }
-
-
     public function closeAMessage()
     {
         end($this->tab_myMessages)->closeMessage();
     }
-
     public function lastMessage()
     {
         $i_lastMessage = -1 ;
@@ -55,7 +50,6 @@ class Discussion
         }
         return $i_lastMessage;
     }
-
     public function getMessages()
     {
         return $this->tab_myMessages;

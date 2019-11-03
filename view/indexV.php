@@ -1,10 +1,9 @@
 <?php
-    $title = 'Freenote';
-    $style = '../assets/css/index.css';
-    $style_theme = '../assets/css/theme/day.css';
-
-    $tab_discussions = getDiscussions();
-	ob_start();
+$title = 'Freenote';
+$style = '../assets/css/index.css';
+$style_theme = '../assets/css/theme/day.css';
+$tab_discussions = getDiscussions();
+ob_start();
 ?>
 
     <div id="LDiscussionContainer">
@@ -22,9 +21,6 @@
                         <?= $value->getNbMessages() ?> Messages
                     </td>
                     <td>
-                        <?= $value->getNbMaxWords()?> Mots MAX
-                    </td>
-                    <td>
                         <?php $b_isOuvert = $value->getState()?>
                         <p class="<?= ($b_isOuvert) ? 'Open' : 'Close' ?>"><?= ($b_isOuvert) ? 'Ouverte' : 'Fermée' ?></p>
                     </td>
@@ -32,7 +28,10 @@
                         <?= $value->getNbLike() ?> <i class="fas fa-thumbs-up"></i>
                     </td>
                 </tr>
-            <?php } ?>
+            <?php }
+            if ($isAdmin == 1) {?>
+                <a class="navLink" href="../"> Créer une discussion <i class="fas fa-plus"></i></a>
+            <? } ?>
         </table>
     </div>
     <main id="top">

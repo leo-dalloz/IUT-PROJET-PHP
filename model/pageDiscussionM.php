@@ -1,6 +1,5 @@
 <?php
 require 'Discussion.php';
-
 function createMessage($i_discussionId)
 {
     $dbLink = dbConnect();
@@ -8,7 +7,6 @@ function createMessage($i_discussionId)
     $query = "INSERT INTO Message (discussionId, date, state) VALUES ('$i_discussionId','$d_date', 1)";
     testError($dbLink,$query);
 }
-
 function addToMessage($s_contents, $i_messageId, $i_authorId)
 {
     $dbLink = dbConnect();
@@ -16,7 +14,6 @@ function addToMessage($s_contents, $i_messageId, $i_authorId)
     $query = "INSERT INTO Post(messageId, authorId, contents, date) VALUES ('$i_messageId','$i_authorId', '$s_contents','$d_date')";
     testError($dbLink,$query);
 }
-
 function getDiscussions()
 {
     $tab_discussions = array();
@@ -29,7 +26,6 @@ function getDiscussions()
     }
     return $tab_discussions;
 }
-
 function testIfLike($i_discussionId, $i_userId)
 {
     $i_cpt = 0;
@@ -42,7 +38,6 @@ function testIfLike($i_discussionId, $i_userId)
     }
     return $i_cpt;
 }
-
 function addLike($i_discussionId, $i_userId)
 {
     $dbLink = dbConnect();
@@ -51,7 +46,6 @@ function addLike($i_discussionId, $i_userId)
     $query = "UPDATE Discussion SET nblike = nbLike + 1 WHERE discussionId = '$i_discussionId'";
     testError($dbLink,$query);
 }
-
 function removeLike ($i_discussionId, $i_userId)
 {
     $dbLink = dbConnect();
@@ -60,7 +54,6 @@ function removeLike ($i_discussionId, $i_userId)
     $query = "UPDATE Discussion SET nblike = nbLike - 1 WHERE discussionId = '$i_discussionId'";
     testError($dbLink,$query);
 }
-
 function isAlreadyComment($i_messageId, $i_userId)
 {
     $i_cpt = 0;
@@ -73,4 +66,3 @@ function isAlreadyComment($i_messageId, $i_userId)
     }
     return $i_cpt;
 }
-
