@@ -50,7 +50,7 @@
             </form>
 
             <p id="RegisterLink">
-                Nouveau sur FreeNote ? <a href="registerV.php">S'inscrire maintenant</a>
+                Nouveau sur FreeNote ? <a href="registerC.php">S'inscrire maintenant</a>
             </p>
 
         </section>
