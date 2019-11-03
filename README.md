@@ -59,7 +59,7 @@ Problèmes rencontrés :
 	verification/envoie d'email sur un autre serveur always d
 
 ##################################################################
-		configuration logicielle
+		Configuration logicielle
 ##################################################################
 fonctionne sur les dernieres versions de :
 - google chrome
