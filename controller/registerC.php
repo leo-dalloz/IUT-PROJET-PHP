@@ -1,4 +1,6 @@
 <?php
+require '../model/checkM.php';
+require '../model/registerM.php';
 if (isset($_POST['register']))
 {
     $s_surname = $_POST['Surname'];
