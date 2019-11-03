@@ -19,12 +19,12 @@
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/plain;charset=utf-8\r\n\r\n";
       $message .= "mot de passe oublié ? cliquez sur ce lien : \n";
-      $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello';
+      $message .= 'http://projet-iut-info.alwaysdata.net/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello';
       //    mail au format html
       $message .= "\r\n\r\n--" . $boundary . "\r\n";
       $message .= "Content-type: text/html;charset=utf-8\r\n\r\n";
       $message .= fread($handle1,filesize($mail1));
-      $message .= 'http://projet-iut-info.alwaysdata.net/mdpoublie/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
+      $message .= 'http://projet-iut-info.alwaysdata.net/PROJET-PHP/controller/generatePwdC.php?token=' . $s_token . '&step=hello <br><br>';
       $message .= fread($handle2,filesize($mail2));
       $message .= "\r\n\r\n--" . $boundary . "--";
       addToken($s_token,$s_mail);
@@ -32,7 +32,7 @@
       fclose($handle1);
       fclose($handle2);
     } // sendMail()
-    
+
     if (isset($_POST['mail'])) {
       $s_mail = $_POST['mail'];
       // si le mail existe dans la bd on averti l'utilisateur de l'envoie du mail sinon en le previent de la non existance du mail
