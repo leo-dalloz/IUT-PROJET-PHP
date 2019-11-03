@@ -26,7 +26,7 @@ if (isset($_GET['action'])) {
         echo "error l.25";
         die();
     }
-    if (isset($_POST['sumbitAction'])) {
+    if (isset($_POST['submitAction'])) {
 
         switch ($s_action) {
             case 'nickname' :
