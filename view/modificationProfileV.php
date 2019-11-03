@@ -11,7 +11,7 @@ ob_start();
 ?>
     <main>
         <div id="HeadController">
-            <a href="./profileV.php" id="linkBack">
+            <a href="../controller/profileC.php" id="linkBack">
                 <i class="fas fa-arrow-left"></i> Retour à la page précédente
             </a>
             <hr>
