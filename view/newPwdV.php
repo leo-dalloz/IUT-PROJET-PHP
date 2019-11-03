@@ -1,22 +1,8 @@
 <?php
-      $title = 'Nouveau mot de passe';
-      $style = 'StyleNewPassWord.css';
-
-      $step = $_GET['step'];
-      if ($step == null)
-          $msg = 'verification mail';
-      else if($step == 'ok')
-          $msg = 'un mail à été envoyé' ;
-      elseif ($step == 'error')
-          $msg = 'adresse mail inexistante dans notre base de données ';
-
       $title = 'Mot de passe oublié';
       $style_common = '../assets/css/connexion-inscription.css';
       $style = '../assets/css/newPwd.css';
-
       ob_start()
-
-
 ?>
 
       <main>

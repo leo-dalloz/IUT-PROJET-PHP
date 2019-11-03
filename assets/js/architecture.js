@@ -1,6 +1,16 @@
 /*
     Style    
 */
+let listPopUp = document.querySelectorAll('.popup');
+
+for (var i = 0; i < listPopUp.length; ++i) {
+    setTimeout(deletePopUp, 5000, listPopUp[i]);
+}
+
+function deletePopUp(popup) {
+    popup.remove();
+}
+
 var ThemeButton = document.getElementById('ChangeThemeButton');
 var IconThemeButton = document.getElementById('IconThemeButton');
 
@@ -16,7 +26,7 @@ if (window.localStorage.theme == 'night') {
 
 
 function changeTheme(newTheme) {    
-    document.getElementById('ThemeStylesheet').setAttribute('href', './assets/css/' + newTheme + '.css');
+    document.getElementById('ThemeStylesheet').setAttribute('href', '../assets/css/theme/' + newTheme + '.css');
     window.localStorage.theme = newTheme;
 
     if (window.localStorage.theme == 'day') {

@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Roboto&display=swap');
+
+* {
+    margin : 0;
+    padding : 0;
+
+    font-family : 'Roboto', sans-serif;
+}
+
+a, a:active {
+    text-decoration : none;
+	color : white;
+}
+
+
+img {
+    user-select : none;
+}
+
+i {
+    padding : 5px;
+}
+
+ul, li {
+    list-style: none;
+    display: inline;
+}
+
+html, body {
+    min-height : 100%;
+    height : 100%;
+}
+
+
+
+header {
+    width : 100%;
+    height : 70px;
+
+    background-color : #20232A;
+
+    box-shadow : 0 0 10px rgba(21,21,21, 0.6);
+
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+
+    border-bottom : 3px solid #ff793f;
+}
+#HeaderContainer {
+    max-width : 1024px;
+    width : 100%;
+    height : 100%;
+
+    display : flex;
+    flex-direction : row;
+    justify-content : space-around;
+}
+
+#LogoHeader {
+    width : 120px;
+
+    margin : 12px auto 10px auto;
+}
+
+nav {
+    height : 100%;
+
+    display : flex;
+    flex-direction : row;
+    justify-content : space-around;
+    align-items : center;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.navLink {
+    height : 100%;
+    
+    padding : 0 25px 0 25px;
+
+    display : flex;
+    flex-direction : row;
+    align-items : center;
+
+    user-select : none;
+        
+    color : white;
+    font-size : 20px;
+
+}
+.navLink:hover {
+    border-bottom : 4px solid #ff793f;
+    box-shadow : 0 0 15px rgba(21,21,21, 0.6);
+    
+    color : #f7895a;
+
+    transition : 0.2s;
+}
+main {
+    width : 80%;
+    max-width : 1024px;
+    min-height : auto;
+
+    margin : 50px auto 50px auto;
+}
+
+
+
+/* 
+    FOOTER
+*/
+footer {
+    width : 100%;
+
+    background-color : #20232A;
+
+    display : flex;
+    flex-direction : row;
+    justify-content: center;
+
+    box-shadow : 0 0 15px rgba(21,21,21, 0.6);
+    border-top: 3px solid #ff793f;
+}
+
+
+#FooterContainer {
+    max-width : 1024px;
+    width : 80%;
+
+    display : flex;
+    flex-direction : row;
+    justify-content: space-around;
+    flex-wrap : wrap;
+}
+
+
+#NameContainer {
+    display : flex;
+    flex-direction : row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.AuthorName {
+    padding : 10px;
+}
+.AuthorName > a:hover, .AuthorName> a:hover > i {
+    color : #ff793f;
+    transition : 0.2s;
+}
+
+#ChangeThemeButton {
+    padding : 5px;
+    margin : 5px;
+
+    background : none;
+    border : none;
+
+    font-size : 25px;
+
+    color : white;
+    transition : 0.2s;
+}
+
+#ChangeThemeButton:hover {
+    background-color : #ff793f;
+
+    cursor : pointer;
+    transition : 0.2s;
+}
+#ChangeThemeButton:focus {
+    outline : none;
+}
+
+
+/* 
+    creationConversationContainer
+*/
+#creationConversationContainer {
+    width : auto;
+    height : auto;
+
+    position : relative;   
+}
+#formCConversation {
+    padding : 10px;
+    
+    position: absolute;
+    top : 70px;
+    right : 0px;
+
+    display : none;
+
+    background-color : #ff793f;
+    box-shadow : 0 5px 5px rgba(21,21,21, 0.6);
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#submitCConversation {
+    padding : 3px;
+    
+    background : white;
+    border : 1px solid black;
+    color : #212121;
+
+    font-size : 13px;
+}
+#inputCConversation {
+    padding-left : 5px;
+    margin-bottom : 5px;
+
+    border : none;
+    border-radius : 5px;
+    color : black;
+
+}
+#inputCConversation:focus {
+    outline : none;
+}
+
+#btnCConversation {
+    height : 70px;
+}
+#creationConversationContainer:hover > #formCConversation,
+#btnCConversation:hover ~ #formCConversation
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formCreation {
+    position : absolute;
+    bottom : 0;
+}
+
+/* 
+    popup
+*/
+.popup {
+    width: 320px;
+
+    padding : 10px 0px 10px 0px;
+
+    position: fixed;
+    bottom : 0;
+
+    display : flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    box-shadow: 0 0 10px #212121;
+    
+    text-align : center;
+    color : white;
+    font-size : 20px;
+    font-weight: 600;
+    
+    animation : fadeout 0.5s;
+    animation-delay: 4.75s;
+    transition : 0.5s;
+}
+
+
+.popupsuccess {
+    background-color : #6ab04c;
+}
+.popuperror {
+    background-color: #eb4d4b;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity : 1;
+    }
+    100% {
+        opacity : 0;
+    }
+}
+
+
+@media screen and (max-width : 600px) {
+    .navLink {
+        padding : 0;
+    }
+}
+
+@media screen and (max-width : 450px) {
+    .navLink > i {
+        display : none;
+    }
+    #btnCConversation > i {
+        display: initial;
+    }
+    .navLink {
+        padding : 0 5px 0 5px;
+    }
+    #LogoHeader {
+        width : 100px;
+    }
+    #ChangeThemeButton {
+        font-size : 17px;
+        margin : 0;
+    }
+}
+
+
+@media screen and (max-width : 370px) {
+    #LogoHeader {
+        width : 80px;
+        margin-top: 20px;
+    }
+    .navLink {
+        font-size : 17px;
+    }
+}

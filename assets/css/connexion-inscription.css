@@ -91,10 +91,7 @@ input[type=checkbox] {
 */
 main {
     max-width : 1024px;
-    width : 30%;
     height: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
 
     display : flex;
     flex-direction: column;
@@ -173,4 +170,18 @@ main {
     text-align: center;
 }
 
-@media screen and (width)
+
+/*
+    ERRORS
+*/
+#ErrorContainer {
+    width : 80%;
+
+    margin-left : auto;
+    padding : 10px;
+    margin-right : auto;
+
+    background-color : #ff5e57;
+
+    font-size : 17px;
+}

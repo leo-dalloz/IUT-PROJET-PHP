@@ -1,12 +1,21 @@
 <?php
     require ('../model/generatePwdM.php');
-    /*
-      si il n'y pas de token c'est que quelqu'un essaye d'acceder à la page de
-      modification de passe sans avoir reçu de mail
-    */
-    if(empty($_GET['token']))
-        header('Location: ../view/accesInterdit.html');
 
+
+    // on verifie que l'url est correcte
+    if(!isset($_GET['step']) || empty($_GET['token']) || !isset($_GET['token']) || empty($_GET['step'])) {
+      header('Location: ../public/accesInterdit.html');
+    }
+    $step    = $_GET['step'];
+    if ($step == 'hello'){
+      $s_msg = 'veuillez entrer votre nouveau mot de passe';
+    }
+    else if ($step == 'errconf') {
+      $s_msg = 'les 2 mots de passes entrés sont differenets';
+    }
+    else if ($step = 'errmdp') {
+      $s_msg = 'vous ne respectez pas les critères de sécurité';
+    }
 
     $s_token   = $_GET['token'];
     /*
@@ -14,7 +23,7 @@
       la page avec un token au hasard ou alors il a dépassé le temps du token. pas sympa
     */
     if(!verifToken($s_token))
-      header('Location: ../view/accesInterdit.html');
+      header('Location: ../public/accesInterdit.html');
 
 
     if(isset($_POST['newPwd'])
@@ -26,17 +35,17 @@
        $s_confPwd = $_POST['confPwd'];
 
       if($s_newPwd != $s_confPwd)
-        header('Location: ../view/generatePwdV.php?step=errconf&token='. $s_token);
+        header('Location: generatePwdC.php?step=errconf&token='. $s_token);
       else {
         // le mdp doit contenir une majuscule, un chiffre, une minuscule et faire au moins 8 caractères
         if (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])#', $s_newPwd) && strlen($s_newPwd) > 8)
 	      {
           $s_newPwd = password_hash($s_newPwd,PASSWORD_DEFAULT);
           changePwd($s_token,$s_newPwd);
-          header('Location: ../view/mdpModifie.html');
+          header('Location: ../public/mdpModifie.html');
         }
         else
-          header('Location: ../view/generatePwdV.php?step=errmdp&token='. $s_token);
+          header('Location: generatePwdC.php?step=errmdp&token='. $s_token);
       }
     }
     require ('../view/generatePwdV.php');

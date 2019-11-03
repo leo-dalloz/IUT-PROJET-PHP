@@ -1,7 +1,5 @@
 <?php
-
-  require '../base.php';
-
+  require 'dbTest.php';
   /*
   * Laurent
   * verifie dans la base de donnée si l'adresse mail existe
@@ -10,7 +8,6 @@
   */
   function getMail($s_mail)
   {
-
     $dbLink = dbConnect();
     $query  = 'SELECT email FROM User WHERE email = \'' .  $s_mail .'\'';
     $result = testError($dbLink,$query);
@@ -19,8 +16,6 @@
           return false;
     return true;
   } //getMail()
-
-
   /*
   * Laurent
   * ajoute un token généré dans la base de donnée pour l'utilisateur qui a besoin de ce token

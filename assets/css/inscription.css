@@ -15,7 +15,7 @@ main
 
 .FormInput {
     justify-content: space-between;
-    
+
     width: 80%;
     flex-wrap: nowrap;
     margin : 0 25px 35px 0;
@@ -24,9 +24,9 @@ main
 
     border : none;
     border-bottom: 3px solid #ff793f;
-    
+
     font-size: 19px;
- 
+
 
 }
 .FormInput:focus {
@@ -34,7 +34,7 @@ main
 }
 
 
-/* 
+/*
     SELECT OPTION
 */
 option {
@@ -49,7 +49,7 @@ select .OptionInput {
     outline : none;
 }
 
-/* 
+/*
     LoginLink
 */
 #LoginLink {

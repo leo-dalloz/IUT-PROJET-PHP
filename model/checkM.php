@@ -1,51 +1,45 @@
 <?php
+require_once 'dbTest.php';
+function checkPseudo($s_pseudo)
+{
+    $dbLink = dbConnect();
+    $query = 'SELECT pseudo FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
+    $dbRow = testError($dbLink, $query);
+    $dbResult = $dbRow->fetch_assoc();
+    if ($dbResult['pseudo'] != NULL)
+        return false;
+    else
+        return true;
+}
+function checkEmail($s_email)
+{
+    $dbLink = dbConnect();
+    $query = 'SELECT email FROM `User` WHERE email = \'' . $s_email . '\'';
+    $dbRow = testError($dbLink, $query);
+    $dbResult = $dbRow->fetch_assoc();
+    if ($dbResult['email'] != NULL)
+        return false;
+    else
+        return true;
 
-    require_once 'dbConnect.php';
+}
 
-    function checkPseudo($s_pseudo)
-    {
-        $dbLink = dbConnect();
+/*
+* Protège des injections sql
+* in : str string que l'on va lettre dans la bd
+*
+*/
 
-        $query = 'SELECT pseudo FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
+function sanitize($str) {
+         $dbLink = dbConnect();
+         $str = utf8_encode($str);
 
-        if (!($dbResult = mysqli_query($dbLink, $query))) {
-            echo 'Erreur de requête<br/>';
-            //Affiche le type d'erreur.
-            echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
-            //Affiche la requête envoyée.
-            echo 'Requête : ' . $query . '<br/>';
-            exit();
-        }
+         if(get_magic_quotes_gpc()) {
+                 $str = sripslashes($str);
+         }
+         if (!is_numeric($str)) {
+                 $str = '\'' . $dbLink -> real_escape_string($str) . '\'';
+         }
+         return $str;
 
-        $result = $dbResult->fetch_assoc();
-
-
-        if ($result['pseudo'] != NULL)
-            return 1;
-        else
-            return 0;
-
-    }
-
-    function checkEmail($s_email)
-    {
-        $dbLink = dbConnect();
-
-        $query = 'SELECT email FROM `User` WHERE email = \'' . $s_email . '\'';
-
-        if (!($dbResult = mysqli_query($dbLink, $query))) {
-            echo 'Erreur de requête<br/>';
-            //Affiche le type d'erreur.
-            echo 'Erreur : ' . mysqli_error($dbLink) . '<br/>';
-            //Affiche la requête envoyée.
-            echo 'Requête : ' . $query . '<br/>';
-            exit();
-        }
-
-        $result = $dbResult->fetch_assoc();
-
-        if ($result['email'] != NULL)
-            return 1;
-        else
-            return 0;
-    }
+ }//sanitize()
