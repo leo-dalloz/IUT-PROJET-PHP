@@ -28,3 +28,23 @@ function checkEmail($s_email)
             return 1;
     //}
 }
+
+/*
+* Protège des injections sql
+* in : str string que l'on va lettre dans la bd
+*
+*/
+
+function sanitize($str) {
+         $dbLink = dbConnect();
+         $str = utf8_encode($str);
+
+         if(get_magic_quotes_gpc()) {
+                 $str = sripslashes($str);
+         }
+         if (!is_numeric($str)) {
+                 $str = '\'' . $dbLink -> real_escape_string($str) . '\'';
+         }
+         return $str;
+
+ }//sanitize()
