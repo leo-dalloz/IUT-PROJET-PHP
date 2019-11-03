@@ -61,37 +61,6 @@ input[type = 'text']:focus, input[type = 'password']:focus {
 
 
 
-/*
-    input checkbox
-*/
-input[type="checkbox"]:hover + label {
-    color : #ff793f;
-
-    transition : 0.5s;
-}
-input[type="checkbox"]:hover {
-    cursor : pointer;
-}
-
-
-/*
-    RememberContainer
-*/
-#RememberContainer {
-    display : flex;
-    flex-direction: row;
-    align-items: center;
-
-    margin-top : 10px;
-    margin-bottom : 10px;
-}
-#rememberC {
-    margin-right : 5px;
-}
-#rememberCLabel {
-    font-size : 17px;
-}
-
 
 
 
