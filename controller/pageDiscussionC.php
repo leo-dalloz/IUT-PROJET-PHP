@@ -46,7 +46,7 @@ if (isset($_POST['action']))
             }
 
             header('Location: ./pageDiscussionC.php?etat=' . 'messageEnvoye' . '&discussionId=' . $i_discussionId);
-        } else {*
+        } else {
             header('Location: ./pageDiscussionC.php?etat=error&discussionId=' . $i_discussionId);
         }
     }
