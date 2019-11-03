@@ -20,8 +20,17 @@
                 </a>
 
                 <nav>
-                    <a class="navLink" href="loginV.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
-                    <a class="navLink" href="registerV.php">Inscription <i class="fas fa-user-plus"></i></a>
+                   <?php if ('ok' != $is_guest) {?>
+                      <a class="navLink" href="../controller/loginC.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
+                     <a class="navLink" href="../controller/registerC.php">Inscription <i class="fas fa-user-plus"></i></a>
+                   <?php } else { ?>
+                     <a class="navLink" href="../view/basicProfileV.php">Profil</a>
+                       <a class="navLink" href="">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
+                  <?php } 
+                        if ($is_admin) {
+                            ?> <a class="navLink" href="../"> <i class="fas fa-plus"></i></a>
+                    <?php }
+                  ?>
                 </nav>
                 <button id="ChangeThemeButton">
                         <i id="IconThemeButton" class="fas fa-sun"></i>
