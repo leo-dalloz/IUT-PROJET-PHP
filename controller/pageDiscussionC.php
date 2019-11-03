@@ -23,7 +23,7 @@ if (isset($_POST['action']))
         {
             header('Location: ../controller/pageDiscussionC.php?etat=' . 'dejaParticipe' . '&discussionId=' . $i_discussionId);
         }
-        else if (str_word_count($s_contents, 0, '123456789') <= $D_discussion->getNbMaxWords()
+        else if (str_word_count($s_contents, 0, '123456789') <= $D_discussion::NbMaxWords
             && str_word_count($s_contents, 0, '123456789') != 0) {
             if (-1 == $i_lastMessageID) {
                 if (1 == $D_discussion->canOpenDiscussion()) {

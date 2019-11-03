@@ -21,9 +21,6 @@
                         <?= $value->getNbMessages() ?> Messages
                     </td>
                     <td>
-                        <?= $value->getNbMaxWords()?> Mots MAX
-                    </td>
-                    <td>
                         <?php $b_isOuvert = $value->getState()?>
                         <p class="<?= ($b_isOuvert) ? 'Open' : 'Close' ?>"><?= ($b_isOuvert) ? 'Ouverte' : 'Fermée' ?></p>
                     </td>

@@ -2,9 +2,10 @@
 require 'Message.php';
 class Discussion
 {
+    const NbMaxWords = 2;
     private $i_myDiscussionId;
     private $s_myName;
-    private $i_myNbMaxWords;
+
     private $i_myNbLike;
     private $b_myState;
     private $i_myNbMaxMessage;
@@ -12,12 +13,11 @@ class Discussion
     function __construct($i_discussionId)
     {
         $dbLink = dbConnect();
-        $query = 'SELECT discussionName, nbMaxWords, nbLike, state, nbMaxMessages FROM Discussion WHERE discussionId = \'' . $i_discussionId.'\'';
+        $query = 'SELECT discussionName, nbLike, state, nbMaxMessages FROM Discussion WHERE discussionId = \'' . $i_discussionId.'\'';
         $dbResult = testError($dbLink,$query);
         while($dbRow = mysqli_fetch_assoc($dbResult))
         {
             $this->s_myName = $dbRow['discussionName'];
-            $this->i_myNbMaxWords = $dbRow['nbMaxWords'];
             $this->i_myNbLike =$dbRow['nbLike'];
             $this->b_myState = $dbRow['state'];
             $this->i_myNbMaxMessage = $dbRow['nbMaxMessages'];
