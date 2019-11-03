@@ -1,5 +1,3 @@
-
-Learn more or give us feedback
 <?php
   require 'dbTest.php';
   /*
