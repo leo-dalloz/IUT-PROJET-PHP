@@ -14,7 +14,7 @@ if (isset($_POST['login']))
             header('Location: ../controller/indexC.php');
         }
         else
-            header('Location: ../controller/indexC.php?step=error');
+            header('Location: ../controller/loginC.php?step=error');
     }
     else
         header('Location: ../controller/indexC.php?step=missing');
