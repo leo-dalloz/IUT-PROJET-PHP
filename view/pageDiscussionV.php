@@ -47,7 +47,7 @@ ob_start();
             </p>
             <p id="likeContainer">
                 <?= $D_discussion->getNbLike(); ?>
-                likes
+                like(s)
             <form action="../controller/pageDiscussionC.php?discussionId=<?=$i_discussionId?>" method="post">
                 <button class="likeButton" type="submit" name="action" value="like">
                     Like <i class="fas fa-heart"></i>

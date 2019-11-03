@@ -4,15 +4,6 @@ require '../model/pageDiscussionM.php';
 require '../model/User.php';
 session_start();
 $isConnected = $_SESSION['login'];
-if($isConnected == 'ok')
-{
-    $isAdmin = $_SESSION['user']->getMyAdmin();
-}
-else
-{
-    $isAdmin = 0;
-}
-
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
 $s_etat = $_GET['etat'];
