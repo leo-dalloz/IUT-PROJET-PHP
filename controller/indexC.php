@@ -1,5 +1,6 @@
 <?php
 require '../model/indexM.php';
+require '../model/User.php';
 session_start();
 $isGuest = $_SESSION['login'];
 if($isGuest == 'ok')
