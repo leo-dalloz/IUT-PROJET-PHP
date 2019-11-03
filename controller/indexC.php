@@ -2,6 +2,16 @@
 require '../model/indexM.php';
 require '../model/User.php';
 session_start();
+
+if (isset($_GET['etat']))
+{
+    $_SESSION['popupsuccess'] = $_GET['etat'];
+}
+else if (isset($_GET['error']))
+{
+    $_SESSION['popuperror'] = $_GET['etat'];
+}
+
 if(isset($_POST['action']))
 {
     $s_action = $_POST['action'];
@@ -13,11 +23,11 @@ if(isset($_POST['action']))
         {
             createNewDiscussion($s_nomDiscussion);
             $_SESSION['popupsuccess'] = 'Discussion créer';
-            header('Location: ./indexC.php');
+            header('Location: ./indexC.php?etat=' . 'Discussion créée');
         }
         else
         {
-            header('Location: ../view/indexC.php?error=nomIncorrect');
+            header('Location: ../view/indexC.php?error=' . 'Nom incorrect');
         }
     }
 }
