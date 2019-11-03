@@ -26,10 +26,6 @@
             <? } else { ?>
                 <a class="navLink" href="../view/basicProfileV.php">Profil</a>
                 <a class="navLink" href="">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
-                <?php
-                if (1 == $isAdmin) {?>
-                    <a class="navLink" href="../"> Créer une discussion <i class="fas fa-plus"></i></a>
-                <? } ?>
             <? } ?>
         </nav>
         <button id="ChangeThemeButton">
