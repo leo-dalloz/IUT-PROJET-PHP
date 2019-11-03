@@ -24,7 +24,7 @@ if(isset($_POST['action']))
 if($isConnected == 'ok')
 {
     $isAdmin = $_SESSION['user']->getMyAdmin();
-    print_r($isAdmin);
+    print_r($isAdmin . ' ' . $_SESSION['user']->getMyId());
     exit();
 }
 else
