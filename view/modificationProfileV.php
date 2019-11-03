@@ -48,7 +48,7 @@ ob_start();
             }
             ?>
 
-            <button type="submit" name="submitAction" id="submitButton">
+            <button type="submit" id="submitButton">
                 <i class="fas fa-user-edit"></i>
             </button>
         </form>
