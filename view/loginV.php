@@ -30,10 +30,7 @@ ob_start()
                     <a id="ForgotPwdLink" href="http://laurent-vouriot.alwaysdata.net/PROJET-PHP/controller/newPwdC.php">Mot de passe oublié ?</a>
                 </div>
 
-                <div id="RememberContainer">
-                    <input type="checkbox" name="rememberC" id="rememberC">
-                    <label id="rememberCLabel" for="rememberC">Se souvenir de moi</label>
-                </div>
+          
                 <?php if ($s_error != '') {?>
                     <div id="ErrorContainer">
                         <p id="Error">
