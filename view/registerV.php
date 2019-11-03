@@ -4,7 +4,6 @@ $style_common = '../assets/css/connexion-inscription.css';
 $style = '../assets/css/inscription.css';
 // Gestion des erreurs de connexion
 // Jeremy
-
 ob_start();
 ?>
 
@@ -21,8 +20,8 @@ ob_start();
 
         <section id="FormContainer">
             <form action="../controller/registerC.php" method="post">
-                <input type="text" name="Name"  class="FormInput" placeholder="Nom">
-                <input type="text" name="Surname"  class="FormInput" placeholder="Prénom">
+                <input type="text" name="Surname"  class="FormInput" placeholder="Nom">
+                <input type="text" name="Name"  class="FormInput" placeholder="Prénom">
                 <input type="text" name="Pseudo" class="FormInput" placeholder="Pseudo">
 
                 <select name="Gender" class="FormInput">
