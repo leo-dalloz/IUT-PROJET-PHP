@@ -7,7 +7,7 @@
 ?>
 
     <main>
-        <a id="LogoMainContainer" href="index.php">
+        <a id="LogoMainContainer" href="../controller/indexC.php">
             <img id="LogoMain" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
 
