@@ -2,12 +2,17 @@
 if (isset($_POST['register']))
 {
     $s_surname = $_POST['Surname'];
+    $s_surname = addslashes($s_surname);
     $s_name = $_POST['Name'];
+    $s_name = addslashes($s_name);
     $s_pseudo = $_POST['Pseudo'];
+    $s_pseudo = addslashes($s_pseudo);
     $s_email = $_POST['Email'];
     $d_birth = $_POST['Birth'];
     $s_pwd = $_POST['Pwd'];
+    $s_pwd = addslashes($s_pwd);
     $s_pwd1 = $_POST['Pwd1'];
+    $s_pwd1 = addslashes($s_pwd1);
     $s_gender = $_POST['Gender'];
     if ($s_surname != NULL AND $s_name != NULL AND $s_pseudo != NULL AND $s_email != NULL AND $d_birth != NULL AND $s_pwd != NULL AND $s_pwd1 != NULL AND $s_gender != NULL)
     {

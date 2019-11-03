@@ -6,9 +6,9 @@ function registration($newUser)
     $dbLink = dbConnect();
     $query =    'INSERT INTO User (admin, name , surname, pseudo, email,birthdate, password, gender)
                     VALUES (            \' 0 \',
-                            \'' . addslashes($newUser->getMyName()) . '\',
-                            \'' . addslashes($newUser->getMySurname()) . '\',
-                            \'' . addslashes($newUser->getMyPseudo()) . '\',
+                            \'' . $newUser->getMyName(). '\',
+                            \'' . $newUser->getMySurname() . '\',
+                            \'' . $newUser->getMyPseudo() . '\',
                             \'' . $newUser->getMyEmail() . '\',
                             \'' . $newUser->getMyBirth() . '\',
                             \'' . $newUser->getMyPassword() . '\',
