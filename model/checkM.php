@@ -1,10 +1,4 @@
 <?php
-<<<<<<< HEAD
-
-    require_once '../base.php';
-
-    function checkPseudo($s_pseudo)
-=======
 require_once 'dbTest.php';
 function checkPseudo($s_pseudo)
 {
@@ -12,7 +6,6 @@ function checkPseudo($s_pseudo)
     $query = 'SELECT pseudo FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
     $dbResult = testError($dbLink,$query);
     while($dbRow = mysqli_fetch_assoc($dbResult))
->>>>>>> finalJeremyDevelop
     {
         if ($dbRow['pseudo'] != NULL)
             return 0;
@@ -29,11 +22,7 @@ function checkEmail($s_email)
     {
         if ($dbRow['email'] != NULL)
             return 0;
-<<<<<<< HEAD
-    }
-=======
         else
             return 1;
     }
 }
->>>>>>> finalJeremyDevelop
