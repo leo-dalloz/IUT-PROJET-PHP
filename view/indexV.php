@@ -19,7 +19,7 @@
                         <a href="../controller/pageDiscussionC.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
                     </td>
                     <td>
-                        <?= $value->getNbMessages() ?> Messages
+                        <?= $value->getNbMessages() ?> Messages <?$isAdmin?>
                     </td>
                     <td>
                         <?= $value->getNbMaxWords()?> Mots MAX
