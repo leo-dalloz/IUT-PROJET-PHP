@@ -21,7 +21,7 @@ if (isset($_POST['action']))
     $s_contents = $_POST['contents'];
     $s_action = $_POST['action'];
     if ($s_action == 'sendMessage' AND $_SESSION['login'] == 'ok') {
-        if ($D_discussion->getState()) {
+        if (1 != $D_discussion->getState()) {
             header('Location: ../controller/pageDiscussionC.php?error=' . 'Discussion fermé' . '&discussionId=' . $i_discussionId);
         }
         $i_lastMessageID = $D_discussion->lastMessage();
