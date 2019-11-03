@@ -19,13 +19,14 @@
             <img id="LogoHeader" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
         <nav>
-            <?php if ('ok' != $is_guest) {?>
+            <? if ('ok' != $isConnected) {?>
                 <a class="navLink" href="../controller/loginC.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
                 <a class="navLink" href="../controller/registerC.php">Inscription <i class="fas fa-user-plus"></i></a>
-            <?php } else { ?>
-                <a class="navLink" href="../controller/profileC.php">Profil</a>
+
+            <? } else { ?>
+                <a class="navLink" href="../view/basicProfileV.php">Profil</a>
                 <a class="navLink" href="../controller/deconnectionC.php">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
-            <?php } ?>
+            <? } ?>
         </nav>
         <button id="ChangeThemeButton">
             <i id="IconThemeButton" class="fas fa-sun"></i>

@@ -9,7 +9,7 @@ if( 'ok' != $_SESSION['login'])
 {
     header('Location: ../controller/indexC.php');
 }
-$is_guest = $_SESSION['login'];
+$isConnected = $_SESSION['login'];
 
 
 
