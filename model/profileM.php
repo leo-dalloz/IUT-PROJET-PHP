@@ -54,7 +54,7 @@ function changePseudo ($s_newPseudo)
     }
     else {
         $dbLink = dbConnect();
-        $query = 'UPDATE `User` SET pseudo = \'' . $s_newPseudo . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'';
+        $query = 'UPDATE `User` SET pseudo = \'' . $s_newPseudo . '\' WHERE id = \'' . $_SESSION['user']->getMyId() . '\'';
         if (!($dbResult = mysqli_query($dbLink, $query))) {
             echo 'Erreur de requête<br/>';
             //Affiche le type d'erreur.
