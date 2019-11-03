@@ -14,14 +14,13 @@ else if (isset($_GET['error']))
 if(isset($_POST['action']))
 {
     $s_action = $_POST['action'];
-    if($s_action == 'createDiscussion')
+    if($s_action == 'Créer discussion')
     {
         $s_nomDiscussion = $_POST['nameDiscu'];
         $i_tailleDiscussion = strlen($s_nomDiscussion);
         if ($i_tailleDiscussion > 1 && $i_tailleDiscussion < 20)
         {
             createNewDiscussion($s_nomDiscussion);
-            $_SESSION['popupsuccess'] = 'Discussion créer';
             header('Location: ../controller/indexC.php?etat=' . 'Discussion créée');
         }
         else
