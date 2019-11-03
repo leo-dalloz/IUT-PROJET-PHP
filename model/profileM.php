@@ -10,7 +10,7 @@ function changeSurname ($s_newSurname)
 {
     if($s_newSurname == NULL)
     {
-        header('Location: ../view/profileV.php?error=1');
+        header('Location: ../view/profileV.php?error=Nom de famille invalide');
     }
     $dbLink = dbConnect();
     $query = 'UPDATE `User` SET surname = \'' . $s_newSurname . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'' ;
@@ -28,7 +28,7 @@ function changeName ($s_newName)
 {
     if($s_newName == NULL)
     {
-        header('Location: ../view/profileV.php?error=2');
+        header('Location: ../view/profileV.php?error=Prénom invalide');
     }
     $dbLink = dbConnect();
     $query = 'UPDATE `User` SET name = \'' . $s_newName . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'' ;
@@ -44,13 +44,13 @@ function changeName ($s_newName)
 }
 function changePseudo ($s_newPseudo)
 {
-    if (checkPseudo($s_newPseudo))
+    if (!checkPseudo($s_newPseudo))
     {
-        header('Location: ../view/profileV.php?error=3');
+        header('Location: ../view/profileV.php?error=Pseudo déjà utilisé');
     }
     else if($s_newPseudo == NULL)
     {
-        header('Location: ../view/profileV.php?error=4');
+        header('Location: ../view/profileV.php?error=Pseudo invalide');
     }
     $dbLink = dbConnect();
     $query = 'UPDATE `User` SET pseudo = \'' . $s_newPseudo . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'' ;
@@ -68,7 +68,7 @@ function changeBirth ($d_newBirth)
 {
     if($d_newBirth == NULL)
     {
-        header('Location: ../view/profileV.php?error=5');
+        header('Location: ../view/profileV.php?error=Date vide ou vous ne pouvez pas avoir avoir moins de 13 ans');
     }
     $dbLink = dbConnect();
     $query = 'UPDATE `User` SET birthdate = \'' . $d_newBirth . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'' ;
@@ -86,7 +86,7 @@ function changePassword($s_newPassword)
 {
     if($s_newPassword == NULL)
     {
-        header('Location: ../view/profileV.php?error=6');
+        header('Location: ../view/profileV.php?error=Mot de passe invalide');
     }
     $dbLink = dbConnect();
     $query = 'UPDATE `User` SET password = \'' . $s_newPassword . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'' ;
