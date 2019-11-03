@@ -1,6 +1,16 @@
 /*
     Style    
 */
+let listPopUp = document.querySelectorAll('.popup');
+
+for (var i = 0; i < listPopUp.length; ++i) {
+    setTimeout(deletePopUp, 5000, listPopUp[i]);
+}
+
+function deletePopUp(popup) {
+    popup.remove();
+}
+
 var ThemeButton = document.getElementById('ChangeThemeButton');
 var IconThemeButton = document.getElementById('IconThemeButton');
 
@@ -10,7 +20,7 @@ ThemeButton.addEventListener("click", switchCss);
 if (window.localStorage.theme == 'night') {
     changeTheme('night');
 } else {
-    window.localStorage.theme = 'day';
+    window.localStorage.theme == 'day';
     changeTheme('day');
 }
 
