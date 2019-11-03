@@ -25,7 +25,9 @@ ob_start()
 
                 <div id="PwdContainer">
                     <input type="password" name="Pwd" placeholder="Mot de passe"/> <br/>
-                    <a id="ForgotPwdLink" href="">Mot de passe oublié ?</a>
+                    <!-- On est obligé de rediriger vers mon serveur pour pouvoir envoyer un email car le serveur du groupe est considéré comme spam
+                        à cause des tests -->
+                    <a id="ForgotPwdLink" href="http://laurent-vouriot.alwaysdata.net/PROJET-PHP/controller/newPwdC.php">Mot de passe oublié ?</a>
                 </div>
 
                 <div id="RememberContainer">
