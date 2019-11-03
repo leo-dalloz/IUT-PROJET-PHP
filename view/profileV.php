@@ -51,6 +51,12 @@ ob_start();
                 </div>
                 <div class="ProfileLine">
                     <p class="CategName">
+                        Mot de Passe
+                    </p>
+                    <a href="../controller/modificationProfileC.php?action=password" class="CategLink"><i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="ProfileLine">
+                    <p class="CategName">
                         DATE DE NAISSANCE
                     </p>
                     <p class="CategValue">
