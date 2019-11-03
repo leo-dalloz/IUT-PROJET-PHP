@@ -22,7 +22,7 @@ function login($s_pseudo,$s_pwd)
 function returnUser ($s_pseudo)
 {
     $dbLink = dbConnect();
-    $query = 'SELECT id, admin, surname, name, pseudo, email, birthdate, password, gender FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
+    $query = 'SELECT id, admin, name , surname, pseudo, email, birthdate, password, gender FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
     if (!($dbResult = mysqli_query($dbLink, $query))) {
         echo 'Erreur de requête<br/>';
         //Affiche le type d'erreur.
@@ -32,7 +32,7 @@ function returnUser ($s_pseudo)
         exit();
     }
     $result = $dbResult->fetch_assoc();
-    $myUser = new User($result['admin'], $result['surname'], $result['name'], $result['pseudo'],$result['email'], $result['birthdate'], $result['password'],$result['gender']);
+    $myUser = new User($result['admin'], $result['name'], $result['surname'], $result['pseudo'],$result['email'], $result['birthdate'], $result['password'],$result['gender']);
     $myUser->setMyId($result['id']);
     return $myUser;
 }

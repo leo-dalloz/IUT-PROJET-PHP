@@ -21,8 +21,8 @@ ob_start();
 
         <section id="FormContainer">
             <form action="../controller/registerC.php" method="post">
-                <input type="text" name="Name"  class="FormInput" placeholder="Nom">
-                <input type="text" name="Surname"  class="FormInput" placeholder="Prénom">
+                <input type="text" name="Surname"  class="FormInput" placeholder="Nom">
+                <input type="text" name="Name"  class="FormInput" placeholder="Prénom">
                 <input type="text" name="Pseudo" class="FormInput" placeholder="Pseudo">
 
                 <select name="Gender" class="FormInput">

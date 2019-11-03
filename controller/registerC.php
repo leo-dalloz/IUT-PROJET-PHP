@@ -24,7 +24,7 @@ if (isset($_POST['register']))
                 require '../model/registerM.php';
                 if (checkPseudo($s_pseudo) AND checkEmail($s_email)) {
                     $s_pwd = password_hash($s_pwd, PASSWORD_DEFAULT);
-                    $newUser = new User(0, $s_surname, $s_name, $s_pseudo, $s_email, $d_birth, $s_pwd, $s_gender);
+                    $newUser = new User(0, $s_name, $s_surname, $s_pseudo, $s_email, $d_birth, $s_pwd, $s_gender);
                     registration($newUser);
                     header('Location: ./loginC.php');
                 } else if (!checkPseudo($s_pseudo)) {

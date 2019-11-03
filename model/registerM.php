@@ -4,10 +4,10 @@ require_once 'dbTest.php';
 function registration($newUser)
 {
     $dbLink = dbConnect();
-    $query =    'INSERT INTO User (admin, surname, name, pseudo, email,birthdate, password, gender)
+    $query =    'INSERT INTO User (admin, name , surname, pseudo, email,birthdate, password, gender)
                     VALUES (            \' 0 \',
-                            \'' . $newUser->getMySurname() . '\',
                             \'' . $newUser->getMyName() . '\',
+                            \'' . $newUser->getMySurname() . '\',
                             \'' . $newUser->getMyPseudo() . '\',
                             \'' . $newUser->getMyEmail() . '\',
                             \'' . $newUser->getMyBirth() . '\',
