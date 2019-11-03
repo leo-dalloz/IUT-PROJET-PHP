@@ -3,7 +3,7 @@
 
     require 'User.php';
 
-    require 'dbConnect.php';
+    require '../base.php';
 
 
     function login($s_pseudo,$s_pwd)
@@ -52,5 +52,3 @@
 
         return new User($result['admin'], $result['surname'], $result['name'], $result['pseudo'],$result['email'], $result['birthdate'], $result['password'],$result['gender']);
     }
-
-

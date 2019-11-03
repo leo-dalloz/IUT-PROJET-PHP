@@ -3,7 +3,7 @@
 
     require 'User.php';
 
-    require_once 'dbConnect.php';
+    require_once 'base.php';
 
     function registration($newUser)
     {
@@ -32,5 +32,3 @@
         }
 
     }
-
-

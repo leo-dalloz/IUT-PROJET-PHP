@@ -3,7 +3,7 @@
 
 <?php
     require '../utils.inc.php';
-    require '../Model/User.php';
+    require '../model/User.php';
 
     session_start();
     if($_SESSION['login']!='ok')

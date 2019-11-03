@@ -1,6 +1,6 @@
 <?php
 
-    require '../Model/profileM.php';
+    require '../model/profileM.php';
     session_start();
     if($_SESSION['login']!='ok')
     {
@@ -87,4 +87,3 @@
 //        $_SESSION['user']->setMyGender($s_newGender);
 //    }
     header('Location: ../View/basicProfileV.php');
-
