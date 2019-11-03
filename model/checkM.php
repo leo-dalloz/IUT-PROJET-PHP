@@ -26,8 +26,8 @@ function checkEmail($s_email)
 
 /*
 * Protège des injections sql
-* in : str string que l'on va lettre dans la bd
-*
+* in : str string que l'on va mettre dans la bd
+* Nous avons manqué de temps pour pouvoir implémenter cette fonction
 */
 
 function sanitize($str) {
