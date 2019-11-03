@@ -2,7 +2,6 @@
     $title = 'Freenote';
     $style = '../assets/css/index.css';
     $style_theme = '../assets/css/theme/day.css';
-
     $tab_discussions = getDiscussions();
 	ob_start();
 ?>
@@ -19,7 +18,7 @@
                         <a href="../controller/pageDiscussionC.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
                     </td>
                     <td>
-                        <?= $value->getNbMessages() ?> Messages <?$isAdmin?>
+                        <?= $value->getNbMessages() ?> Messages
                     </td>
                     <td>
                         <?= $value->getNbMaxWords()?> Mots MAX
@@ -33,7 +32,7 @@
                     </td>
                 </tr>
             <?php }
-            if (1 == $isAdmin) {?>
+            if ($isAdmin == 1) {?>
                 <a class="navLink" href="../"> Créer une discussion <i class="fas fa-plus"></i></a>
             <? } ?>
         </table>
