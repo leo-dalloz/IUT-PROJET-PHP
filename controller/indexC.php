@@ -1,8 +1,8 @@
 <?php
 require '../model/indexM.php';
+require '../model/User.php';
 session_start();
-$is_guest = $_SESSION['login'];
-
+$isConnected = $_SESSION['login'];
 if(isset($_POST['action']))
 {
     $s_action = $_POST['action'];
@@ -20,6 +20,14 @@ if(isset($_POST['action']))
             header('Location: ../view/indexV.php?error=nomIncorrect');
         }
     }
+}
+if($isConnected == 'ok')
+{
+    $isAdmin = $_SESSION['user']->getMyAdmin();
+}
+else
+{
+    $isAdmin = 0;
 }
 require '../view/indexV.php';
 

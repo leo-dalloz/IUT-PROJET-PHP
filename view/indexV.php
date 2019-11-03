@@ -2,7 +2,6 @@
     $title = 'Freenote';
     $style = '../assets/css/index.css';
     $style_theme = '../assets/css/theme/day.css';
-
     $tab_discussions = getDiscussions();
 	ob_start();
 ?>
@@ -32,7 +31,10 @@
                         <?= $value->getNbLike() ?> <i class="fas fa-thumbs-up"></i>
                     </td>
                 </tr>
-            <?php } ?>
+            <?php }
+            if ($isAdmin == 1) {?>
+                <a class="navLink" href="../"> Créer une discussion <i class="fas fa-plus"></i></a>
+            <? } ?>
         </table>
     </div>
     <main id="top">
