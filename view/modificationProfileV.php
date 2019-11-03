@@ -16,7 +16,7 @@ ob_start();
             </a>
             <hr>
         </div>
-        <form id="form" action="../controller/modificationProfileC.php?action=<?=$s_action?>&submitAction=<?=$s_action?>" method="post">
+        <form id="form" action="../controller/modificationProfileC.php?action=<?=$s_action?>&submitAction=<?=$s_action?>" method="get">
             <?php
             switch ($s_action) {
                 case 'nickname':
