@@ -75,10 +75,7 @@ function changeBirth ($d_newBirth)
 }
 function changePassword($s_newPassword)
 {
-    if($s_newPassword == NULL)
-    {
-        header('Location: ../controller/profileC.php?error=Mot de passe invalide');
-    }
+    $s_newPassword = password_hash($s_newPassword, PASSWORD_DEFAULT);
     $dbLink = dbConnect();
     $query = 'UPDATE `User` SET password = \'' . $s_newPassword . '\' WHERE pseudo = \'' . $_SESSION['user']->getMyPseudo() . '\'' ;
     if (!($dbResult = mysqli_query($dbLink, $query)))

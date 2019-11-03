@@ -80,8 +80,8 @@ if (isset($_GET['action'])) {
                 }
                 break;
             case 'password' :
-                if ($_POST['password'] != NULL && (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])#', $_POST['password']) && strlen($_POST['password']) > 8)) {
-                    changePassword($_POST['password']);
+                if ($_POST['firstPwd'] != NULL && (preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])#', $_POST['firstPwd']) && strlen($_POST['firstPwd']) > 8) && $_POST['firstPwd'] == $_POST['secondPwd']) {
+                    changePassword($_POST['firstPwd']);
                     header('location: ../controller/profileC.php?success=Le profil a été modifié avec succès');
                 } else {
                     header('location: ../controller/modificationProfileC.php?action=password&error=Mot de passe invalide ou ne respectant pas les critères de sécurité');
