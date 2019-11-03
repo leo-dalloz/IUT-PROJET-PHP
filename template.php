@@ -1,3 +1,7 @@
+<?php
+    include('view/popupV.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,12 +28,11 @@
                         <a class="navLink" href="../controller/loginC.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
                         <a class="navLink" href="../controller/registerC.php">Inscription <i class="fas fa-user-plus"></i></a>
                     <?php } else { ?>
-                        <a class="navLink" href="../controller/profileC.php">Profil</a>
+                        <a class="navLink" href="../view/basicProfileV.php">Profil</a>
                         <a class="navLink" href="../controller/deconnectionC.php">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
                     <?php } 
                         if ($isAdmin) {
                     ?>
-                    
                         <div id="creationConversationContainer">
                             <p class="navLink" id="btnCConversation"><i class="fas fa-plus"></i></p>
                             <form id="formCConversation" action="" method="post">
