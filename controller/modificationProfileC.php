@@ -4,7 +4,7 @@
     @Authors : Audrey
 */
 require '../model/profileM.php';
-require'checkM.php';
+require'../model/checkM.php';
 session_start();
 if( 'ok' != $_SESSION['login'])
 {
