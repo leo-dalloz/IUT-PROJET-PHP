@@ -8,6 +8,8 @@ function checkPseudo($s_pseudo)
   //  while($dbRow = mysqli_fetch_assoc($dbResult))
   //  {
     $dbResult = $dbRow->fetch_assoc();
+    print_r($dbResult);
+    exit();
         if ($dbResult['pseudo'] == NULL)
             return true;
         else
