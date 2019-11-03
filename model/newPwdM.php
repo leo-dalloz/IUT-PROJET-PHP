@@ -1,6 +1,6 @@
 <?php
 
-require '../base.php';
+require 'dbTest.php';
 
 /*
 * Laurent
