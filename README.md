@@ -4,9 +4,7 @@ Leo Dalloz Jérémy Pouzargues Lucas Urgenti Laurent Vouriot Audrey Wagner
 http://projet-iut-info.alwaysdata.net/PROJET-PHP/controller/indexC.php
 
 
-####################################################################
-	    Les consignes de sécurité pour les mots de passe
-####################################################################
+### Les consignes de sécurité pour les mots de passe ###
 
  Le mot de passe doit comporter au moins : 
  	1 majuscule
@@ -14,17 +12,13 @@ http://projet-iut-info.alwaysdata.net/PROJET-PHP/controller/indexC.php
 	1 minuscule 
 	8 caractères
 	
-###################################################################
-			Presentation du projet 
-###################################################################
+### Presentation du projet ### 
 
 Notre but avec ce projet était de faire un site web moderne, élégant en utilisant majoritairement
 le php avec un sytème de connexion/inscription ainsi qu'un système de mots de passe oublié sécurisé.
 Un  système de discussions dynamiques et original en utilisant une architecture MVC.
 
-###################################################################
-			Choix techniques
-###################################################################
+### Choix techniques ### 
 Nous avons utilisé en majorité du php avec une architecture mvc, ainsi que de l'html5 et css3, 
 du sql et du javascript. 
 Pour les tokens afin qu'ils soient les plus complexes possibles on crypte en md5 
@@ -32,9 +26,7 @@ un entier aléatoire de 6 chiffres.
 En ce qui concerne la protection des mots de passes nous avons utilisé une clé de hachage avec 
 l'algorithme bcrypt. 
 
-###################################################################
-			Mot de passe oublié
-###################################################################
+### Mot de passe oublié ### 
 
  Nous avons souhaité faire un système d'envoie d'email pour pouvoir modifié son mot 
  de passe en cas d'oublie de celui ci. Sur conseille de notre professeur nous avons 
@@ -58,9 +50,7 @@ Problèmes rencontrés :
 	cette adresse comme spam, nous avons dû donc rediriger la page de de 
 	verification/envoie d'email sur un autre serveur always d
 
-##################################################################
-		Configuration logicielle
-##################################################################
+### Configuration logicielle ### 
 fonctionne sur les dernieres versions de :
 - google chrome
 - firefox
@@ -77,9 +67,7 @@ configuration recommandée
 - nvidia rtx 2080ti  
 
 	
-####################################################################
-			identifiants de connexion
-####################################################################
+### Identifiants de connexion ### 
 FreeNote :
 	compte test :
 		-pseudo : Test
