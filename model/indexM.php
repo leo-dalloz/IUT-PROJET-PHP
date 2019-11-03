@@ -18,6 +18,6 @@ function createNewDiscussion($s_nomDiscussion)
 {
     $dbLink = dbConnect();
     $i_rand = rand(3,10);
-    $query = "INSERT INTO Discussion (discussionName, nbMaxWords, nbLike, state, nbMaxMessages) VALUES ('$s_nomDiscussion', 2, 0, 1, '$i_rand')";
+    $query = "INSERT INTO Discussion (discussionName, nbLike, state, nbMaxMessages) VALUES ('$s_nomDiscussion', 0, 1, '$i_rand')";
     testError($dbLink,$query);
 }

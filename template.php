@@ -32,9 +32,9 @@
 
                 <div id="creationConversationContainer">
                     <p class="navLink" id="btnCConversation"><i class="fas fa-plus"></i></p>
-                    <form id="formCConversation" action="" method="post">
+                    <form id="formCConversation" action="../controller/indexC.php" method="post">
                         <input type="text" name="nameDiscu" id="inputCConversation" placeholder="Nom conversation">
-                        <input type="submit" id="submitCConversation" value="Créer">
+                        <input type="submit" id="submitCConversation" value="createDiscussion">
                     </form>
                 </div>
             <?php } ?>
