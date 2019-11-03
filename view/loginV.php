@@ -1,9 +1,8 @@
 <?php
-    $title = 'Connexion';
-    $style_common = '../assets/css/connexion-inscription.css';
-    $style = '../assets/css/connexion.css';
-
-    ob_start()
+$title = 'Connexion';
+$style_common = '../assets/css/connexion-inscription.css';
+$style = '../assets/css/connexion.css';
+ob_start()
 ?>
 
     <main>
@@ -27,7 +26,7 @@
                 <div id="PwdContainer">
                     <input type="password" name="Pwd" placeholder="Mot de passe"/> <br/>
                     <!-- On est obligé de rediriger vers mon serveur pour pouvoir envoyer un email car le serveur du groupe est considéré comme spam
-                        à cause des testes -->
+                        à cause des tests -->
                     <a id="ForgotPwdLink" href="http://laurent-vouriot.alwaysdata.net/PROJET-PHP/controller/newPwdC.php">Mot de passe oublié ?</a>
                 </div>
 
@@ -35,28 +34,28 @@
                     <input type="checkbox" name="rememberC" id="rememberC">
                     <label id="rememberCLabel" for="rememberC">Se souvenir de moi</label>
                 </div>
-                <?php if (isset($_GET['step']) && $_GET['step'] == 'error') {?>
+                <?php if ($s_error != '') {?>
                     <div id="ErrorContainer">
                         <p id="Error">
-                            <?= 'L\'identifiant et le mot de passe ne correspondent pas' ?>
+                            <?php echo $s_error ?>
                         </p>
                     </div>
                 <?php } ?>
 
 
                 <div id="SubmitContainer">
-                    <input id="submitButton" type="submit" value="Se connecter">
+                    <input id="submitButton" name="login" type="submit" value="Se connecter">
                 </div>
             </form>
 
             <p id="RegisterLink">
-                Nouveau sur FreeNote ? <a href="registerC.php">S'inscrire maintenant</a>
+                Nouveau sur FreeNote ? <a href="registerV.php">S'inscrire maintenant</a>
             </p>
 
         </section>
     </main>
 
 <?php
-    $content = ob_get_clean();
-    require('../template_empty.php');
+$content = ob_get_clean();
+require('../template_empty.php');
 ?>
