@@ -3,11 +3,7 @@ use mysql_xdevapi\BaseResult;
 require '../model/pageDiscussionM.php';
 require '../model/User.php';
 session_start();
-$isGuest = $_SESSION['login'];
-if($isGuest == 'ok')
-{
-    $isAdmin = $_SESSION['user']->getMyAdmin();
-}
+$isConnected = $_SESSION['login'];
 $i_discussionId = $_GET['discussionId'];
 $D_discussion = new Discussion($i_discussionId);
 $s_etat = $_GET['etat'];

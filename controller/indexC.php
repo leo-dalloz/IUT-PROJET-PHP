@@ -2,8 +2,8 @@
 require '../model/indexM.php';
 require '../model/User.php';
 session_start();
-$isGuest = $_SESSION['login'];
-if($isGuest != 'ok')
+$isConnected = $_SESSION['login'];
+if($isConnected == 'ok')
 {
     $isAdmin = $_SESSION['user']->getMyAdmin();
 }

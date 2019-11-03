@@ -19,7 +19,7 @@
             <img id="LogoHeader" src="../assets/images/test2.png" alt="logo FreeNote">
         </a>
         <nav>
-            <? if ('ok' != $isGuest) {?>
+            <? if ('ok' != $isConnected) {?>
                 <a class="navLink" href="../controller/loginC.php">Connexion <i class="fas fa-sign-in-alt"></i></a>
                 <a class="navLink" href="../controller/registerC.php">Inscription <i class="fas fa-user-plus"></i></a>
 
