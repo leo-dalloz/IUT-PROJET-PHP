@@ -71,7 +71,7 @@ fonctionne sur les dernieres versions de :
 configuration minimale : 
 -4gb ram 
 
-configuration recomendée
+configuration recommandée
 - 64gb de ram 
 - intel core i9 9900K 
 - nvidia rtx 2080ti  
@@ -87,7 +87,7 @@ FreeNote :
 		-pwd: Test123123
 		
 	admin :
-		id : laurent 
+		pseudo : laurent 
 		pwd: Bonjour13
 		
 alwaysdata :
