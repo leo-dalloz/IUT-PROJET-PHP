@@ -26,7 +26,18 @@
             <? } else { ?>
                 <a class="navLink" href="../view/basicProfileV.php">Profil</a>
                 <a class="navLink" href="../controller/deconnectionC.php">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
-            <? } ?>
+            <?php }
+            if ($isAdmin) {
+                ?>
+
+                <div id="creationConversationContainer">
+                    <p class="navLink" id="btnCConversation"><i class="fas fa-plus"></i></p>
+                    <form id="formCConversation" action="" method="post">
+                        <input type="text" name="nameDiscu" id="inputCConversation" placeholder="Nom conversation">
+                        <input type="submit" id="submitCConversation" value="Créer">
+                    </form>
+                </div>
+            <?php } ?>
         </nav>
         <button id="ChangeThemeButton">
             <i id="IconThemeButton" class="fas fa-sun"></i>

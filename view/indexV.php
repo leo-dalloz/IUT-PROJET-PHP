@@ -28,15 +28,6 @@
                         <?= $value->getNbLike() ?> <i class="fas fa-thumbs-up"></i>
                     </td>
                 </tr>
-            <?php }
-            if ($isAdmin == 1) {?>
-                <div id="creationConversationContainer">
-                    <p class="navLink" id="btnCConversation"><i class="fas fa-plus"></i></p>
-                    <form id="formCConversation" action="" method="post">
-                        <input type="text" name="nameDiscu" id="inputCConversation" placeholder="Nom conversation">
-                        <input type="submit" id="submitCConversation" value="Créer">
-                    </form>
-                </div>
             <? } ?>
         </table>
     </div>
