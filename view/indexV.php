@@ -74,10 +74,6 @@
 
 
         </section>
-        <section id="DescriptionButtons">
-            <a class="MainButton" href="">S'inscrire</a>
-            <a class="MainButton" href="">Se connecter</a>
-        </section>
         <section id="responsiveSection">
             <img src="../assets/images/telThemeClair.png" id="responsiveTel" alt="tel image mobile">
             <p id="responsiveText">

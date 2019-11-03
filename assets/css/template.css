@@ -174,23 +174,66 @@ footer {
 }
 
 
-
-
 /* 
-    PROFIL PHOTO
+    creationConversationContainer
 */
-#ProfilImage {
-    width : 40px;
-    height : 40px;
+#creationConversationContainer {
+    width : auto;
+    height : auto;
 
-    border-radius : 1000%;
-    border : 2px solid white;
+    position : relative;   
+}
+#formCConversation {
+    padding : 10px;
+    
+    position: absolute;
+    top : 70px;
+    right : 0px;
 
-    background-image: url("https://static.makeuseof.com/wp-content/uploads/2015/11/perfect-profile-picture-all-about-face.jpg");
-    background-position: center center;
-    background-size : cover;
+    display : none;
 
-    margin : 5px;
+    background-color : #ff793f;
+    box-shadow : 0 5px 5px rgba(21,21,21, 0.6);
+
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#submitCConversation {
+    padding : 3px;
+    
+    background : white;
+    border : 1px solid black;
+    color : #212121;
+
+    font-size : 13px;
+}
+#inputCConversation {
+    padding-left : 5px;
+    margin-bottom : 5px;
+
+    border : none;
+    border-radius : 5px;
+    color : black;
+
+}
+#inputCConversation:focus {
+    outline : none;
+}
+
+#btnCConversation {
+    height : 70px;
+}
+#creationConversationContainer:hover > #formCConversation,
+#btnCConversation:hover ~ #formCConversation
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formCreation {
+    position : absolute;
+    bottom : 0;
 }
 
 @media screen and (max-width : 600px) {
@@ -202,6 +245,9 @@ footer {
 @media screen and (max-width : 450px) {
     .navLink > i {
         display : none;
+    }
+    #btnCConversation > i {
+        display: initial;
     }
     .navLink {
         padding : 0 5px 0 5px;
