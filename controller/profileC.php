@@ -5,6 +5,7 @@ if($_SESSION['login']!='ok')
 {
     header('Location: ../controller/indexC.php');
 }
+$is_guest = $_SESSION['login'];
 
 
 if (isset($_GET['error']))
