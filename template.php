@@ -27,7 +27,7 @@
                 <a class="navLink" href="../view/basicProfileV.php">Profil</a>
                 <a class="navLink" href="../controller/deconnectionC.php">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
             <?php }
-            if ($isAdmin) {
+            if ($isAdmin == 1) {
                 ?>
 
                 <div id="creationConversationContainer">
