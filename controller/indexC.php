@@ -12,6 +12,7 @@ if(isset($_POST['action']))
         if ($i_tailleDiscussion > 1 && $i_tailleDiscussion < 20)
         {
             createNewDiscussion($s_nomDiscussion);
+            $_SESSION['popupsuccess'] = 'Discussion créer';
             header('Location: ./indexC.php');
         }
         else
