@@ -34,7 +34,7 @@ if (isset($_GET['action'])) {
     }
     if (isset($_GET['sumbitAction'])) {
 
-        switch ($s_action) {
+        switch ($_GET['sumbitAction']) {
             case 'nickname' :
                 if ($_POST['nickname'] != null) {
                     changePseudo($_POST['nickname']);
