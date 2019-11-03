@@ -1,4 +1,8 @@
 <!-- Template pour les pages d'inscription et de connexion -->
+<?php
+    include('popupV.php');
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
