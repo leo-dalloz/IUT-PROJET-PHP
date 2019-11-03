@@ -2,7 +2,10 @@
 require '../model/indexM.php';
 session_start();
 $isGuest = $_SESSION['login'];
-$isAdmin = $_SESSION['user']->getMyAdmin();
+if($isGuest == 'ok')
+{
+    $isAdmin = $_SESSION['user']->getMyAdmin();
+}
 
 if(isset($_POST['action']))
 {
