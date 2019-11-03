@@ -10,12 +10,6 @@ if( 'ok' != $_SESSION['login'])
     header('Location: ../controller/indexC.php');
 }
 
-// Test si l'utilisateur arrive sur ce lien sans action définie au préalable
-if (!isset($_GET['action'])) {
-    echo "error l.10";
-    die();
-}
-
 
 
 if (isset($_GET['action'])) {
