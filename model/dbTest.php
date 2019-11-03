@@ -19,5 +19,5 @@ function testError($dbLink,$query)
         echo 'Requête : ' . $query . '<br/>';
         exit();
     }
-    else return $dbResult;
+    return $dbResult;
 }
