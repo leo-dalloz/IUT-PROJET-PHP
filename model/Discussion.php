@@ -1,6 +1,6 @@
 <?php
 require 'Message.php';
-class Discussion
+class Discussion    
 {
     const NbMaxWords = 2;
     private $i_myDiscussionId;
