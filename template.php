@@ -9,6 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+        <link rel="icon" type="image/png" href="./assets/images/freenoteWWings.png" />
+
+	    
         <link rel="stylesheet" href="../assets/css/template.css">
         <link rel="stylesheet" href="<?= $style ?>">
         <link id="ThemeStylesheet" rel="stylesheet" href="<?= $style_theme ?>">
@@ -30,14 +33,15 @@
                     <?php } else { ?>
                         <a class="navLink" href="../controller/profileC.php">Profil</a>
                         <a class="navLink" href="../controller/deconnectionC.php">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
-                    <?php } 
-                        if ($isAdmin) {
-                    ?>
+                    <?php }
+                    if ($isAdmin == 1) {
+                        ?>
+
                         <div id="creationConversationContainer">
                             <p class="navLink" id="btnCConversation"><i class="fas fa-plus"></i></p>
-                            <form id="formCConversation" action="" method="post">
+                            <form id="formCConversation" action="../controller/indexC.php" method="post">
                                 <input type="text" name="nameDiscu" id="inputCConversation" placeholder="Nom conversation">
-                                <input type="submit" id="submitCConversation" value="Créer">
+                                <input type="submit" id="submitCConversation" name="action" value="Créer discussion">
                             </form>
                         </div>
                     <?php } ?>
