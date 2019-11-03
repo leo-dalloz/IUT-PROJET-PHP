@@ -3,6 +3,15 @@ require '../model/indexM.php';
 require '../model/User.php';
 session_start();
 $isConnected = $_SESSION['login'];
+if($isConnected == 'ok')
+{
+    $isAdmin = $_SESSION['user']->getMyAdmin();
+}
+else
+{
+    $isAdmin = 0;
+}
+
 if(isset($_POST['action']))
 {
     $s_action = $_POST['action'];
@@ -21,13 +30,6 @@ if(isset($_POST['action']))
         }
     }
 }
-if($isConnected == 'ok')
-{
-    $isAdmin = $_SESSION['user']->getMyAdmin();
-}
-else
-{
-    $isAdmin = 0;
-}
+
 require '../view/indexV.php';
 
