@@ -30,6 +30,7 @@ if (isset($_POST['action']))
                     createMessage($i_discussionId);
                     $i_lastMessageID = $D_discussion->lastMessage();
                     addToMessage($s_contents, $i_lastMessageID, $_SESSION['user']->getMyId());
+                    $_SESSION['popupsuccess'] = 'Message envoyé';
                     $D_discussion = new Discussion($i_discussionId);
                     if (!(strpos($s_contents, '.') == FALSE)) {
                         $D_discussion->closeAMessage();
@@ -40,13 +41,16 @@ if (isset($_POST['action']))
                 }
             } else if (!(strpos($s_contents, '.') == FALSE)) {
                 addToMessage($s_contents, $i_lastMessageID, $_SESSION['user']->getMyId());
+                $_SESSION['popupsuccess'] = 'Message envoyé';
                 $D_discussion->closeAMessage();
             } else {
                 addToMessage($s_contents, $i_lastMessageID, $_SESSION['user']->getMyId());
+                $_SESSION['popupsuccess'] = 'Message envoyé';
             }
 
             header('Location: ./pageDiscussionC.php?etat=' . 'messageEnvoye' . '&discussionId=' . $i_discussionId);
         } else {
+            $_SESSION['popuperror'] = 'Message incompatible';
             header('Location: ./pageDiscussionC.php?etat=error&discussionId=' . $i_discussionId);
         }
     }

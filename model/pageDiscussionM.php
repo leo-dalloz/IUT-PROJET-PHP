@@ -15,6 +15,7 @@ function addToMessage($s_contents, $i_messageId, $i_authorId)
     $d_date = date('Y-m-d H:i:s');
     $query = "INSERT INTO Post(messageId, authorId, contents, date) VALUES ('$i_messageId','$i_authorId', '$s_contents','$d_date')";
     testError($dbLink,$query);
+
 }
 
 function getDiscussions()
