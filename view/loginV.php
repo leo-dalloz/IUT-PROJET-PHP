@@ -31,10 +31,7 @@
                     <a id="ForgotPwdLink" href="http://laurent-vouriot.alwaysdata.net/PROJET-PHP/view/newPwdV.php">Mot de passe oublié ?</a>
                 </div>
 
-                <div id="RememberContainer">
-                    <input type="checkbox" name="rememberC" id="rememberC">
-                    <label id="rememberCLabel" for="rememberC">Se souvenir de moi</label>
-                </div>
+                
                 <?php if (isset($_GET['step']) && $_GET['step'] == 'error') {?>
                     <div id="ErrorContainer">
                         <p id="Error">
