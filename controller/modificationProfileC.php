@@ -4,6 +4,7 @@
     @Authors : Audrey
 */
 require '../model/profileM.php';
+require'checkM.php';
 session_start();
 if( 'ok' != $_SESSION['login'])
 {
@@ -31,7 +32,7 @@ if (isset($_GET['action'])) {
 
         switch ($s_action) {
             case 'nickname' :
-                if ($_POST['nickname'] != null) {
+                if ($_POST['nickname'] != null && checkPseudo($_POST['nickname'])) {
                     changePseudo($_POST['nickname']);
                     $_SESSION['user']->setMyPseudo($_POST['nickname']);
                     header('location: ../controller/profileC.php?success=Le profil a été modifié avec succès');

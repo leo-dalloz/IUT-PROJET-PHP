@@ -1,5 +1,4 @@
 <?php
-require'checkM.php';
 require 'User.php';
 session_start();
 if($_SESSION['login'] != 'ok')
@@ -44,17 +43,6 @@ function changeName ($s_newName)
 }
 function changePseudo ($s_newPseudo)
 {
-    if (!checkPseudo($s_newPseudo))
-    {
-        header('Location: ../controller/profileC.php?error=Pseudo déjà utilisé');
-    }
-    else if($s_newPseudo == NULL)
-    {
-        header('Location: ../controller/profileC.php?error=Pseudo invalide');
-    }
-    else {
-        print_r(checkPseudo($s_newPseudo));
-        exit();
         $dbLink = dbConnect();
         $query = 'UPDATE `User` SET pseudo = \'' . $s_newPseudo . '\' WHERE id = \'' . $_SESSION['user']->getMyId() . '\'';
         if (!($dbResult = mysqli_query($dbLink, $query))) {
@@ -65,7 +53,7 @@ function changePseudo ($s_newPseudo)
             echo 'Requête : ' . $query . '<br/>';
             exit();
         }
-    }
+
 }
 function changeBirth ($d_newBirth)
 {
