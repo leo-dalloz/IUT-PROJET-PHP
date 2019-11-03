@@ -62,4 +62,3 @@
 </body>
 <script src="../assets/js/architecture.js"></script>
 </html>
->>>>>>> leoDevelop
