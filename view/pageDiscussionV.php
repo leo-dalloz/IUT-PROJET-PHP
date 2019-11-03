@@ -14,11 +14,11 @@ ob_start();
             </p>
             <div id="LConvContainer">
                 <?php foreach ($tab_discussions as $value) { ?>
-                    <button class="buttonLConv" onclick="window.location.href='../controller/pageDiscussionC.php?discussionId=<?= $value->getDiscussionId()?>&etat=0'">
+                    <button class="buttonLConv" onclick="window.location.href='../controller/pageDiscussionC.php?discussionId=<?= $value->getDiscussionId()?>'">
                         <ul class="LConv">
                             <div class="FirstLine">
                                 <li>
-                                    <a href="../controller/pageDiscussionC.php?discussionId=<?= $value->getDiscussionId()?>&etat=0" class="LinkDiscu"><?= $value->getName()?></a>
+                                    <a href="../controller/pageDiscussionC.php?discussionId=<?= $value->getDiscussionId()?>" class="LinkDiscu"><?= $value->getName()?></a>
                                 </li>
                                 <li>
                                     <?= $value->getNbMessages() ?> Messages
