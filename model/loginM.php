@@ -14,8 +14,8 @@ function login($s_pseudo,$s_pwd)
         exit();
 
     }
-    $resultat = $dbResult->fetch_assoc();
-    if (password_verify($s_pwd, $resultat['password']) AND $s_pwd != NULL AND $resultat['pseudo'] == $s_pseudo AND $s_pseudo != NULL)
+    $result = $dbResult->fetch_assoc();
+    if (password_verify($s_pwd, $result['password']) AND $s_pwd != NULL AND $result['pseudo'] == $s_pseudo AND $s_pseudo != NULL)
         return true;
     else
         return false;
@@ -33,7 +33,7 @@ function returnUser ($s_pseudo)
         exit();
     }
 
-    $dbResult->fetch_assoc();
+    $result = $dbResult->fetch_assoc();
     $myUser = new User($result['admin'], $result['surname'], $result['name'], $result['pseudo'],$result['email'], $result['birthdate'], $result['password'],$result['gender']);
     $myUser->setMyId($result['id']);
     return $myUser;
