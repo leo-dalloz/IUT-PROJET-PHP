@@ -26,7 +26,7 @@ ob_start();
                     echo '<input type="text" name="surname" placeholder="Nom">';
                     break;
                 case 'firstname' :
-                    echo '<input type="text" name="name" placeholder="Prénom">';
+                    echo '<input type="text" name="firstname" placeholder="Prénom">';
                     break;
                 case 'birthday':
                     echo '<input type="date" name="birthday">';
