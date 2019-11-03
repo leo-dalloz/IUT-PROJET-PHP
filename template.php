@@ -25,7 +25,7 @@
 
             <? } else { ?>
                 <a class="navLink" href="../view/basicProfileV.php">Profil</a>
-                <a class="navLink" href="">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
+                <a class="navLink" href="../controller/deconnextionC.php">Deconnexion <i class="fas fa-sign-out-alt"></i></a>
             <? } ?>
         </nav>
         <button id="ChangeThemeButton">
