@@ -4,6 +4,7 @@ $style_common = '../assets/css/connexion-inscription.css';
 $style = '../assets/css/inscription.css';
 // Gestion des erreurs de connexion
 // Jeremy
+
 ob_start();
 ?>
 

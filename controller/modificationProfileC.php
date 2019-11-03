@@ -9,12 +9,7 @@ if( 'ok' != $_SESSION['login'])
 {
     header('Location: ../controller/indexC.php');
 }
-
-// Test si l'utilisateur arrive sur ce lien sans action définie au préalable
-if (!isset($_GET['action'])) {
-    echo "error l.10";
-    die();
-}
+$isConnected = $_SESSION['login'];
 
 
 
@@ -32,7 +27,7 @@ if (isset($_GET['action'])) {
         echo "error l.25";
         die();
     }
-    if (isset($_GET['sumbitAction'])) {
+    if (isset($_POST['submitAction'])) {
 
         switch ($s_action) {
             case 'nickname' :
@@ -106,4 +101,3 @@ else
 
 
 require '../view/modificationProfileV.php';
-

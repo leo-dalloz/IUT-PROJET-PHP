@@ -27,7 +27,7 @@ ob_start();
                         NOM
                     </p>
                     <p class="CategValue">
-                        <?php echo $s_name; ?>
+                        <?php echo $s_surname; ?>
                     </p>
                     <a href="../controller/modificationProfileC.php?action=surname" class="CategLink"><i class="fas fa-angle-right"></i></a>
                 </div>
@@ -36,7 +36,7 @@ ob_start();
                         PRENOM
                     </p>
                     <p class="CategValue">
-                        <?php echo $s_surname; ?>
+                        <?php echo $s_name; ?>
                     </p>
                     <a href="../controller/modificationProfileC.php?action=firstname" class="CategLink"><i class="fas fa-angle-right"></i></a>
                 </div>

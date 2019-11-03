@@ -13,7 +13,7 @@ if (isset($_POST['register']))
     {
         if ($s_pwd != $s_pwd1)
         {
-            header('Location: ../controller/registerC.php?error=pwd');
+            header('Location: ../view/registerV.php?error=pwd');
         }
         else
         {
@@ -59,4 +59,5 @@ if (isset($_GET['error']))
 }
 else
     $s_error = '';
+
 require '../view/registerV.php';
