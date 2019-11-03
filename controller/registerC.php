@@ -26,6 +26,7 @@ if (isset($_POST['register']))
                     $s_pwd = password_hash($s_pwd, PASSWORD_DEFAULT);
                     $newUser = new User(0, $s_name, $s_surname, $s_pseudo, $s_email, $d_birth, $s_pwd, $s_gender);
                     registration($newUser);
+                    $_SESSION['popupsuccess'] = 'Vous êtes maintenant inscrit !';
                     header('Location: ./loginC.php');
                 } else if (!checkPseudo($s_pseudo)) {
                     header('Location: ../controller/registerC.php?error=pseudo');
