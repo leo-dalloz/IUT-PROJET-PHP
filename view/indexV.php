@@ -31,10 +31,7 @@
                         <?= $value->getNbLike() ?> <i class="fas fa-thumbs-up"></i>
                     </td>
                 </tr>
-            <?php }
-            if ($isAdmin == 1) {?>
-                <a class="navLink" href="../"> Créer une discussion <i class="fas fa-plus"></i></a>
-            <? } ?>
+            <?php } ?>
         </table>
     </div>
     <main id="top">
