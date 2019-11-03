@@ -4,27 +4,24 @@ function checkPseudo($s_pseudo)
 {
     $dbLink = dbConnect();
     $query = 'SELECT pseudo FROM `User` WHERE pseudo = \'' . $s_pseudo . '\'';
-    $dbResult = testError($dbLink,$query);
-    while($dbRow = mysqli_fetch_assoc($dbResult))
-    {
-        if ($dbRow['pseudo'] != NULL)
-            return false;
-        else
-            return true;
-    }
+    $dbRow = testError($dbLink,$query);
+    $dbResult = $dbRow->fetch_assoc();
+    if ($dbResult['pseudo'] != NULL)
+        return false;
+    else
+        return true;
 }
 function checkEmail($s_email)
 {
     $dbLink = dbConnect();
     $query = 'SELECT email FROM `User` WHERE email = \'' . $s_email . '\'';
-    $dbResult = testError($dbLink,$query);
-    while($dbRow = mysqli_fetch_assoc($dbResult))
-    {
-        if ($dbRow['email'] != NULL)
-            return false;
-        else
-            return true;
-    }
+    $dbRow = testError($dbLink,$query);
+    $dbResult = $dbRow->fetch_assoc();
+    if ($dbResult['email'] != NULL)
+        return false;
+    else
+        return true;
+
 }
 
 /*
