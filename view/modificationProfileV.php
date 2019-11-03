@@ -23,8 +23,7 @@
 				                'surname',
                                 'birthday',
                                 'gender',
-                                'email',
-                                'password'
+                                'email'
                             );
     if (!in_array($s_action, $a_editable_user)) {
         echo "error l.25";
@@ -67,11 +66,6 @@
 				        <option value="Homme">Homme</option>
                         <option value="Femme">Femme</option>
                         </select>';
-                    break;
-                case 'password' :
-                    echo '<input type="password" name="firstPwd" placeholder="Mot de passe"> 
-                          <input type="password" name="secondPwd" placeholder="Répetez votre mot de passe">
-                         ';
                     break;
                 default:
                     echo 'Erreur';

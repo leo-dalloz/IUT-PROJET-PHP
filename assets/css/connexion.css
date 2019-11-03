@@ -1,4 +1,4 @@
-/* 
+/*
     @Title : connexion
     @For : FreeNote
     @Started on : 13/10/19
@@ -9,7 +9,7 @@
 
 
 
-/* 
+/*
     PageTitleContainer & components
 */
 #PageDescription {
@@ -17,15 +17,15 @@
 }
 
 
-/* 
-    Form 
+/*
+    Form
 */
 #FormContainer {
     padding : 20px 55px 20px 55px;
 }
 
 
-/* 
+/*
     input text & password
 */
 input[type = 'password'], input[type = 'text']  {
@@ -37,7 +37,7 @@ input[type = 'password'], input[type = 'text']  {
 
     border : none;
     border-bottom: 3px solid #ff793f;
-    
+
     font-size: 19px;
 }
 input[type = 'text'] {
@@ -48,7 +48,7 @@ input[type = 'text']:focus, input[type = 'password']:focus {
 }
 
 
-/* 
+/*
     PwdContainer
 */
 #PwdContainer {
@@ -61,12 +61,12 @@ input[type = 'text']:focus, input[type = 'password']:focus {
 
 
 
-/* 
+/*
     input checkbox
 */
 input[type="checkbox"]:hover + label {
     color : #ff793f;
-    
+
     transition : 0.5s;
 }
 input[type="checkbox"]:hover {
@@ -74,14 +74,14 @@ input[type="checkbox"]:hover {
 }
 
 
-/* 
+/*
     RememberContainer
 */
 #RememberContainer {
     display : flex;
     flex-direction: row;
     align-items: center;
-    
+
     margin-top : 10px;
     margin-bottom : 10px;
 }
@@ -94,8 +94,8 @@ input[type="checkbox"]:hover {
 
 
 
-    
-/* 
+
+/*
     RegisterLink
 */
 #RegisterLink {
@@ -105,9 +105,27 @@ input[type="checkbox"]:hover {
 }
 
 
+<<<<<<< HEAD
+/*
+    ERRORS
+*/
+#ErrorContainer {
+    width : 80%;
+
+    padding : 10px;
+
+    background-color : #ff5e57;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    font-size : 17px;
+}
+=======
+>>>>>>> origin/AudreyDevelop
 
 
-/* 
+/*
     TABLET DESIGN
 */
 @media screen and (max-width : 1024px) {
@@ -116,7 +134,7 @@ input[type="checkbox"]:hover {
     }
 }
 
-/* 
+/*
     SMARTPHONE DESIGN
 */
 @media screen and (max-width : 465px) {
@@ -124,5 +142,3 @@ input[type="checkbox"]:hover {
         width : 90%;
     }
 }
-
-
