@@ -13,7 +13,7 @@ if (isset($_POST['register']))
     {
         if ($s_pwd != $s_pwd1)
         {
-            header('Location: ../view/registerV.php?error=pwd');
+            header('Location: ../controller/registerC.php?error=pwd');
         }
         else
         {
@@ -27,7 +27,7 @@ if (isset($_POST['register']))
                     $newUser = new User(0, $s_name, $s_surname, $s_pseudo, $s_email, $d_birth, $s_pwd, $s_gender);
                     registration($newUser);
                     $_SESSION['popupsuccess'] = 'Vous êtes maintenant inscrit !';
-                    header('Location: ./loginC.php');
+                    header('Location: ../controller/loginC.php');
                 } else if (!checkPseudo($s_pseudo)) {
                     header('Location: ../controller/registerC.php?error=pseudo');
                 } else if (!checkEmail($s_email)) {
