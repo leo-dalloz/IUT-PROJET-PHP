@@ -49,7 +49,7 @@ ob_start()
             </form>
 
             <p id="RegisterLink">
-                Nouveau sur FreeNote ? <a href="../controller/registerC.php">S'inscrire maintenant</a>
+                Nouveau sur FreeNote ? <a href="registerV.php">S'inscrire maintenant</a>
             </p>
 
         </section>
