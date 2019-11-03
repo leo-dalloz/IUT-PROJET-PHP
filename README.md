@@ -68,7 +68,7 @@ fonctionne sur les dernieres versions de :
 - safari 
 - microsoft edge 
 
-configuration minimal : 
+configuration minimale : 
 -4gb ram 
 
 configuration recomendée
@@ -83,7 +83,7 @@ ata.
 ####################################################################
 FreeNote :
 	compte test :
-		-id : test
+		-pseudo : Test
 		-pwd: Test123123
 		
 	admin :
@@ -91,14 +91,14 @@ FreeNote :
 		pwd: Bonjour13
 		
 alwaysdata :
-	id : projet.iut.info13@gmail.com
+	pseudo : projet.iut.info13@gmail.com
 	pwd: jullazone
 
 php myAdmin :
-	id : 191346_admin
+	pseudo : 191346_admin
 	pwd: jullazone
 github :
-	id : Leo-Dalloz
+	pseudo : Leo-Dalloz
 	pwd : JulLaZone123
 
 
