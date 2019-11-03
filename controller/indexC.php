@@ -9,7 +9,7 @@ if (isset($_GET['etat']))
 }
 else if (isset($_GET['error']))
 {
-    $_SESSION['popuperror'] = $_GET['etat'];
+    $_SESSION['popuperror'] = $_GET['error'];
 }
 if(isset($_POST['action']))
 {
