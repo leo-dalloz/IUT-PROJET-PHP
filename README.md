@@ -84,9 +84,7 @@ alwaysdata :
 php myAdmin :
 	pseudo : 191346_admin
 	pwd: jullazone
-github :
-	pseudo : leo-dalloz
-	pwd : JulLaZone123
+
 
 
 	
